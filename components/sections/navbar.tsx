@@ -50,9 +50,9 @@ const Navbar = ({ session }: { session: any }) => {
       {/* Left Content */}
       <NavbarBrand>
         <div className="rounded-full bg-foreground text-background">
-          <Avatar alt="logo" src="/logo.jpeg" />
+          <Avatar alt="logo" src="/favicon.ico" />
         </div>
-        <span className="ml-2 text-small font-medium">Devocode</span>
+        <span className="ml-2 text-small font-medium">Pixelpaw</span>
       </NavbarBrand>
 
       {/* Center Content */}
@@ -63,8 +63,8 @@ const Navbar = ({ session }: { session: any }) => {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className="text-default-500" href="/dashboard">
-            Dashboard
+          <Link className="text-default-500" href="/work">
+            Work
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -74,18 +74,18 @@ const Navbar = ({ session }: { session: any }) => {
         </NavbarItem>
         <NavbarItem>
           <Link className="text-default-500" href="/about">
-            About Us
+            About
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link className="text-default-500" href="/integration">
-            Integrations
+            Socials
           </Link>
         </NavbarItem>
       </NavbarContent>
 
       {/* Right Content */}
-      <NavbarContent className="hidden md:flex" justify="end">
+      {/* <NavbarContent className="hidden md:flex" justify="end">
         {session ? (
           <NavbarItem className="ml-2 !flex gap-2">
             <Button
@@ -121,7 +121,7 @@ const Navbar = ({ session }: { session: any }) => {
             </Button>
           </NavbarItem>
         )}
-      </NavbarContent>
+      </NavbarContent> */}
 
       <NavbarMenuToggle className="text-default-400 md:hidden" />
 

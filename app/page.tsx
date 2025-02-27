@@ -11,10 +11,7 @@ export default function Home() {
           'bg-default-100 text-default-900 dark:bg-default-900 dark:text-default-100'
         )}
       >
-        <h1>
-          Edit this page on
-          <Code>app/page.tsx</Code>
-        </h1>
+        <h1></h1>
       </div>
     </>
   );
