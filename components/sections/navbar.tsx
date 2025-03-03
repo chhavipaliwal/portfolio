@@ -1,7 +1,13 @@
 'use client';
-import React from 'react';
 const Navbar = () => {
-  return <></>;
+  return (
+    <>
+      <nav>
+        <ul>
+          <li></li>
+        </ul>
+      </nav>
+    </>
+  );
 };
-
 export default Navbar;
