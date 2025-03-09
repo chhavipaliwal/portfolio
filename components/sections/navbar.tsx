@@ -27,25 +27,25 @@ const Navbar = () => {
         <div className="hidden space-x-6 md:flex">
           <Link
             href="#home"
-            className="text-lg font-medium text-primary-200 transition-all hover:text-[#ef7c6c] hover:underline hover:decoration-[#ef7c6c] hover:underline-offset-4"
+            className="text-lg font-medium transition-all hover:text-primary hover:underline"
           >
             Home
           </Link>
           <Link
             href="#about"
-            className="text-lg font-medium text-secondary transition-all hover:text-[#ef7c6c] hover:underline hover:decoration-[#ef7c6c] hover:underline-offset-4"
+            className="text-lg font-medium transition-all hover:text-primary hover:underline"
           >
             About
           </Link>
           <Link
             href="#work"
-            className="text-lg font-medium text-white transition-all hover:text-[#ef7c6c] hover:underline hover:decoration-[#ef7c6c] hover:underline-offset-4"
+            className="text-lg font-medium text-white transition-all hover:text-primary hover:underline"
           >
             Work
           </Link>
           <Link
             href="#contact"
-            className="text-lg font-medium text-white transition-all hover:text-[#ef7c6c] hover:underline hover:decoration-[#ef7c6c] hover:underline-offset-4"
+            className="text-lg font-medium text-white transition-all hover:text-primary hover:underline"
           >
             Contact
           </Link>
@@ -67,28 +67,28 @@ const Navbar = () => {
         <div className="flex flex-col space-y-3 bg-[#202020] py-3 text-white md:hidden">
           <Link
             href="#home"
-            className="block text-center text-lg transition-all hover:text-[#ef7c6c] hover:underline"
+            className="block text-center text-lg transition-all hover:text-primary hover:underline"
             onClick={() => setIsOpen(false)}
           >
             Home
           </Link>
           <Link
             href="#about"
-            className="block text-center text-lg transition-all hover:text-[#ef7c6c] hover:underline"
+            className="block text-center text-lg transition-all hover:text-primary hover:underline"
             onClick={() => setIsOpen(false)}
           >
             About
           </Link>
           <Link
             href="#work"
-            className="block text-center text-lg transition-all hover:text-[#ef7c6c] hover:underline"
+            className="block text-center text-lg transition-all hover:text-primary hover:underline"
             onClick={() => setIsOpen(false)}
           >
             Work
           </Link>
           <Link
             href="#contact"
-            className="hover:underlinenp block text-center text-lg transition-all hover:text-[#ef7c6c]"
+            className="block text-center text-lg transition-all hover:text-primary hover:underline"
             onClick={() => setIsOpen(false)}
           >
             Contact
