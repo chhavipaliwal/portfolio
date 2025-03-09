@@ -18,11 +18,11 @@ export default async function RootLayout({
 }>) {
   const session = await auth();
   return (
-    <html lang="en" suppressHydrationWarning className="light">
-      <body>
+    <html lang="en" suppressHydrationWarning>
+      <body className="font-pp-neue-machina dark">
         <Providers>
-          <ThemeProvider attribute="class" defaultTheme="light">
-            <Navbar session={session} />
+          <ThemeProvider attribute="class" defaultTheme="dark">
+            <Navbar />
             {children}
             <Sonner />
           </ThemeProvider>

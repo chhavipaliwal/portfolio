@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed left-0 right-0 top-0 z-50 bg-black bg-transparent shadow-md backdrop-blur-md">
+    <nav className="fixed left-0 right-0 top-0 z-50 bg-black shadow-md backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3">
@@ -19,21 +19,21 @@ const Navbar = () => {
             height={40}
             className="rounded-full"
           />
-          <span className="text-2xl font-bold tracking-wide text-white">
-            PixelPaw
+          <span className="font-sans text-2xl font-bold tracking-wide text-white">
+            Chhavi
           </span>
         </Link>
 
         <div className="hidden space-x-6 md:flex">
           <Link
             href="#home"
-            className="text-lg font-medium text-white transition-all hover:text-[#ef7c6c] hover:underline hover:decoration-[#ef7c6c] hover:underline-offset-4"
+            className="text-lg font-medium text-primary-200 transition-all hover:text-[#ef7c6c] hover:underline hover:decoration-[#ef7c6c] hover:underline-offset-4"
           >
             Home
           </Link>
           <Link
             href="#about"
-            className="text-lg font-medium text-white transition-all hover:text-[#ef7c6c] hover:underline hover:decoration-[#ef7c6c] hover:underline-offset-4"
+            className="text-lg font-medium text-secondary transition-all hover:text-[#ef7c6c] hover:underline hover:decoration-[#ef7c6c] hover:underline-offset-4"
           >
             About
           </Link>
@@ -88,7 +88,7 @@ const Navbar = () => {
           </Link>
           <Link
             href="#contact"
-            className="block text-center text-lg transition-all hover:text-[#ef7c6c] hover:underline"
+            className="hover:underlinenp block text-center text-lg transition-all hover:text-[#ef7c6c]"
             onClick={() => setIsOpen(false)}
           >
             Contact

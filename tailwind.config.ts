@@ -11,6 +11,11 @@ const config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'pp-neue-machina': ['PPNeueMachina', 'sans-serif'],
+        'pp-migra': ['PPMigra', 'sans-serif'],
+        'clash-display': ['ClashDisplay', 'sans-serif']
+      },
       colors: {
         accent: {
           '50': '#fdefed',
