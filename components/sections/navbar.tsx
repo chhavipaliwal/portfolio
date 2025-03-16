@@ -27,9 +27,21 @@ const Navbar = () => {
               Contact
             </button>
           </div>
-          <div>
+          <div className="flex items-center justify-center gap-3">
             <p>menu</p>
-            <div></div>
+            <div className="relative h-14 w-14">
+              <div className="flex h-full w-full flex-col items-center justify-center rounded-full bg-white">
+                {/* Four smaller circles */}
+                <div className="flex space-x-1">
+                  <div className="h-2 w-2 rounded-full bg-black"></div>
+                  <div className="h-2 w-2 rounded-full bg-black"></div>
+                </div>
+                <div className="mt-1 flex space-x-1">
+                  <div className="h-2 w-2 rounded-full bg-black"></div>
+                  <div className="h-2 w-2 rounded-full bg-black"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
