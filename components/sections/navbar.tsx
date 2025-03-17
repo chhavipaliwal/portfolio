@@ -2,12 +2,18 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [circleRotation, setCircleRotation] = useState(0);
+  const [closeRotation, setCloseRotation] = useState(0);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    setCircleRotation((prev) => prev + 180);
+    setCloseRotation((prev) => prev - 180);
   };
+
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 bg-background shadow-md backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between py-4 pl-6">
@@ -24,13 +30,15 @@ const Navbar = () => {
             Chhavi
           </span>
         </Link>
+
+        {/* Right side: Contact, Menu, and Circle Logo */}
         <div className="flex items-center gap-6">
-          <div className="flex items-center justify-center">
+          <div className="flex items-center">
             <button className="border-gray rounded-full border px-4 py-3 hover:bg-white hover:text-black">
               Contact
             </button>
           </div>
-          <div className="flex items-center justify-center gap-3">
+          <div className="flex items-center gap-3">
             <button
               onClick={toggleMenu}
               className="text-white focus:outline-none"
@@ -47,7 +55,9 @@ const Navbar = () => {
               {/* Close Button */}
               <button
                 onClick={toggleMenu}
-                className="absolute right-2 top-2 text-gray-600 hover:text-black"
+                className={`absolute right-2 top-2 text-gray-600 transition-transform duration-500 ease-in-out hover:text-black ${
+                  closeRotation === 0 ? 'rotate-0' : '-rotate-180'
+                }`}
               >
                 ✕
               </button>
@@ -92,7 +102,7 @@ const Navbar = () => {
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.132 5.775.072 7.053.015 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.278.261 2.173.558 2.913.306.789.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.74.297 1.635.498 2.913.558C8.333 23.985 8.74 24 12 24s3.667-.015 4.947-.072c1.278-.06 2.173-.261 2.913-.558.789-.306 1.459-.717 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.297-.74.498-1.635.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.278-.261-2.173-.558-2.913-.306-.789-.717-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.74-.297-1.635-.498-2.913-.558C15.667.015 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.421.42.679.819.896 1.381.167.422.36 1.057.415 2.227.055 1.265.071 1.647.071 4.85s-.016 3.585-.071 4.85c-.055 1.17-.249 1.805-.415 2.227-.217.562-.477.96-.896 1.382-.42.421-.819.679-1.381.896-.422.167-1.057.36-2.227.415-1.265.055-1.647.071-4.85.071s-3.585-.016-4.85-.071c-1.17-.055-1.805-.249-2.227-.415-.562-.217-.96-.477-1.382-.896-.421-.42-.679-.819-.896-1.381-.167-.422-.36-1.057-.415-2.227-.055-1.265-.071-1.647-.071-4.85s.016-3.585.071-4.85c.055-1.17.249-1.805.415-2.227.217-.562.477-.96.896-1.382.42-.421.819-.679 1.381-.896.422-.167 1.057-.36 2.227-.415 1.265-.055 1.647-.071 4.85-.071zm0 3.435c-2.89 0-5.235 2.345-5.235 5.235s2.345 5.235 5.235 5.235 5.235-2.345 5.235-5.235-2.345-5.235-5.235-5.235zm0 8.47c-1.682 0-3.235-1.553-3.235-3.235s1.553-3.235 3.235-3.235 3.235 1.553 3.235 3.235-1.553 3.235-3.235 3.235zm4.6-4.225c-.049-.026-.122-.035-.167-.035-.145 0-.278.047-.402.072-.124.025-.267.068-.407.108-.134.04-.302.076-.454.076s-.32-.036-.454-.076c-.14-.04-.283-.083-.407-.108-.124-.025-.257-.072-.402-.072-.045 0-.118.009-.167.035-.105.046-.189.112-.251.19-.062.077-.103.18-.103.301 0 .121.041.224.103.301.062.078.146.144.251.19.049.026.122.035.167.035.145 0 .278-.047.402-.072.124-.025.267-.068.407-.108.134-.04.302-.076.454-.076s.32.036.454.076c.14.04.283.083.407.108.124.025.257.072.402.072.045 0 .118-.009.167-.035.105-.046.189-.112.251-.19.062-.077.103-.18.103-.301 0-.121-.041-.224-.103-.301-.062-.078-.146-.144-.251-.19z" />
+                    <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.132 5.775.072 7.053.015 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.278.261 2.173.558 2.913.306.789.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.74.297 1.635.498 2.913.558C8.333 23.985 8.74 24 12 24s3.667-.015 4.947-.072c1.278-.06 2.173-.261 2.913-.558.789-.306 1.459-.717 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.297-.74.498-1.635.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.278-.261-2.173-.558-2.913-.306-.789-.717-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.74-.297-1.635-.498-2.913-.558C15.667.015 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.421.42.679.819.896 1.381.167.422.36 1.057.415 2.227.055 1.265.071 1.647.071 4.85s-.016 3.585-.071 4.85c-.055 1.17-.249 1.805-.415 2.227-.217.562-.477.96-.896 1.382-.42.421-.819.679-1.381.896-.422.167-1.057.36-2.227.415-1.265.055-1.647.071-4.85.071s-3.585-.016-4.85-.071c-1.17-.055-1.805-.249-2.227-.415-.562-.217-.96-.477-1.382-.896-.421-.42-.679-.819-.896-1.381-.167-.422-.36-1.057-.415-2.227-.055-1.265-.071-1.647-.071-4.85s.016-3.585.071-4.85c.055-1.17.249-1.805.415-2.227.217-.562.477-.96.896-1.382.42-.421.819-.679 1.381-.896.422-.167 1.057-.36 2.227-.415 1.265-.055 1.647-.071 4.85-.071zm0 3.435c-2.89 0-5.235 2.345-5.235 5.235s2.345 5.235 5.235 5.235 5.235-2.345 5.235-5.235-2.345-5.235-5.235-5.235zm0 8.47c-1.682 0-3.235-1.553-3.235-3.235s1.553-3.235 3.235-3.235 3.235 1.553 3.235 3.235-1.553 3.235-3.235 3.235zm4.6-4.225c-.049-.026-.122-.035-.167-.035-.145 0-.278.047-.402.072-.124.025-.267.068-.407.108-.134.04-.302.076-.454.076s-.32-.036-.454-.076-.283-.083-.407-.108c-.124-.025-.257-.072-.402-.072-.045 0-.118.009-.167.035-.105.046-.189.112-.251.19-.062.077-.103.18-.103.301 0 .121.041.224.103.301.062.078.146.144.251.19.049.026.122.035.167.035.145 0 .278-.047.402-.072.124-.025.267-.068.407-.108.134-.04.302-.076.454-.076s.32.036.454.076c.14.04.283.083.407.108.124.025.257.072.402.072.045 0 .118-.009.167-.035.105-.046.189-.112.251-.19.062-.077.103-.18.103-.301 0-.121-.041-.224-.103-.301-.062-.078-.146-.144-.251-.19z" />
                   </svg>
                 </Link>
 
@@ -141,23 +151,23 @@ const Navbar = () => {
                   </svg>
                 </Link>
               </div>
-              <p className="mt-2 text-gray-600"></p>
+              <p className="mt-2 text-gray-600">hello@chhavi.dev</p>
             </div>
           </div>
-        </div>
-        <div className="relative h-14 w-14">
-          <div
-            className="flex h-full w-full flex-col items-center justify-center rounded-full bg-white"
-            onClick={toggleMenu}
-          >
-            {/* Four smaller circles */}
-            <div className="flex space-x-1">
-              <div className="h-2 w-2 rounded-full bg-black"></div>
-              <div className="h-2 w-2 rounded-full bg-black"></div>
-            </div>
-            <div className="mt-1 flex space-x-1">
-              <div className="h-2 w-2 rounded-full bg-black"></div>
-              <div className="h-2 w-2 rounded-full bg-black"></div>
+          <div className="relative h-14 w-14">
+            <div
+              className="${ closeRotation === 0 ? 'rotate-0' : '-rotate-180' group flex h-full w-full flex-col items-center justify-center rounded-full bg-white transition-transform duration-500 ease-in-out"
+              onClick={toggleMenu}
+            >
+              {/* Four smaller circles */}
+              <div className="flex space-x-1">
+                <div className="h-2 w-2 rounded-full bg-black transition-transform duration-500 ease-in-out group-hover:rotate-180"></div>
+                <div className="h-2 w-2 rounded-full bg-black transition-transform duration-500 ease-in-out group-hover:rotate-180"></div>
+              </div>
+              <div className="mt-1 flex space-x-1">
+                <div className="h-2 w-2 rounded-full bg-black transition-transform duration-500 ease-in-out group-hover:rotate-180"></div>
+                <div className="h-2 w-2 rounded-full bg-black transition-transform duration-500 ease-in-out group-hover:rotate-180"></div>
+              </div>
             </div>
           </div>
         </div>
