@@ -63,7 +63,7 @@ const Button = React.forwardRef<
                 y: 35,
                 transition: {
                   duration,
-                  delay: index * 0.05,
+                  delay: index * 0.02,
                   ease: 'easeInOut'
                 }
               },
