@@ -1,19 +1,30 @@
 'use client';
-import { useState } from 'react';
+import react from 'react';
 
 const HeroSection = () => {
   return (
-    <section className="flex min-h-screen items-center justify-center bg-gray-900 text-white">
-      <div className="text-center">
-        <h1 className="mb-4 text-5xl font-bold md:text-6xl">
-          Welcome to My World
-        </h1>
-        <p className="text-xl text-gray-300 md:text-2xl">
-          Chhavi: Where Innovation Meets Excellence
-        </p>
-        <button className="mt-6 rounded-full bg-blue-600 px-6 py-3 text-white transition-colors hover:bg-blue-700">
-          Explore My Work
-        </button>
+    <section className="relative flex min-h-screen items-center justify-center">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute inset-0 h-full w-full object-cover"
+      >
+        <source src="/vedio/kreyda2.mp4" type="video/mp4" />
+      </video>
+
+      {/* Overlay Content */}
+      <div className="relative z-10 p-8">
+        <div>
+          <p> Bringing Ideas to Life with Code and Creativity.</p>
+        </div>
+        <div>
+          <p>
+            I can design and develop intelligent products that transform ideas
+            into reality.
+          </p>
+        </div>
       </div>
     </section>
   );
