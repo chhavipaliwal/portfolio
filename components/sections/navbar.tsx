@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Button from '../ui/button';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,9 +35,7 @@ const Navbar = () => {
         {/* Right side: Contact, Menu, and Circle Logo */}
         <div className="flex items-center gap-6">
           <div className="flex items-center">
-            <button className="border-gray rounded-full border px-4 py-3 hover:bg-white hover:text-black">
-              Contact
-            </button>
+            <Button>Contact</Button>
           </div>
           <div className="flex items-center gap-3">
             <button
