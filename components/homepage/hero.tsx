@@ -20,7 +20,7 @@ const HeroSection = () => {
       <div className="relative z-10 flex w-full flex-col justify-between p-8 text-white md:flex-row">
         {/* Left Section: Main Headline */}
         <div className="max-w-xl">
-          <h1 className="font-sans text-7xl font-extrabold md:text-7xl">
+          <h1 className="font-sans text-7xl font-extrabold tracking-tight md:text-7xl">
             <span className="text-secondary">BRINGING</span> IDEAS TO LIFE{' '}
             <span className="text-secondary">WITH</span>{' '}
             <span className="text-secondary">CODE</span> AND{' '}
