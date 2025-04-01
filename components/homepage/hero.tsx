@@ -95,7 +95,7 @@ const HeroSection = () => {
           <div>
             <p className="mr-20 text-2xl font-medium text-default">Skills</p>
           </div>
-          <ul className="space-y-2 text-2xl font-semibold md:text-3xl">
+          <ul className="space-y-2 text-2xl tracking-wide md:text-4xl">
             <li>Next.js</li>
             <li>React.js</li>
             <li>Node.js</li>
