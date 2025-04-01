@@ -26,4 +26,8 @@
     src: url('/fonts/Clash_Display_Medium.otf');
     font-weight: 500;
   }
+  @font-face {
+    font-family: 'NeueHelvetica';
+    src: url('/fonts/Neue Helvetica W04 89 Cm Heavy.otf');
+  }
 }

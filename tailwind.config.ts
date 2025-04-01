@@ -14,7 +14,8 @@ const config = {
       fontFamily: {
         'pp-neue-machina': ['PPNeueMachina', 'sans-serif'],
         'pp-migra': ['PPMigra', 'sans-serif'],
-        'clash-display': ['ClashDisplay', 'sans-serif']
+        'clash-display': ['ClashDisplay', 'sans-serif'],
+        'neue-Helvetica': ['NeueHelvetica', 'sans-serif']
       },
       keyframes: {
         'caret-blink': {
