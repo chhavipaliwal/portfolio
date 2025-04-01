@@ -20,8 +20,8 @@ const HeroSection = () => {
         {/* Overlay Content */}
         <div className="relative z-10 flex w-full flex-col justify-between p-8 text-white md:flex-row">
           {/* Left Section: Main Headline */}
-          <div className="max-w-xl">
-            <h1 className="text-7xl font-extrabold md:text-7xl">
+          <div className="max-w-lg">
+            <h1 className="text-[101px] font-extrabold leading-none">
               <span className="text-secondary">BRINGING</span> IDEAS TO LIFE{' '}
               <span className="text-secondary">WITH</span>{' '}
               <span className="text-secondary">CODE</span> AND{' '}
