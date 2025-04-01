@@ -21,7 +21,7 @@ const HeroSection = () => {
         <div className="relative z-10 flex w-full flex-col justify-between p-8 text-white md:flex-row">
           {/* Left Section: Main Headline */}
           <div className="max-w-lg">
-            <h1 className="text-[101px] font-extrabold leading-none">
+            <h1 className="text-[101px] font-bold leading-none">
               <span className="text-secondary">BRINGING</span> IDEAS TO LIFE{' '}
               <span className="text-secondary">WITH</span>{' '}
               <span className="text-secondary">CODE</span> AND{' '}
@@ -77,7 +77,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right Section: Subtext */}
-          <div className="max-w-lg font-pp-neue-machina md:mt-64 md:text-right">
+          <div className="max-w-lg font-pp-neue-machina md:mt-72 md:text-right">
             <p className="text-3xl font-light">
               I can design and develop intelligent products that transform ideas
               into reality.
