@@ -16,7 +16,6 @@ const HeroSection = () => {
         >
           <source src="/vedio/kreyda2.mp4" type="video/mp4" />
         </video>
-
         {/* Overlay Content */}
         <div className="relative z-10 flex w-full flex-col justify-between p-8 text-white md:flex-row">
           {/* Left Section: Main Headline */}
@@ -75,7 +74,6 @@ const HeroSection = () => {
               </Link>
             </div>
           </div>
-
           {/* Right Section: Subtext */}
           <div className="max-w-lg font-pp-neue-machina md:mt-72 md:text-right">
             <p className="text-3xl font-light">
