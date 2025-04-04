@@ -5,20 +5,22 @@ import { Icon } from '@iconify/react';
 
 const HeroSection = () => {
   return (
-    <section className="relative flex flex-col bg-background font-neue-Helvetica text-foreground">
-      <div></div>
+    <section className="relative mt-10 bg-background font-neue-Helvetica text-foreground">
+      <div>
+        <video
+          autoPlay
+          loop
+          muted
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/vedio/kreyda2.mp4" type="video/mp4" />
+        </video>
+      </div>
 
       <div className="relative">
         <div className="flex items-center justify-center">
           {/* Background Video */}
-          <video
-            autoPlay
-            loop
-            muted
-            className="absolute inset-0 h-full w-full object-cover"
-          >
-            <source src="/vedio/kreyda2.mp4" type="video/mp4" />
-          </video>
+
           {/* Overlay Content */}
           <div className="z-10 flex w-full flex-col justify-between p-8 text-white md:flex-row">
             {/* Left Section: Main Headline */}
