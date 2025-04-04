@@ -7,12 +7,7 @@ import HomePage from './homepage/page';
 export default function Home() {
   return (
     <>
-      <div
-        className={cn(
-          'flex h-screen flex-col items-center justify-center space-y-10',
-          'bg-default-100 text-default-900 dark:bg-default-900 dark:text-default-100'
-        )}
-      >
+      <div className="flex flex-col items-center justify-center space-y-10 bg-default-100">
         <HomePage />
       </div>
     </>
