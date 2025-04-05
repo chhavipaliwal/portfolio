@@ -6,26 +6,17 @@ import { Icon } from '@iconify/react';
 export default function Projects() {
   return (
     <>
-      <div className="h-screen rounded-t-3xl bg-white text-black">
-        <div className="flex justify-between">
-          <h1 className="mt-12 text-7xl">FEATURED PROJECTS</h1>
-          <div className="mt-12 flex space-x-3">
-            <Link
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-gray-500 p-2"
-            >
+      <div className="w-full rounded-t-[60px] bg-white p-10 text-black">
+        <div className="mt-12 flex items-center justify-between">
+          <div>
+            <h1 className="text-[82px]">FEATURED PROJECTS</h1>
+          </div>
+          <div className="flex h-fit flex-row">
+            <Link href="https://github.com" className="">
               <Icon icon="uil:github" className="h-5 w-5" />
             </Link>
-
             {/* LinkedIn */}
-            <Link
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-gray-500 p-2"
-            >
+            <Link href="https://linkedin.com" className="">
               <Icon icon="akar-icons:linkedin-fill" className="h-5 w-5" />
             </Link>
           </div>
