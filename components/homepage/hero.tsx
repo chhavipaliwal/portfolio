@@ -5,7 +5,7 @@ import { Icon } from '@iconify/react';
 
 const HeroSection = () => {
   return (
-    <section className="relative mt-10 bg-background font-neue-Helvetica text-foreground">
+    <section className="mt-20 font-neue-Helvetica text-foreground">
       <div>
         <video
           autoPlay
@@ -17,15 +17,15 @@ const HeroSection = () => {
         </video>
       </div>
 
-      <div className="relative">
+      <div className="relative mt-20">
         <div className="flex items-center justify-center">
           {/* Background Video */}
 
           {/* Overlay Content */}
-          <div className="z-10 flex w-full flex-col justify-between p-8 text-white md:flex-row">
+          <div className="flex w-full flex-col justify-between text-white md:flex-row">
             {/* Left Section: Main Headline */}
-            <div className="max-w-lg">
-              <h1 className="text-[101px] font-bold leading-none">
+            <div className="">
+              <h1 className="max-w-lg text-[101px] font-bold leading-none">
                 <span className="text-secondary">BRINGING</span> IDEAS TO LIFE{' '}
                 <span className="text-secondary">WITH</span>{' '}
                 <span className="text-secondary">CODE</span> AND{' '}
@@ -91,7 +91,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-start justify-between text-white md:flex-row md:items-center">
+        <div className="relative flex flex-col items-start justify-between text-white md:flex-row md:items-center">
           <div className="text-left">
             <h1 className="mt-32 text-4xl font-bold text-primary underline md:text-6xl">
               LET'S DISCUSS
