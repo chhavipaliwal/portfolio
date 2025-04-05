@@ -5,95 +5,87 @@ import { Icon } from '@iconify/react';
 
 const HeroSection = () => {
   return (
-    <section className="mt-20 font-neue-Helvetica text-foreground">
+    <section className="bg-background font-neue-Helvetica leading-none text-foreground">
       <div>
         <video
           autoPlay
           loop
           muted
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 mt-20 h-full w-full object-cover"
         >
           <source src="/vedio/kreyda2.mp4" type="video/mp4" />
         </video>
       </div>
 
-      <div className="relative mt-20">
-        <div className="flex items-center justify-center">
-          {/* Background Video */}
+      <div className="relative mt-60">
+        <div className="flex flex-row justify-between text-white">
+          <div className="">
+            <h1 className="mr-80 max-w-lg text-[101px] font-bold leading-none">
+              <span className="text-secondary">BRINGING</span> IDEAS TO LIFE{' '}
+              <span className="text-secondary">WITH</span>{' '}
+              <span className="text-secondary">CODE</span> AND{' '}
+              <span className="text-secondary">CREATIVITY.</span>
+            </h1>
+            <div className="mt-6 flex items-center space-x-3">
+              {/* Instagram */}
+              <Link
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-gray-500 p-2"
+              >
+                <Icon icon="ri:instagram-line" className="h-5 w-5 text-white" />
+              </Link>
 
-          {/* Overlay Content */}
-          <div className="flex w-full flex-col justify-between text-white md:flex-row">
-            {/* Left Section: Main Headline */}
-            <div className="">
-              <h1 className="max-w-lg text-[101px] font-bold leading-none">
-                <span className="text-secondary">BRINGING</span> IDEAS TO LIFE{' '}
-                <span className="text-secondary">WITH</span>{' '}
-                <span className="text-secondary">CODE</span> AND{' '}
-                <span className="text-secondary">CREATIVITY.</span>
-              </h1>
-              <div className="mt-6 flex items-center space-x-3">
-                {/* Instagram */}
-                <Link
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full border border-gray-500 p-2"
-                >
-                  <Icon
-                    icon="ri:instagram-line"
-                    className="h-5 w-5 text-white"
-                  />
-                </Link>
+              {/* GitHub */}
+              <Link
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-gray-500 p-2"
+              >
+                <Icon icon="uil:github" className="h-5 w-5 text-white" />
+              </Link>
 
-                {/* GitHub */}
-                <Link
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full border border-gray-500 p-2"
-                >
-                  <Icon icon="uil:github" className="h-5 w-5 text-white" />
-                </Link>
+              {/* LinkedIn */}
+              <Link
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-gray-500 p-2"
+              >
+                <Icon
+                  icon="akar-icons:linkedin-fill"
+                  className="h-5 w-5 text-white"
+                />
+              </Link>
 
-                {/* LinkedIn */}
-                <Link
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full border border-gray-500 p-2"
-                >
-                  <Icon
-                    icon="akar-icons:linkedin-fill"
-                    className="h-5 w-5 text-white"
-                  />
-                </Link>
-
-                {/* Twitter */}
-                <Link
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full border border-gray-500 p-2"
-                >
-                  <Icon
-                    icon="akar-icons:twitter-fill"
-                    className="h-5 w-5 text-white"
-                  />
-                </Link>
-              </div>
-            </div>
-            {/* Right Section: Subtext */}
-            <div className="max-w-lg font-pp-neue-machina md:mt-72 md:text-right">
-              <p className="text-3xl font-light">
-                I can design and develop intelligent products that transform
-                ideas into reality.
-              </p>
+              {/* Twitter */}
+              <Link
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-gray-500 p-2"
+              >
+                <Icon
+                  icon="akar-icons:twitter-fill"
+                  className="h-5 w-5 text-white"
+                />
+              </Link>
             </div>
           </div>
+          {/* Right Section: Subtext */}
+          <div className="max-w-lg font-pp-neue-machina md:mt-80 md:text-right">
+            <p className="text-3xl font-light">
+              I can design and develop intelligent products that transform ideas
+              into reality.
+            </p>
+          </div>
         </div>
-        <div className="relative flex flex-col items-start justify-between text-white md:flex-row md:items-center">
+
+        <div className="relative mt-52 flex flex-col items-start justify-between text-white md:flex-row md:items-center">
           <div className="text-left">
-            <h1 className="mt-32 text-4xl font-bold text-primary underline md:text-6xl">
+            <h1 className="mt-32 text-4xl font-bold text-primary underline md:text-7xl">
               LET'S DISCUSS
             </h1>
           </div>
