@@ -6,7 +6,7 @@ import { Icon } from '@iconify/react';
 export default function Projects() {
   return (
     <>
-      <div className="rounded-t-3xl bg-white font-neue-Helvetica text-black">
+      <div className="h-screen rounded-t-3xl bg-white text-black">
         <div className="flex justify-between">
           <h1 className="mt-12 text-7xl">FEATURED PROJECTS</h1>
           <div className="mt-12 flex space-x-3">

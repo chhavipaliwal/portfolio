@@ -24,7 +24,7 @@ const DiscussText: React.FC<DiscussTextProps> = ({
       className={`relative inline-block cursor-pointer overflow-hidden ${className}`}
     >
       {/* Top layer (starts visible, moves up on hover) */}
-      <motion.div className="absolute left-0 top-0 flex w-full">
+      <motion.div className="absolute left-0 top-0 flex w-full underline underline-offset-4">
         {letters.map((letter, index) => (
           <motion.span
             key={`top-${index}`}

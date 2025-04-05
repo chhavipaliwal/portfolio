@@ -84,7 +84,7 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="relative mt-52 flex flex-col items-start justify-between text-white md:flex-row md:items-center">
-          <div className="text-left underline-offset-4">
+          <div className="text-left">
             <DiscussText
               text="LET'S DISCUSS"
               className="text-7xl text-primary underline decoration-2 underline-offset-4"
