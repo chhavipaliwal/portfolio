@@ -20,7 +20,7 @@ const HeroSection = () => {
       <div className="relative mt-60">
         <div className="flex flex-row justify-between text-white">
           <div className="">
-            <h1 className="mr-80 max-w-lg text-[101px] font-bold leading-none">
+            <h1 className="mr-80 max-w-xl text-[101px] font-bold leading-none tracking-wide">
               <span className="text-secondary">BRINGING</span> IDEAS TO LIFE{' '}
               <span className="text-secondary">WITH</span>{' '}
               <span className="text-secondary">CODE</span> AND{' '}
@@ -89,11 +89,13 @@ const HeroSection = () => {
               LET'S DISCUSS
             </h1>
           </div>
-          <div className="mt-10 flex flex-row space-x-3 text-left md:mt-0">
+          <div className="flex flex-row space-x-3 text-left">
             <div>
-              <p className="mr-20 text-2xl font-medium text-default">Skills</p>
+              <p className="mr-20 text-3xl tracking-wider text-default">
+                Skills
+              </p>
             </div>
-            <ul className="space-y-2 text-2xl tracking-wide md:text-4xl">
+            <ul className="space-y-2 text-2xl tracking-wider md:text-4xl">
               <li>Next.js</li>
               <li>React.js</li>
               <li>Node.js</li>
