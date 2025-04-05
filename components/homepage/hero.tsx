@@ -2,6 +2,7 @@
 import react from 'react';
 import Link from 'next/link';
 import { Icon } from '@iconify/react';
+import DiscussText from '../ui/animate';
 
 const HeroSection = () => {
   return (
@@ -82,20 +83,18 @@ const HeroSection = () => {
             </p>
           </div>
         </div>
-
         <div className="relative mt-52 flex flex-col items-start justify-between text-white md:flex-row md:items-center">
-          <div className="text-left">
-            <h1 className="mt-32 text-4xl font-bold text-primary underline md:text-7xl">
-              LET'S DISCUSS
-            </h1>
+          <div className="text-left underline-offset-4">
+            <DiscussText
+              text="LET'S DISCUSS"
+              className="text-7xl text-primary underline decoration-2 underline-offset-4"
+            />
           </div>
-          <div className="flex flex-row space-x-3 text-left">
+          <div className="font-neue-Helvetica-Medium flex flex-row space-x-3 text-left">
             <div>
-              <p className="mr-20 text-3xl tracking-wider text-default">
-                Skills
-              </p>
+              <p className="mr-20 text-3xl text-default">Skills</p>
             </div>
-            <ul className="space-y-2 text-2xl tracking-wider md:text-4xl">
+            <ul className="space-y-2 text-xl md:text-3xl">
               <li>Next.js</li>
               <li>React.js</li>
               <li>Node.js</li>

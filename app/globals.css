@@ -30,4 +30,12 @@
     font-family: 'NeueHelvetica';
     src: url('/fonts/Neue Helvetica W04 89 Cm Heavy.otf');
   }
+  @font-face {
+    font-family: 'NeueHelveticaMedium';
+    src: url('/fonts/HelveticaNeueMedium.otf');
+  }
+  @font-face {
+    font-family: 'NeueHelveticaCondensedLight';
+    src: url('/fonts/HelveticaNeueLight.otf');
+  }
 }

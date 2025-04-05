@@ -15,7 +15,12 @@ const config = {
         'pp-neue-machina': ['PPNeueMachina', 'sans-serif'],
         'pp-migra': ['PPMigra', 'sans-serif'],
         'clash-display': ['ClashDisplay', 'sans-serif'],
-        'neue-Helvetica': ['NeueHelvetica', 'sans-serif']
+        'neue-Helvetica': ['NeueHelvetica', 'sans-serif'],
+        'neue-Helvetica-Medium': ['NeueHelveticaMedium', 'sans-serif'],
+        'neue-Helvetica-Condensed-light': [
+          'NeueHelveticaCondensedLight',
+          'sans-serif'
+        ]
       },
       keyframes: {
         'caret-blink': {

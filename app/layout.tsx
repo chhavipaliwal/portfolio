@@ -19,7 +19,7 @@ export default async function RootLayout({
   const session = await auth();
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="font-pp-neue-machina dark">
+      <body className="font-neue-Helvetica dark">
         <Providers>
           <ThemeProvider attribute="class" defaultTheme="dark">
             <Navbar />
