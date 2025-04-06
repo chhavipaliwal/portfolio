@@ -13,25 +13,25 @@ interface ProjectsProps {
 const projectsData: ProjectsProps = {
   projects: [
     {
-      title: 'Project 1',
+      title: 'The Policlinic',
       description: 'Description of Project 1',
       image: '/project/hospital.png',
       link: 'https://example.com/project1'
     },
     {
-      title: 'Project 2',
+      title: 'Invoice Generator',
       description: 'Description of Project 2',
       image: '/project/invoice.png',
       link: 'https://example.com/project2'
     },
     {
-      title: 'Project 3',
+      title: 'Kittify',
       description: 'Description of Project 3',
       image: '/project/kittify.png',
       link: 'https://example.com/project3'
     },
     {
-      title: 'Project 4',
+      title: 'Kodi',
       description: 'Description of Project 4',
       image: '/project/kodi.png',
       link: 'https://example.com/project4'
@@ -69,18 +69,21 @@ export default function Projects() {
             {projectsData.projects.map((project, index) => (
               <div
                 key={index}
-                className="relative flex h-[400px] items-center justify-center overflow-hidden rounded-lg bg-gray-200 p-8 shadow-lg transition-transform duration-300 hover:scale-105"
+                className="relative flex h-[400px] items-center justify-center overflow-hidden rounded-lg p-8 shadow-lg"
               >
+                {/* Image with hover zoom-out effect */}
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="object-fit absolute inset-0 h-full w-full"
+                  className="object-fit absolute inset-0 h-full w-full rounded-lg transition-transform duration-500 ease-in-out hover:scale-95"
                 />
                 <div className="relative z-10 text-center text-white">
                   <Link
                     href={project.link}
                     className="mt-4 inline-block rounded px-4 py-2 text-white"
-                  ></Link>
+                  >
+                    {/* Button text here if needed */}
+                  </Link>
                 </div>
               </div>
             ))}
