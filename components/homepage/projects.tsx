@@ -43,11 +43,11 @@ const projectsData: ProjectsProps = {
 export default function Projects() {
   return (
     <>
-      <div className="w-full rounded-t-[60px] bg-white p-10 text-black">
-        <div className="mt-12 flex items-center justify-between">
-          <div>
-            <h1 className="text-[82px]">FEATURED PROJECTS</h1>
-          </div>
+      <div className="w-full bg-white p-6 text-black sm:p-10">
+        <div className="mb-12 flex flex-col items-center justify-between gap-4 sm:flex-row">
+          <h1 className="text-center text-[40px] font-bold sm:text-left sm:text-[60px] md:text-[82px]">
+            FEATURED PROJECTS
+          </h1>
           <div className="flex flex-row space-x-4">
             <Link
               href="https://github.com"
@@ -55,7 +55,6 @@ export default function Projects() {
             >
               <Icon icon="uil:github" className="h-8 w-8" />
             </Link>
-            {/* LinkedIn */}
             <Link
               href="https://linkedin.com"
               className="rounded-full border border-gray-500 p-4"
@@ -64,9 +63,9 @@ export default function Projects() {
             </Link>
           </div>
         </div>
-        <hr className="my-5 border-t border-gray-400" />
+        <hr className="my-5 border-t border-gray-300" />
         <div>
-          <div className="mt-20 grid grid-cols-1 gap-10 md:grid-cols-2">
+          <div className="mt-20 grid grid-cols-1 gap-10 sm:grid-cols-2">
             {projectsData.projects.map((project, index) => (
               <div
                 key={index}
