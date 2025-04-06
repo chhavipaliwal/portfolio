@@ -64,7 +64,32 @@ export default function Projects() {
           </div>
         </div>
         <hr className="my-5 border-t border-gray-400" />
-        <div></div>
+        <div>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            {projectsData.projects.map((project, index) => (
+              <div
+                key={index}
+                className="relative flex h-[400px] items-center justify-center overflow-hidden rounded-lg bg-gray-200 p-4 shadow-lg transition-transform duration-300 hover:scale-105"
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="absolute inset-0 h-full w-full object-cover opacity-50"
+                />
+                <div className="relative z-10 text-center text-white">
+                  <h2 className="text-xl font-bold">{project.title}</h2>
+                  <p className="mt-4">{project.description}</p>
+                  <Link
+                    href={project.link}
+                    className="mt-4 inline-block rounded bg-blue-500 px-4 py-2 text-white"
+                  >
+                    View Project
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );
