@@ -74,17 +74,13 @@ export default function Projects() {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="absolute inset-0 h-full w-full object-cover opacity-50"
+                  className="object-fit absolute inset-0 h-full w-full"
                 />
                 <div className="relative z-10 text-center text-white">
-                  <h2 className="text-xl font-bold">{project.title}</h2>
-                  <p className="mt-4">{project.description}</p>
                   <Link
                     href={project.link}
-                    className="mt-4 inline-block rounded bg-blue-500 px-4 py-2 text-white"
-                  >
-                    View Project
-                  </Link>
+                    className="mt-4 inline-block rounded px-4 py-2 text-white"
+                  ></Link>
                 </div>
               </div>
             ))}
