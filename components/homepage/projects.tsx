@@ -2,6 +2,42 @@
 import react from 'react';
 import Link from 'next/link';
 import { Icon } from '@iconify/react';
+interface ProjectsProps {
+  projects: {
+    title: string;
+    description: string;
+    image: string;
+    link: string;
+  }[];
+}
+const projectsData: ProjectsProps = {
+  projects: [
+    {
+      title: 'Project 1',
+      description: 'Description of Project 1',
+      image: '/project/hospital.png',
+      link: 'https://example.com/project1'
+    },
+    {
+      title: 'Project 2',
+      description: 'Description of Project 2',
+      image: '/project/invoice.png',
+      link: 'https://example.com/project2'
+    },
+    {
+      title: 'Project 3',
+      description: 'Description of Project 3',
+      image: '/project/kittify.png',
+      link: 'https://example.com/project3'
+    },
+    {
+      title: 'Project 4',
+      description: 'Description of Project 4',
+      image: '/project/kodi.png',
+      link: 'https://example.com/project4'
+    }
+  ]
+};
 
 export default function Projects() {
   return (
