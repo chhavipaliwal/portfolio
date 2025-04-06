@@ -5,36 +5,37 @@ import { Icon } from '@iconify/react';
 interface ProjectsProps {
   projects: {
     title: string;
-    description: string;
     image: string;
     link: string;
+    tech: string[];
   }[];
 }
+
 const projectsData: ProjectsProps = {
   projects: [
     {
       title: 'The Policlinic',
-      description: 'Description of Project 1',
       image: '/project/hospital.png',
-      link: 'https://example.com/project1'
+      link: 'https://example.com/project1',
+      tech: ['NEXT.JS', 'TAILWIND CSS', 'MONGODB']
     },
     {
       title: 'Invoice Generator',
-      description: 'Description of Project 2',
       image: '/project/invoice.png',
-      link: 'https://example.com/project2'
+      link: 'https://example.com/project2',
+      tech: ['REACT', 'TYPESCRIPT', 'FRAMER MOTION', 'NODE.JS']
     },
     {
       title: 'Kittify',
-      description: 'Description of Project 3',
       image: '/project/kittify.png',
-      link: 'https://example.com/project3'
+      link: 'https://example.com/project3',
+      tech: ['NEXT.JS', 'SHADCN', 'OPENAI API']
     },
     {
       title: 'Kodi',
-      description: 'Description of Project 4',
       image: '/project/kodi.png',
-      link: 'https://example.com/project4'
+      link: 'https://example.com/project4',
+      tech: ['HTML', 'CSS', 'JAVASCRIPT']
     }
   ]
 };
