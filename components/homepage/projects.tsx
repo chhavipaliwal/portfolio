@@ -65,7 +65,7 @@ export default function Projects() {
         </div>
         <hr className="my-5 border-t border-gray-400" />
         <div>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div className="mt-20 grid grid-cols-1 gap-4 md:grid-cols-2">
             {projectsData.projects.map((project, index) => (
               <div
                 key={index}
