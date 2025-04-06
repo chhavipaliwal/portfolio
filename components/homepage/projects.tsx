@@ -72,11 +72,13 @@ export default function Projects() {
                 className="relative flex h-[400px] items-center justify-center overflow-hidden rounded-lg p-8 shadow-lg"
               >
                 {/* Image with hover zoom-out effect */}
+
                 <img
                   src={project.image}
                   alt={project.title}
                   className="object-fit absolute inset-0 h-full w-full rounded-lg transition-transform duration-500 ease-in-out hover:scale-95"
                 />
+
                 <div className="relative z-10 text-center text-white">
                   <Link
                     href={project.link}
