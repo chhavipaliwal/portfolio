@@ -2,6 +2,7 @@
 import react from 'react';
 import Link from 'next/link';
 import { Icon } from '@iconify/react';
+import Button from '../ui/button';
 interface ProjectsProps {
   projects: {
     title: string;
@@ -100,6 +101,7 @@ export default function Projects() {
             I craft digital experiences where every pixel matters — blending
             personality with purpose, and design with intention.
           </p>
+          <Button>View All Projects</Button>
         </div>
       </div>
     </>
