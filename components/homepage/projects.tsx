@@ -67,27 +67,28 @@ export default function Projects() {
         <div>
           <div className="mt-20 grid grid-cols-1 gap-10 sm:grid-cols-2">
             {projectsData.projects.map((project, index) => (
-              <div
+              <Link
+                href={project.link}
                 key={index}
-                className="relative flex h-[400px] items-center justify-center overflow-hidden rounded-lg p-8 shadow-lg"
+                className="flex flex-col items-center justify-center gap-6 rounded-lg"
               >
                 {/* Image with hover zoom-out effect */}
-
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="object-fit absolute inset-0 h-full w-full rounded-lg transition-transform duration-500 ease-in-out hover:scale-95"
-                />
-
-                <div className="relative z-10 text-center text-white">
-                  <Link
-                    href={project.link}
-                    className="mt-4 inline-block rounded px-4 py-2 text-white"
-                  >
-                    {/* Button text here if needed */}
-                  </Link>
+                <div className="overflow-hidden rounded-lg">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="object-fit h-full w-full rounded-lg shadow-lg transition-transform duration-500 ease-in-out hover:scale-95"
+                  />
                 </div>
-              </div>
+                <div className="mb-8">
+                  <h2 className="font-neue-Helvetica-Condensed-light text-5xl font-semibold">
+                    {project.title}
+                  </h2>
+                  <p className="mt-2 rounded-full border">
+                    {project.tech.join(' ')}
+                  </p>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
