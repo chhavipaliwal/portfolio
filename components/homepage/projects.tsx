@@ -43,7 +43,7 @@ const projectsData: ProjectsProps = {
 export default function Projects() {
   return (
     <>
-      <div className="w-full bg-white p-6 text-black sm:p-10">
+      <div className="w-full rounded-[74px] bg-white p-6 text-black sm:p-10">
         <div className="mb-12 flex flex-col items-center justify-between gap-4 sm:flex-row">
           <h1 className="text-center text-[40px] font-bold sm:text-left sm:text-[60px] md:text-[82px]">
             FEATURED PROJECTS
@@ -64,33 +64,42 @@ export default function Projects() {
           </div>
         </div>
         <hr className="my-5 border-t border-gray-300" />
+        <div className="mt-20 grid grid-cols-1 gap-10 sm:grid-cols-2">
+          {projectsData.projects.map((project, index) => (
+            <Link
+              href={project.link}
+              key={index}
+              className="flex flex-col justify-center gap-8 rounded-lg"
+            >
+              {/* Image with hover zoom-out effect */}
+              <div className="overflow-hidden rounded-lg">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="object-fit h-full w-full rounded-lg shadow-lg transition-transform duration-500 ease-in-out hover:scale-95"
+                />
+              </div>
+              <div className="mb-8 ml-4 font-neue-Helvetica-Medium">
+                <h2 className="text-4xl">{project.title}</h2>
+                <div className="mt-2 flex flex-wrap gap-3">
+                  {project.tech.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="border-gray rounded-full border px-5 py-3 text-sm font-semibold text-black"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
         <div>
-          <div className="mt-20 grid grid-cols-1 gap-10 sm:grid-cols-2">
-            {projectsData.projects.map((project, index) => (
-              <Link
-                href={project.link}
-                key={index}
-                className="flex flex-col items-center justify-center gap-6 rounded-lg"
-              >
-                {/* Image with hover zoom-out effect */}
-                <div className="overflow-hidden rounded-lg">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="object-fit h-full w-full rounded-lg shadow-lg transition-transform duration-500 ease-in-out hover:scale-95"
-                  />
-                </div>
-                <div className="mb-8">
-                  <h2 className="font-neue-Helvetica-Condensed-light text-5xl font-semibold">
-                    {project.title}
-                  </h2>
-                  <p className="mt-2 rounded-full border">
-                    {project.tech.join(' ')}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
+          <p>
+            I craft digital experiences where every pixel matters — blending
+            personality with purpose, and design with intention.
+          </p>
         </div>
       </div>
     </>
