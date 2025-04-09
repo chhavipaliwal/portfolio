@@ -96,12 +96,11 @@ export default function Projects() {
             </Link>
           ))}
         </div>
-        <div>
-          <p>
+        <div className="mt-20 flex flex-col items-center justify-center">
+          <p className="mt-10 max-w-xl font-neue-Helvetica-Condensed-light text-3xl">
             I craft digital experiences where every pixel matters — blending
             personality with purpose, and design with intention.
           </p>
-          <Button>View All Projects</Button>
         </div>
       </div>
     </>
