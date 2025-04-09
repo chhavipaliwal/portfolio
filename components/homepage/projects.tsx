@@ -97,10 +97,13 @@ export default function Projects() {
           ))}
         </div>
         <div className="mt-20 flex flex-col items-center justify-center">
-          <p className="mt-10 max-w-xl font-neue-Helvetica-Condensed-light text-3xl">
+          <p className="mt-10 max-w-2xl font-neue-Helvetica-Condensed-light text-4xl">
             I craft digital experiences where every pixel matters — blending
             personality with purpose, and design with intention.
           </p>
+          <Button className="mt-2 rounded-full border border-gray-500 px-8 py-6 font-neue-Helvetica-Condensed-light text-lg text-black hover:bg-gray-900 hover:text-white">
+            View All Projects
+          </Button>
         </div>
       </div>
     </>
