@@ -5,15 +5,15 @@ import DiscussText from '../ui/animate';
 export default function ContactMe() {
   return (
     <>
-      <section className="bg-[#2F3847]">
+      <section className="mt-0 h-screen w-full rounded-t-[74px] bg-[#2F3847] text-foreground">
         <div>
           <video
             autoPlay
             loop
             muted
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-x-0 object-cover"
           >
-            <source src="/vedio/kreyda2.mp4" type="video/mp4" />
+            <source src="/vedio/kreyda.mp4" type="video/mp4" />
           </video>
         </div>
         <div className="relative">
@@ -28,13 +28,13 @@ export default function ContactMe() {
             <div className="text-left">
               <DiscussText
                 text="HELLO@PIXELPAW"
-                className="text-7xl text-primary underline decoration-2 underline-offset-4"
+                className="font-neue-Helvetica-Condensed-light text-2xl text-white underline decoration-2 underline-offset-4"
               />
             </div>
             <div className="text-right">
               <DiscussText
                 text="LET'S COLLABORATE"
-                className="text-7xl text-primary underline decoration-2 underline-offset-4"
+                className="text-5xl text-primary underline decoration-2 underline-offset-4"
               />
             </div>
           </div>
