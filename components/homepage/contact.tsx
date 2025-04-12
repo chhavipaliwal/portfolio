@@ -5,7 +5,7 @@ import DiscussText from '../ui/animate';
 export default function ContactMe() {
   return (
     <>
-      <section className="mt-0 h-screen w-full rounded-t-[74px] bg-[#2F3847] text-foreground">
+      <section className="h-screen w-full rounded-t-[74px] bg-[#2F3847] text-foreground">
         <div>
           <video
             autoPlay
@@ -19,8 +19,11 @@ export default function ContactMe() {
         <div className="relative">
           <div className="flex flex-row justify-between text-white">
             <div className="">
-              <h1 className="max-w-xl text-[101px] font-bold leading-none tracking-wide">
-                LET'S CONNECT AND BUILD SOMETHING AMAZING TOGETHER
+              <h1 className="mr-80 max-w-xl text-[117px] leading-none tracking-wide">
+                <span className="text-secondary">LET'S</span> CONNECT{' '}
+                <span className="text-secondary">AND</span>{' '}
+                <span className="text-secondary">CREATE</span> SOMETHING{' '}
+                <span className="text-secondary">MAGICAL.</span>
               </h1>
             </div>
           </div>
