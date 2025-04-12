@@ -4,7 +4,7 @@ import Marquee from '@/components/magicui/marquee';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { Project, Project as ProjectType } from '@/lib/interface';
-import { isCaching, PLACEHOLDERS } from '@/lib/config';
+import { isCaching, PLACEHOLDERS } from '../../lib/config';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import {
   Card,
@@ -16,7 +16,7 @@ import {
   DropdownItem,
   Image
 } from '@nextui-org/react';
-import ImagePlaceholder from '../ui/image-placeholder';
+
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
@@ -83,9 +83,7 @@ function Projects({ projects }: Props) {
             style={{ filter: backdrop }}
             className="absolute left-[50%] top-[50%] -z-10 translate-x-[-50%] translate-y-[-50%]"
           >
-            <div className="text-center text-[50px] font-extrabold leading-[50px] md:text-[90px] md:leading-[90px]">
-              My Great
-            </div>
+            <div className="text-center text-[50px] font-extrabold leading-[50px] md:text-[90px] md:leading-[90px]"></div>
             <Marquee pauseOnHover={false} className="[--duration:20s]">
               <div className="font-pp-migra text-[100px] font-extrabold uppercase italic leading-[100px] text-primary after:text-secondary after:content-['•'] md:text-[200px] md:leading-[200px]">
                 PROJECTS
@@ -98,92 +96,9 @@ function Projects({ projects }: Props) {
           <motion.div
             className="mx-auto mt-12 grid w-full max-w-[96rem] gap-4 px-4 sm:grid-cols-2 md:px-8 lg:grid-cols-2 lg:px-12 xl:grid-cols-3"
             style={{ y }}
-          >
-            {projects.slice(0, 12).map((project, index) => (
-              <ProjectCard project={project} key={index} />
-            ))}
-          </motion.div>
+          ></motion.div>
         </div>
       </section>
     </>
   );
 }
-
-const ProjectCard = ({ project }: { project: ProjectType }) => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
-  const router = useRouter();
-
-  return (
-    <Card
-      className="backdrop-blur-md hover:bg-default-200/30"
-      isPressable
-      onPress={() => {
-        router.push(`/work/${project.slug}`);
-      }}
-    >
-      <CardBody className="gap-2">
-        <div className="w-full">
-          {isError ? (
-            <ImagePlaceholder
-              title={project.title}
-              subtitle={project.previewlink || project.client || project.github}
-              message="Failed to load image"
-            />
-          ) : (
-            <Image
-              isBlurred
-              isLoading={isLoading}
-              src={isError ? PLACEHOLDERS.image : project.thumbnail.src}
-              onLoad={() => {
-                setIsLoading(false);
-              }}
-              onError={() => {
-                setIsError(true);
-              }}
-              loading="lazy"
-              alt={project.title}
-              className="mb-4 aspect-video w-full bg-default-200 object-cover"
-              width={600}
-              classNames={{
-                wrapper: 'aspect-video'
-              }}
-            />
-          )}
-        </div>
-        <div className="flex items-center gap-2">
-          <div className="flex flex-col">
-            <h3>{project.title}</h3>
-            <p className="line-clamp-1" title={project.description}>
-              {project.description}
-            </p>
-          </div>
-          <div>
-            <Dropdown aria-label="Options" placement="top-end">
-              <DropdownTrigger>
-                <Button variant="flat" size="sm" isIconOnly>
-                  <Icon icon="tabler:dots-vertical" width={16} />
-                </Button>
-              </DropdownTrigger>
-              <DropdownMenu>
-                <DropdownItem key="view" target="_BLANK" href={project._id}>
-                  View
-                </DropdownItem>
-                <DropdownItem key="edit" href={`/${project._id}/edit`}>
-                  Edit
-                </DropdownItem>
-                <DropdownItem
-                  key="delete"
-                  className="text-danger"
-                  color="danger"
-                >
-                  Delete
-                </DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </div>
-        </div>
-      </CardBody>
-    </Card>
-  );
-};
