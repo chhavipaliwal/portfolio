@@ -7,8 +7,13 @@ export default function ContactMe() {
     <>
       <section className="bg-[#2F3847]">
         <div>
-          <video autoPlay loop muted className="absolute mt-20 h-full w-full">
-            <source src="/vedio/kreyda.mp4" />
+          <video
+            autoPlay
+            loop
+            muted
+            className="absolute inset-0 h-full w-full object-cover"
+          >
+            <source src="/vedio/kreyda2.mp4" type="video/mp4" />
           </video>
         </div>
         <div className="relative">
