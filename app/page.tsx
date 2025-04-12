@@ -7,7 +7,7 @@ import HomePage from './homepage/page';
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center space-y-10 bg-background">
+      <div className="flex flex-col">
         <HomePage />
       </div>
     </>

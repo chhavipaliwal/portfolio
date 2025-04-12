@@ -5,7 +5,7 @@ import DiscussText from '../ui/animate';
 export default function ContactMe() {
   return (
     <>
-      <section className="w-full overflow-hidden rounded-t-[74px] bg-[#2F3847] text-foreground">
+      <section className="w-full rounded-t-[74px] bg-[#2F3847] text-foreground">
         <div>
           <video
             autoPlay

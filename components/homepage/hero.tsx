@@ -6,7 +6,7 @@ import DiscussText from '../ui/animate';
 
 const HeroSection = () => {
   return (
-    <section className="bg-background font-neue-Helvetica leading-none text-foreground">
+    <section className="bg-background font-neue-Helvetica leading-none text-foreground sm:p-8">
       <div>
         <video
           autoPlay
@@ -90,7 +90,7 @@ const HeroSection = () => {
               className="text-7xl text-primary underline decoration-2 underline-offset-4"
             />
           </div>
-          <div className="font-neue-Helvetica-Medium flex flex-row space-x-3 text-left">
+          <div className="flex flex-row space-x-3 text-left font-neue-Helvetica-Medium">
             <div>
               <p className="mr-20 text-3xl text-default">Skills</p>
             </div>
