@@ -16,7 +16,7 @@ export default function ContactMe() {
             <source src="/vedio/kreyda.mp4" type="video/mp4" />
           </video>
         </div>
-        <div className="relative sm:p-8">
+        <div className="relative mb-20 sm:p-8">
           <div className="flex flex-row justify-between text-white">
             <div className="mt-12">
               <h1 className="max-w-xl text-[117px] leading-none tracking-wide">

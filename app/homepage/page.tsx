@@ -12,6 +12,7 @@ const HomePage = () => {
       <Projects />
       <AboutMe />
       <ContactMe />
+      <Skills />
     </>
   );
 };
