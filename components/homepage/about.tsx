@@ -26,9 +26,9 @@ export default function AboutMe() {
             <Image
               src="/favicon.ico"
               alt="Logo"
-              width={40}
-              height={40}
-              className="rounded-full"
+              width={60}
+              height={60}
+              className="rounded-full object-fill"
             />
             <span className="text-4xl font-medium tracking-wide text-white">
               Chhavi Paliwal

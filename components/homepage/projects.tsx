@@ -133,7 +133,7 @@ export default function Projects() {
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className="mx-8 mt-10 text-[60px] font-extrabold leading-[100px] text-primary before:text-secondary before:content-['•'] md:text-[120px]"
+                className="mx-8 mt-10 text-[60px] leading-[100px] text-primary before:text-secondary before:content-['•'] md:text-[120px]"
               >
                 {skill}
               </div>
