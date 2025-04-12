@@ -5,21 +5,16 @@ import DiscussText from '../ui/animate';
 export default function ContactMe() {
   return (
     <>
-      <section className="relative -mb-36 mt-36 bg-[#2F3847]">
+      <section className="bg-[#2F3847]">
         <div>
-          <video
-            autoPlay
-            loop
-            muted
-            className="absolute inset-0 mt-20 h-full w-full object-cover"
-          >
+          <video autoPlay loop muted className="absolute mt-20 h-full w-full">
             <source src="/vedio/kreyda.mp4" />
           </video>
         </div>
         <div className="relative">
           <div className="flex flex-row justify-between text-white">
             <div className="">
-              <h1 className="mr-80 max-w-xl text-[101px] font-bold leading-none tracking-wide">
+              <h1 className="max-w-xl text-[101px] font-bold leading-none tracking-wide">
                 LET'S CONNECT AND BUILD SOMETHING AMAZING TOGETHER
               </h1>
             </div>
