@@ -5,7 +5,7 @@ import DiscussText from '../ui/animate';
 export default function ContactMe() {
   return (
     <>
-      <section className="h-screen w-full rounded-t-[74px] bg-[#2F3847] text-foreground">
+      <section className="w-full overflow-hidden rounded-t-[74px] bg-[#2F3847] text-foreground">
         <div>
           <video
             autoPlay
@@ -37,7 +37,7 @@ export default function ContactMe() {
             <div className="text-right">
               <DiscussText
                 text="LET'S COLLABORATE"
-                className="text-5xl text-primary underline decoration-2 underline-offset-4"
+                className="text-6xl text-primary underline decoration-2 underline-offset-4"
               />
             </div>
           </div>

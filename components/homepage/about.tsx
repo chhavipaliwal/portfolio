@@ -4,9 +4,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 export default function AboutMe() {
   return (
-    <div className="grid h-screen w-full grid-cols-3 items-center justify-center rounded-t-[74px] bg-secondary font-neue-Helvetica-Condensed-light font-bold text-black sm:p-8">
-      <h1 className="col-span-1 text-2xl text-white">About Me</h1>
-      <div className="col-span-2 flex flex-col">
+    <div className="grid w-full grid-cols-3 overflow-hidden rounded-t-[74px] bg-secondary font-neue-Helvetica-Condensed-light font-bold text-black sm:p-8">
+      <h1 className="col-span-1 mt-10 text-6xl text-white">About Me :</h1>
+      <div className="col-span-2 mb-20 flex flex-col">
         <p className="mt-4 text-4xl">
           "Hi, I'm Kitti — a passionate developer, fresh ML Engineer, and
           creative thinker with a love for clean code and beautiful UI. Whether
