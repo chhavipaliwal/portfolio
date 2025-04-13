@@ -18,10 +18,10 @@ const HeroSection = () => {
         </video>
       </div>
 
-      <div className="relative mt-60">
+      <div className="relative mt-48">
         <div className="flex flex-row justify-between text-white">
           <div className="">
-            <h1 className="mr-80 max-w-xl text-[101px] font-bold leading-none tracking-wide">
+            <h1 className="mr-80 max-w-2xl text-[101px] font-bold leading-none tracking-wide">
               <span className="text-secondary">BRINGING</span> IDEAS TO LIFE{' '}
               <span className="text-secondary">WITH</span>{' '}
               <span className="text-secondary">CODE</span> AND{' '}
