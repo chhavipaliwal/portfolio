@@ -1,5 +1,4 @@
 'use client';
-
 import React from 'react';
 import Marquee from '../magicui/marquee';
 import { Icon } from '@iconify/react';
