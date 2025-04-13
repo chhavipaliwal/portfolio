@@ -16,14 +16,12 @@ const primarySkills: Skill[] = [
   { _id: '6', name: 'SQL', url: 'https://en.wikipedia.org/wiki/SQL' },
   { _id: '7', name: 'PHP', url: 'https://www.php.net/' }
 ];
-
 const secondarySkills: Skill[] = [
   { _id: '1', name: 'Shadcn', url: 'https://shadcn.com/' },
   { _id: '2', name: 'NextUI', url: 'https://nextui.org/' },
   { _id: '3', name: 'Formik', url: 'https://formik.org/' },
   { _id: '4', name: 'Framer Motion', url: 'https://www.framer.com/motion/' }
 ];
-
 export default function Skills() {
   const [ref, inView] = useInView({ unobserveOnEnter: true });
 
@@ -60,7 +58,6 @@ export default function Skills() {
           </React.Fragment>
         ))}
       </Marquee>
-
       <Marquee
         pauseOnHover
         reverse
@@ -85,7 +82,6 @@ export default function Skills() {
           </React.Fragment>
         ))}
       </Marquee>
-
       <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
       <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
     </motion.section>
