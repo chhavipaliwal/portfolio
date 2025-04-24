@@ -1,4 +1,5 @@
 import AboutMe from '@/components/homepage/about';
+import Expertise from '@/components/homepage/cando';
 import ContactMe from '@/components/homepage/contact';
 import HeroSection from '@/components/homepage/hero';
 import Projects from '@/components/homepage/projects';
@@ -12,7 +13,7 @@ const HomePage = () => {
       <Projects />
       <AboutMe />
       <ContactMe />
-      <Skills />
+      <Expertise />
     </>
   );
 };
