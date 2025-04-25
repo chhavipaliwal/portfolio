@@ -62,7 +62,7 @@ const expertise = [
 
 export default function Expertise() {
   return (
-    <section className="rounded-t-[74px] bg-white px-6 py-20 tracking-wider dark:bg-black">
+    <section className="-translate-y-32 rounded-t-[74px] bg-white px-6 py-20 tracking-wider dark:bg-black">
       <div className="mx-auto">
         <div className="mb-16 text-center">
           <motion.h2
