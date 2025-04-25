@@ -67,7 +67,7 @@ export default function Expertise() {
         <p className="mb-6 text-sm uppercase tracking-widest text-gray-500">
           Expertise
         </p>
-        <p className="mb-16 font-pp-neue-machina text-2xl font-light leading-relaxed text-gray-700 dark:text-gray-300 md:text-3xl">
+        <p className="mb-16 text-2xl font-light leading-relaxed text-gray-700 dark:text-gray-300 md:text-3xl">
           I blend design thinking with robust development to create digital
           experiences that are both intuitive and technically strong.
         </p>
