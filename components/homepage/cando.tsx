@@ -64,7 +64,7 @@ export default function Expertise() {
   return (
     <section className="-translate-y-32 rounded-t-[74px] bg-white px-6 py-20 tracking-wider dark:bg-black">
       <div className="mx-auto">
-        <div className="mb-16 text-center">
+        <div className="text-center">
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
