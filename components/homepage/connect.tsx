@@ -19,10 +19,11 @@ export default function ProjectInquiryForm() {
   const [selectedBudget, setSelectedBudget] = useState<BudgetType>('1K-5K');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [projectDetails, setProjectDetails] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const services: ServiceType[] = [
     'Web design',
-    'Product design',
     'Web development',
     'Branding',
     'Graphics',
@@ -38,7 +39,7 @@ export default function ProjectInquiryForm() {
   };
 
   return (
-    <div className="flex min-h-screen -translate-y-60 items-center justify-center rounded-t-[74px] bg-white p-4 text-white">
+    <div className="flex min-h-screen -translate-y-60 items-center justify-center rounded-t-[74px] bg-black p-4 text-white">
       <div className="w-full max-w-4xl">
         <h1 className="mb-16 text-5xl font-bold">
           Please tell us about your project
@@ -101,28 +102,44 @@ export default function ProjectInquiryForm() {
           </div>
 
           <div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-2">
-            <div>
-              <label htmlFor="name" className="mb-4 block text-2xl">
-                Name
-              </label>
-              <input
-                id="name"
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="w-full border-b border-gray-700 bg-transparent pb-2 transition-colors focus:border-white focus:outline-none"
-                required
-              />
+            <div className="flex flex-col gap-8">
+              <div>
+                <label htmlFor="name" className="mb-4 block text-2xl">
+                  Name
+                </label>
+                <input
+                  id="name"
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full border-b border-gray-700 bg-transparent pb-2 transition-colors focus:border-white focus:outline-none"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="mb-4 block text-2xl">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full border-b border-gray-700 bg-transparent pb-2 transition-colors focus:border-white focus:outline-none"
+                  required
+                />
+              </div>
             </div>
             <div>
               <label htmlFor="email" className="mb-4 block text-2xl">
-                Email
+                Project Details
               </label>
               <input
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                id="projectDetails"
+                type="text"
+                value={projectDetails}
+                onChange={(e) => setProjectDetails(e.target.value)}
+                placeholder="Please tell us about your project"
                 className="w-full border-b border-gray-700 bg-transparent pb-2 transition-colors focus:border-white focus:outline-none"
                 required
               />
