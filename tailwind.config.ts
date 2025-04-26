@@ -7,7 +7,7 @@ const config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-    './node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}'
+    './node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
@@ -19,19 +19,21 @@ const config = {
         'neue-Helvetica-Medium': ['NeueHelveticaMedium', 'sans-serif'],
         'neue-Helvetica-Condensed-light': [
           'NeueHelveticaCondensedLight',
-          'sans-serif'
-        ]
+          'sans-serif',
+        ],
+        'work-sans': ['Work Sans', 'sans-serif'],
+        manrope: ['Manrope', 'sans-serif'],
       },
       keyframes: {
         'caret-blink': {
           '0%,70%,100%': { opacity: '1' },
-          '20%,50%': { opacity: '0' }
-        }
+          '20%,50%': { opacity: '0' },
+        },
       },
       animation: {
-        'caret-blink': 'caret-blink 1.25s ease-out infinite'
-      }
-    }
+        'caret-blink': 'caret-blink 1.25s ease-out infinite',
+      },
+    },
   },
   darkMode: ['class', '[data-theme^="dark-"]'],
   plugins: [
@@ -52,7 +54,7 @@ const config = {
               '800': '#68735a',
               '900': '#424939',
               foreground: '#000',
-              DEFAULT: '#dbf2bd'
+              DEFAULT: '#dbf2bd',
             },
             secondary: {
               '50': '#f6f7f9',
@@ -66,9 +68,9 @@ const config = {
               '800': '#555a62',
               '900': '#36393e',
               foreground: '#000',
-              DEFAULT: '#b3bdce'
-            }
-          }
+              DEFAULT: '#b3bdce',
+            },
+          },
         },
         dark: {
           colors: {
@@ -84,7 +86,7 @@ const config = {
               '800': '#68735a',
               '900': '#424939',
               foreground: '#000',
-              DEFAULT: '#dbf2bd'
+              DEFAULT: '#dbf2bd',
             },
             secondary: {
               '50': '#f6f7f9',
@@ -98,40 +100,40 @@ const config = {
               '800': '#555a62',
               '900': '#36393e',
               foreground: '#000',
-              DEFAULT: '#b3bdce'
-            }
-          }
-        }
+              DEFAULT: '#b3bdce',
+            },
+          },
+        },
       },
       layout: {
         fontSize: {
           tiny: '0.75rem',
           small: '0.875rem',
           medium: '1rem',
-          large: '1.125rem'
+          large: '1.125rem',
         },
         lineHeight: {
           tiny: '1rem',
           small: '1.25rem',
           medium: '1.5rem',
-          large: '1.75rem'
+          large: '1.75rem',
         },
         radius: {
           small: '0.5rem',
           medium: '0.75rem',
-          large: '0.875rem'
+          large: '0.875rem',
         },
         borderWidth: {
           small: '1px',
           medium: '2px',
-          large: '3px'
+          large: '3px',
         },
         disabledOpacity: '0.5',
         dividerWeight: '1',
-        hoverOpacity: '0.9'
-      }
-    })
-  ]
+        hoverOpacity: '0.9',
+      },
+    }),
+  ],
 } satisfies Config;
 
 export default config;

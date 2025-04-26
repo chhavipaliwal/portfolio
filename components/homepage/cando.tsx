@@ -1,8 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Button from '../ui/button';
+import { useState } from 'react';
+import { cn } from '@heroui/react';
 
-const expertise = [
+interface Expertise {
+  id: string;
+  title: string;
+  items: string[];
+  color: string;
+}
+
+const expertise: Expertise[] = [
   {
     id: '01',
     title: 'Front-End Development',
@@ -12,8 +22,9 @@ const expertise = [
       'Tailwind CSS',
       'TypeScript',
       'Framer Motion',
-      'Responsive Design'
-    ]
+      'Responsive Design',
+    ],
+    color: 'hover:bg-blue-100',
   },
   {
     id: '02',
@@ -23,8 +34,9 @@ const expertise = [
       'Express.js',
       'Authentication',
       'RESTful Services',
-      'Server-Side Logic'
-    ]
+      'Server-Side Logic',
+    ],
+    color: 'hover:bg-red-100',
   },
   {
     id: '03',
@@ -34,8 +46,9 @@ const expertise = [
       'Wireframing',
       'Prototyping',
       'Figma',
-      'Interaction Design'
-    ]
+      'Interaction Design',
+    ],
+    color: 'hover:bg-green-100',
   },
   {
     id: '04',
@@ -45,8 +58,9 @@ const expertise = [
       'Mongoose',
       'Firebase',
       'REST API Integration',
-      'Data Modeling'
-    ]
+      'Data Modeling',
+    ],
+    color: 'hover:bg-yellow-100',
   },
   {
     id: '05',
@@ -55,14 +69,15 @@ const expertise = [
       'Personal Love Pages',
       'Hackathon Prototypes',
       'Portfolio Sites',
-      'Fun & Functional Side Projects'
-    ]
-  }
+      'Fun & Functional Side Projects',
+    ],
+    color: 'hover:bg-purple-100',
+  },
 ];
 
 export default function Expertise() {
   return (
-    <section className="-translate-y-32 rounded-t-[74px] bg-white px-6 py-20 font-neue-Helvetica-Condensed-light tracking-wider dark:bg-black">
+    <section className="-translate-y-32 rounded-t-[74px] bg-white py-20 font-neue-Helvetica-Condensed-light tracking-wider dark:bg-black">
       <div className="mx-auto">
         <div className="mb-20 text-center">
           <p className="mb-6 text-sm uppercase tracking-widest text-gray-500">
@@ -73,30 +88,65 @@ export default function Expertise() {
             experiences that are both intuitive and technically strong.
           </p>
         </div>
-        <div className="space-y-12">
-          {expertise.map((block) => (
-            <motion.div
-              key={block.id}
-              className="border-b border-gray-200 pb-8 dark:border-gray-700"
-            >
-              <p className="text-sm text-gray-400">{block.id}</p>
-              <h3 className="mb-2 text-2xl font-semibold text-black dark:text-white">
-                {block.title}
-              </h3>
-              <div className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-gray-600 dark:text-gray-400">
-                {block.items.map((item, i) => (
-                  <span
-                    key={i}
-                    className="after:mx-2 after:content-['•'] last:after:content-['']"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
+        <div>
+          {expertise.map((item) => (
+            <ExpertiseItem key={item.id} item={item} />
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+function ExpertiseItem({ item }: { item: Expertise }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const buttonVariants = {
+    hidden: { opacity: 0, height: 0 },
+    visible: { opacity: 1, height: 'auto' },
+  };
+
+  return (
+    <motion.div
+      key={item.id}
+      layout
+      className={cn(
+        'border-b transition-colors relative grid p-6 grid-cols-[0.6fr_1fr] gap-8 border-gray-200 pb-8 dark:border-gray-700',
+        item.color
+      )}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+    >
+      <p className="text-sm text-gray-400">{item.id}</p>
+      <div className="flex flex-col gap-4">
+        <div className="flex font-manrope flex-col gap-4">
+          <h3 className="text-3xl font-semibold text-background">
+            {item.title}
+          </h3>
+          <div className="flex font-manrope tracking-tight font-bold uppercase flex-wrap gap-x-2 gap-y-1 text-sm text-default">
+            {item.items.map((item, i) => (
+              <span
+                key={i}
+                className="after:ml-2 after:content-['•'] last:after:content-['']"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Button */}
+        <motion.div
+          variants={buttonVariants}
+          initial="hidden"
+          animate={isHovered ? 'visible' : 'hidden'}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+        >
+          <Button className="border-background font-semibold border text-background">
+            discuss the project
+          </Button>
+        </motion.div>
+      </div>
+    </motion.div>
   );
 }

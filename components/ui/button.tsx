@@ -20,10 +20,8 @@ const Button = React.forwardRef<
       animate="rest"
       variant="bordered"
       radius="full"
-      className={cn(
-        'border-foreground px-6 py-6 text-base hover:bg-foreground hover:text-background',
-        className
-      )}
+      className={cn('px-6 py-6 text-base', className)}
+      {...props}
     >
       <div className="absolute flex">
         {letters.map((letter, index) => (
@@ -36,17 +34,17 @@ const Button = React.forwardRef<
                 transition: {
                   duration,
                   delay: index * 0.05,
-                  ease: 'easeInOut'
-                }
+                  ease: 'easeInOut',
+                },
               },
               hover: {
                 y: -35,
                 transition: {
                   duration,
                   delay: index * 0.05,
-                  ease: 'easeInOut'
-                }
-              }
+                  ease: 'easeInOut',
+                },
+              },
             }}
           >
             {letter === ' ' ? '\u00A0' : letter}
@@ -64,17 +62,17 @@ const Button = React.forwardRef<
                 transition: {
                   duration,
                   delay: index * 0.02,
-                  ease: 'easeInOut'
-                }
+                  ease: 'easeInOut',
+                },
               },
               hover: {
                 y: 0,
                 transition: {
                   duration,
                   delay: index * 0.05,
-                  ease: 'easeInOut'
-                }
-              }
+                  ease: 'easeInOut',
+                },
+              },
             }}
           >
             {letter === ' ' ? '\u00A0' : letter}
