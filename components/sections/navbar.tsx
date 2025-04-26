@@ -21,6 +21,7 @@ const Navbar = () => {
 
       if (diff > 10) {
         setIsHidden(true);
+        setIsOpen(false);
       } else if (diff < -10) {
         setIsHidden(false);
       }
