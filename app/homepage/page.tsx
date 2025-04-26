@@ -1,5 +1,6 @@
 import AboutMe from '@/components/homepage/about';
 import Expertise from '@/components/homepage/cando';
+import ProjectInquiryForm from '@/components/homepage/connect';
 import ContactMe from '@/components/homepage/contact';
 import HeroSection from '@/components/homepage/hero';
 import LetsWork from '@/components/homepage/letwork';
@@ -16,6 +17,7 @@ const HomePage = () => {
       <ContactMe />
       <Expertise />
       <LetsWork />
+      <ProjectInquiryForm />
     </>
   );
 };
