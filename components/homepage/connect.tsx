@@ -39,7 +39,7 @@ export default function ProjectInquiryForm() {
   };
 
   return (
-    <div className="flex min-h-screen -translate-y-60 items-center justify-center rounded-t-[74px] bg-black p-4 text-white">
+    <div className="flex min-h-screen -translate-y-60 items-center justify-center rounded-t-[74px] bg-black p-4 font-neue-Helvetica-Condensed-light text-white">
       <div className="w-full max-w-4xl">
         <h1 className="mb-16 text-5xl font-bold">
           Please tell us about your project
