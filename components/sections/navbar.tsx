@@ -71,10 +71,13 @@ const Navbar = () => {
 
             <div className="relative">
               <HeroButton
-                className="grid p-4 relative z-[51] size-12 bg-white place-items-center grid-cols-2 grid-rows-2"
+                className="grid p-4 relative transition-all z-[51] size-12 bg-white place-items-center grid-cols-2 grid-rows-2"
                 onPress={toggleMenu}
                 isIconOnly
                 radius="full"
+                style={{
+                  rotate: isOpen ? '135deg' : '0deg',
+                }}
               >
                 {Array.from({ length: 4 }).map((_, index) => (
                   <div
