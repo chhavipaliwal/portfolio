@@ -1,13 +1,30 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from '../ui/button';
+import { useScroll, motion, useMotionValueEvent } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [circleRotation, setCircleRotation] = useState(0);
   const [closeRotation, setCloseRotation] = useState(0);
+  const [isHidden, setIsHidden] = useState(false);
+
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    if (latest > 1000) {
+      const previous = scrollY.getPrevious();
+      const diff = previous ? latest - previous : 0;
+
+      if (diff > 10) {
+        setIsHidden(true);
+      } else if (diff < -10) {
+        setIsHidden(false);
+      }
+    }
+  });
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -16,8 +33,14 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed left-0 right-0 top-0 z-50 bg-background font-pp-neue-machina shadow-md backdrop-blur-md">
-      <div className="mx-auto flex items-center justify-between py-4 pl-6">
+    <motion.nav
+      className="fixed left-0 w-full top-0 z-50 px-8 bg-background/30 font-pp-neue-machina shadow-md backdrop-blur-md"
+      animate={{
+        y: isHidden ? -100 : 0,
+        opacity: isHidden ? 0 : 1,
+      }}
+    >
+      <div className="mx-auto flex items-center justify-between py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3">
           <Image
@@ -25,7 +48,7 @@ const Navbar = () => {
             alt="Logo"
             width={40}
             height={40}
-            className="rounded-full"
+            className="rounded-full object-cover"
           />
           <span className="text-2xl font-medium tracking-wide text-white">
             Chhavi
@@ -171,7 +194,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
