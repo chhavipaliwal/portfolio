@@ -111,19 +111,19 @@ function ExpertiseItem({ item }: { item: Expertise }) {
       key={item.id}
       layout
       className={cn(
-        'border-b transition-colors relative grid p-6 grid-cols-[0.6fr_1fr] gap-8 border-gray-200 pb-8 dark:border-gray-700',
+        'border-b transition-colors cursor-default font-manrope relative grid p-6 grid-cols-[0.6fr_1fr] gap-8 border-gray-200 pb-8 dark:border-gray-700',
         item.color
       )}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
-      <p className="text-sm text-gray-400">{item.id}</p>
+      <h3 className="font-bold text-default">{item.id}</h3>
       <div className="flex flex-col gap-4">
-        <div className="flex font-manrope flex-col gap-4">
+        <div className="flex  flex-col gap-4">
           <h3 className="text-3xl font-semibold text-background">
             {item.title}
           </h3>
-          <div className="flex font-manrope tracking-tight font-bold uppercase flex-wrap gap-x-2 gap-y-1 text-sm text-default">
+          <div className="flex tracking-tight font-bold uppercase flex-wrap gap-x-2 gap-y-1 text-sm text-default">
             {item.items.map((item, i) => (
               <span
                 key={i}
