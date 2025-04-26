@@ -60,7 +60,9 @@ const Navbar = () => {
         {/* Right side: Contact, Menu, and Circle Logo */}
         <div className="flex items-center gap-6">
           <div className="flex items-center">
-            <Button className="border-foreground border">Contact</Button>
+            <Button className="border-foreground border hover:bg-foreground transition-all hover:text-background">
+              Contact
+            </Button>
           </div>
           <div className="flex items-center gap-3">
             <button
@@ -91,8 +93,8 @@ const Navbar = () => {
                 className="fixed top-0 left-0 right-0 bottom-0 z-[49] w-screen h-screen bg-background/40"
                 animate={
                   isOpen
-                    ? { opacity: 1, zIndex: 49 }
-                    : { opacity: 0, zIndex: -1 }
+                    ? { opacity: 1, zIndex: 49, display: 'block' }
+                    : { opacity: 0, zIndex: -1, display: 'none' }
                 }
                 transition={{ duration: 0.5, type: 'spring', bounce: 0 }}
                 onClick={() => setIsOpen(false)}
