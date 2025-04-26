@@ -18,7 +18,7 @@ export default function LetsWork() {
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="mx-8 mb-10 mt-10 text-[60px] leading-[100px] before:content-['•'] md:text-[120px]"
+              className="mx-8 mb-24 mt-10 text-[60px] leading-[100px] before:content-['•'] md:text-[120px]"
             >
               {skill}
             </div>
