@@ -13,7 +13,6 @@
     "@aws-sdk/client-s3": "^3.679.0",
     "@heroui/react": "^2.7.2",
     "@iconify/react": "^5.0.2",
-    "@nextui-org/react": "^2.6.11",
     "@supabase/ssr": "^0.5.1",
     "@tabler/icons-react": "^3.21.0",
     "@tailwindcss/typography": "^0.5.15",
@@ -39,14 +38,11 @@
     "react-fast-marquee": "^1.6.5",
     "react-hook-inview": "^4.5.1",
     "sonner": "^1.5.0",
-    "supabase": "^1.207.9",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
-    "yup": "^1.4.0",
-    "zod": "^3.23.8"
+    "yup": "^1.4.0"
   },
   "devDependencies": {
-    "@supabase/supabase-js": "^2.45.6",
     "@types/bcryptjs": "^2.4.6",
     "@types/jsonwebtoken": "^9.0.7",
     "@types/node": "^20.17.2",

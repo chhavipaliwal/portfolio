@@ -1,7 +1,7 @@
 'use client';
-import react from 'react';
 import Marquee from 'react-fast-marquee';
 const skills = ["LET'S WORK", "LET'S WORK", "LET'S WORK"];
+
 export default function LetsWork() {
   return (
     <>

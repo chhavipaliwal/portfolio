@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Icon } from '@iconify/react';
 import Button from '../ui/button';
 import Marquee from 'react-fast-marquee';
+import { Image } from '@heroui/react';
 
 const skills = [
   'TAILWIND CSS',
@@ -88,7 +89,7 @@ export default function Projects() {
               >
                 {/* Image with hover zoom-out effect */}
                 <div className="overflow-hidden rounded-lg">
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
                     className="object-fit h-full w-full rounded-lg shadow-lg transition-transform duration-500 ease-in-out hover:scale-95"
