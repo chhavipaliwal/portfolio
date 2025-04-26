@@ -59,7 +59,7 @@ const Navbar = () => {
         {/* Right side: Contact, Menu, and Circle Logo */}
         <div className="flex items-center gap-6">
           <div className="flex items-center">
-            <Button>Contact</Button>
+            <Button className="border-foreground border">Contact</Button>
           </div>
           <div className="flex items-center gap-3">
             <button
@@ -88,7 +88,11 @@ const Navbar = () => {
               </HeroButton>
               <motion.div
                 className="fixed top-0 left-0 right-0 bottom-0 z-[49] w-screen h-screen bg-background/40"
-                animate={isOpen ? { opacity: 1 } : { opacity: 0 }}
+                animate={
+                  isOpen
+                    ? { opacity: 1, zIndex: 49 }
+                    : { opacity: 0, zIndex: -1 }
+                }
                 transition={{ duration: 0.5, type: 'spring', bounce: 0 }}
                 onClick={() => setIsOpen(false)}
               >
