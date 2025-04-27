@@ -22,10 +22,10 @@ const HeroSection = () => {
         <div className="flex flex-row justify-between text-white">
           <div className="">
             <h1 className="mr-80 max-w-2xl text-[101px] font-bold leading-none tracking-wide">
-              <span className="text-secondary">BRINGING</span> IDEAS TO LIFE{' '}
-              <span className="text-secondary">WITH</span>{' '}
-              <span className="text-secondary">CODE</span> AND{' '}
-              <span className="text-secondary">CREATIVITY.</span>
+              <span className="text-[#999]">BRINGING</span> IDEAS TO LIFE{' '}
+              <span className="text-[#999]">WITH</span>{' '}
+              <span className="text-[#999]">CODE</span> AND{' '}
+              <span className="text-[#999]">CREATIVITY.</span>
             </h1>
             <div className="mt-6 flex items-center space-x-3">
               {/* Instagram */}
@@ -92,7 +92,9 @@ const HeroSection = () => {
           </div>
           <div className="flex flex-row space-x-3 text-left font-neue-Helvetica-Medium">
             <div>
-              <p className="mr-20 text-3xl text-default">Skills</p>
+              <p className="mr-20 text-2xl text-[#999] font-neue-Helvetica-Condensed-light tracking-wide">
+                skills
+              </p>
             </div>
             <ul className="space-y-2 text-xl md:text-3xl">
               <li>Next.js</li>
