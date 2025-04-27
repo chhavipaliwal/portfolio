@@ -1,6 +1,5 @@
 'use client';
 import react from 'react';
-import Link from 'next/link';
 import DiscussText from '../ui/animate';
 export default function ContactMe() {
   return (
