@@ -81,7 +81,7 @@ export default function Projects() {
             </div>
           </div>
           <hr className="my-5 border-t border-gray-300" />
-          <div className="mt-20 grid grid-cols-1 gap-10 sm:grid-cols-2">
+          <div className="mt-20 grid  grid-cols-1 gap-10 sm:grid-cols-2">
             {projectsData.projects.map((project, index) => (
               <Link
                 href={project.link}
