@@ -8,8 +8,6 @@ import { Button as HeroButton } from '@heroui/react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [circleRotation, setCircleRotation] = useState(0);
-  const [closeRotation, setCloseRotation] = useState(0);
   const [isHidden, setIsHidden] = useState(false);
 
   const { scrollY } = useScroll();
@@ -30,13 +28,15 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-    setCircleRotation((prev) => prev + 180);
-    setCloseRotation((prev) => prev - 180);
   };
 
   return (
     <motion.nav
       className="fixed left-0 w-full top-0 z-50 px-8 bg-background/30 font-pp-neue-machina shadow-md backdrop-blur-md"
+      initial={{
+        y: isHidden ? -100 : 0,
+        opacity: isHidden ? 0 : 1,
+      }}
       animate={{
         y: isHidden ? -100 : 0,
         opacity: isHidden ? 0 : 1,
@@ -91,6 +91,11 @@ const Navbar = () => {
               </HeroButton>
               <motion.div
                 className="fixed top-0 left-0 right-0 bottom-0 z-[49] w-screen h-screen bg-background/40"
+                initial={{
+                  opacity: 0,
+                  zIndex: -1,
+                  display: 'none',
+                }}
                 animate={
                   isOpen
                     ? { opacity: 1, zIndex: 49, display: 'block' }
@@ -101,6 +106,11 @@ const Navbar = () => {
               >
                 <motion.div
                   className="fixed overflow-hidden right-8 top-4 z-50 rounded-lg bg-white p-6 text-black shadow-lg"
+                  initial={{
+                    opacity: 0,
+                    height: 0,
+                    width: 0,
+                  }}
                   animate={
                     isOpen
                       ? { opacity: 1, height: '300px', width: '200px' }

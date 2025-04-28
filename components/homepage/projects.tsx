@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Icon } from '@iconify/react';
 import Button from '../ui/button';
 import Marquee from 'react-fast-marquee';
-import { Image } from '@heroui/react';
+import { Image, Button as HeroButton } from '@heroui/react';
 
 const skills = [
   'TAILWIND CSS',
@@ -64,19 +64,29 @@ export default function Projects() {
             <h1 className="text-center text-[40px] font-bold sm:text-left sm:text-[60px] md:text-[82px]">
               FEATURED PROJECTS
             </h1>
-            <div className="flex flex-row space-x-4">
-              <Link
-                href="https://github.com"
-                className="rounded-full border border-gray-500 p-4"
+            <div className="flex flex-row gap-4">
+              <HeroButton
+                // as={Link}
+                variant="bordered"
+                // href="https://github.com"
+                isIconOnly
+                className="border-default-500 text-background border p-4"
+                radius="full"
+                size="lg"
               >
-                <Icon icon="uil:github" className="h-8 w-8" />
-              </Link>
-              <Link
-                href="https://linkedin.com"
-                className="rounded-full border border-gray-500 p-4"
+                <Icon icon="uil:github" width={32} />
+              </HeroButton>
+              <HeroButton
+                // as={Link}
+                variant="bordered"
+                // href="https://github.com"
+                isIconOnly
+                className="border-default-500 text-background border p-4"
+                radius="full"
+                size="lg"
               >
-                <Icon icon="akar-icons:linkedin-fill" className="h-8 w-8" />
-              </Link>
+                <Icon icon="akar-icons:linkedin-fill" width={32} />
+              </HeroButton>
             </div>
           </div>
           <hr className="my-5 border-t border-gray-300" />
@@ -92,7 +102,7 @@ export default function Projects() {
                   <Image
                     src={project.image}
                     alt={project.title}
-                    className="object-fit h-full w-full rounded-lg shadow-lg transition-transform duration-500 ease-in-out hover:scale-95"
+                    className="object-fit h-full w-full rounded-lg shadow-lg transition-transform duration-500 ease-in-out scale-105 hover:scale-100"
                   />
                 </div>
                 <div className="mb-8 ml-4 font-neue-Helvetica-Medium">
