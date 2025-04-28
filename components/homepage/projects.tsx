@@ -5,7 +5,6 @@ import { Icon } from '@iconify/react';
 import Button from '../ui/button';
 import Marquee from 'react-fast-marquee';
 import { Image } from '@heroui/react';
-//import {Button, ButtonGroup} from "@heroui/button";
 
 const skills = [
   'TAILWIND CSS',
