@@ -19,7 +19,7 @@ export default function ContactMe() {
           <div className="flex flex-row justify-between text-white">
             <div className="mt-12">
               <h1 className="max-w-xl text-[117px] leading-none tracking-wide">
-                <span className="text-secondary">LET'S</span> CONNECT{' '}
+                <span className="text-secondary">LET&apos;S</span> CONNECT{' '}
                 <span className="text-secondary">AND</span>{' '}
                 <span className="text-secondary">CREATE</span> SOMETHING{' '}
                 <span className="text-secondary">MAGICAL.</span>
