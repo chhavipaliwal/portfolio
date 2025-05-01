@@ -74,7 +74,7 @@ export default function Projects() {
                 radius="full"
                 size="lg"
               >
-                <Icon icon="uil:github" width={32} />
+                <Icon icon="uil:github" className="w-[48px] h-[48px] block" />
               </HeroButton>
               <HeroButton
                 // as={Link}
@@ -85,7 +85,7 @@ export default function Projects() {
                 radius="full"
                 size="lg"
               >
-                <Icon icon="akar-icons:linkedin-fill" width={32} />
+                <Icon icon="akar-icons:linkedin-fill" className="w-10 h-10" />
               </HeroButton>
             </div>
           </div>
@@ -111,7 +111,7 @@ export default function Projects() {
                     {project.tech.map((tag, i) => (
                       <span
                         key={i}
-                        className="border-gray rounded-full border px-5 py-3 text-sm font-semibold text-black"
+                        className="border-gray-300 rounded-full border px-5 py-2 text-xs font-semibold text-black"
                       >
                         {tag}
                       </span>
