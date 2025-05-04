@@ -12,7 +12,7 @@ export default function ContactMe() {
             muted
             className="absolute inset-x-0 object-cover"
           >
-            <source src="/vedio/kreyda.mp4" type="video/mp4" />
+            <source src="/video/contact.mp4" type="video/mp4" />
           </video>
         </div>
         <div className="relative mb-32 sm:p-8">

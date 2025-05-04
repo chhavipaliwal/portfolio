@@ -14,7 +14,7 @@ const HeroSection = () => {
           muted
           className="absolute inset-0 mt-20 h-full w-full object-cover"
         >
-          <source src="/vedio/kreyda2.mp4" type="video/mp4" />
+          <source src="/video/banner.mp4" type="video/mp4" />
         </video>
       </div>
 
@@ -40,7 +40,7 @@ const HeroSection = () => {
 
               {/* GitHub */}
               <Link
-                href="https://github.com"
+                href="https://github.com/chhavipaliwal"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border border-gray-500 p-2"
@@ -50,7 +50,7 @@ const HeroSection = () => {
 
               {/* LinkedIn */}
               <Link
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/chhavipaliwal/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border border-gray-500 p-2"

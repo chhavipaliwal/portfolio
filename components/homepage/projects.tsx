@@ -68,7 +68,7 @@ export default function Projects() {
               <HeroButton
                 // as={Link}
                 variant="bordered"
-                // href="https://github.com"
+                href="https://github.com/chhavipaliwal"
                 isIconOnly
                 className="border-default-500 text-background border p-4"
                 radius="full"
@@ -79,7 +79,7 @@ export default function Projects() {
               <HeroButton
                 // as={Link}
                 variant="bordered"
-                // href="https://github.com"
+                href="https://www.linkedin.com/in/chhavipaliwal/"
                 isIconOnly
                 className="border-default-500 text-background border p-4"
                 radius="full"
