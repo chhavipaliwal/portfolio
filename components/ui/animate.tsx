@@ -1,22 +1,25 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link'; // Only needed if using Next.js
 import React from 'react';
 
 type DiscussTextProps = {
   text: string;
   duration?: number;
   className?: string;
+  href?: string;
 };
 
 const DiscussText: React.FC<DiscussTextProps> = ({
   text = '',
   duration = 0.4,
-  className = ''
+  className = '',
+  href = '#',
 }) => {
   const letters = text?.split('') || [];
 
-  return (
+  const content = (
     <motion.div
       initial="rest"
       whileHover="hover"
@@ -36,8 +39,8 @@ const DiscussText: React.FC<DiscussTextProps> = ({
                 transition: {
                   duration,
                   delay: index * 0.03,
-                  ease: 'easeInOut'
-                }
+                  ease: 'easeInOut',
+                },
               },
               hover: {
                 y: -40,
@@ -45,9 +48,9 @@ const DiscussText: React.FC<DiscussTextProps> = ({
                 transition: {
                   duration,
                   delay: index * 0.03,
-                  ease: 'easeInOut'
-                }
-              }
+                  ease: 'easeInOut',
+                },
+              },
             }}
           >
             {letter === ' ' ? '\u00A0' : letter}
@@ -68,8 +71,8 @@ const DiscussText: React.FC<DiscussTextProps> = ({
                 transition: {
                   duration,
                   delay: index * 0.03,
-                  ease: 'easeInOut'
-                }
+                  ease: 'easeInOut',
+                },
               },
               hover: {
                 y: 0,
@@ -77,9 +80,9 @@ const DiscussText: React.FC<DiscussTextProps> = ({
                 transition: {
                   duration,
                   delay: index * 0.03,
-                  ease: 'easeInOut'
-                }
-              }
+                  ease: 'easeInOut',
+                },
+              },
             }}
           >
             {letter === ' ' ? '\u00A0' : letter}
@@ -87,6 +90,16 @@ const DiscussText: React.FC<DiscussTextProps> = ({
         ))}
       </motion.div>
     </motion.div>
+  );
+
+  return href.startsWith('/') || href.startsWith('#') ? (
+    <Link href={href} scroll={href.startsWith('#')}>
+      {content}
+    </Link>
+  ) : (
+    <a href={href} target="_blank" rel="noopener noreferrer">
+      {content}
+    </a>
   );
 };
 

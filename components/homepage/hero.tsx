@@ -30,7 +30,7 @@ const HeroSection = () => {
             <div className="mt-6 flex items-center space-x-3">
               {/* Instagram */}
               <Link
-                href="https://instagram.com"
+                href="https://instagram.com/kittious"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border border-gray-500 p-2"
@@ -63,7 +63,7 @@ const HeroSection = () => {
 
               {/* Twitter */}
               <Link
-                href="https://twitter.com"
+                href="https://x.com/PaliwalChhavi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border border-gray-500 p-2"
@@ -87,6 +87,7 @@ const HeroSection = () => {
           <div className="text-left">
             <DiscussText
               text="LET'S DISCUSS"
+              href="/contact"
               className="text-7xl text-primary underline decoration-2 underline-offset-4"
             />
           </div>

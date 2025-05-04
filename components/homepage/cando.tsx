@@ -79,7 +79,7 @@ export default function Expertise() {
     <section className="-translate-y-32 rounded-t-[74px] bg-white py-28 font-neue-Helvetica-Condensed-light tracking-wider dark:bg-black">
       <div className="mx-auto">
         <div className="mb-20 text-center">
-          <p className="mb-6 text-sm uppercase tracking-widest text-gray-500">
+          <p className="mb-6 text-sm uppercase tracking-widest text-gray-500 ">
             Expertise
           </p>
           <p className="mb-16 text-2xl font-light leading-relaxed text-gray-700 dark:text-gray-300 md:text-3xl">

@@ -35,6 +35,7 @@ export default function ContactMe() {
             </div>
             <div className="text-right">
               <DiscussText
+                href="/contact"
                 text="LET'S COLLABORATE"
                 className="text-6xl text-primary underline decoration-2 underline-offset-4"
               />

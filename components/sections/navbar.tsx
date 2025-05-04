@@ -60,7 +60,10 @@ const Navbar = () => {
         {/* Right side: Contact, Menu, and Circle Logo */}
         <div className="flex items-center gap-6">
           <div className="flex items-center">
-            <Button className="border-foreground border hover:bg-foreground transition-all hover:text-background">
+            <Button
+              className="border-foreground border hover:bg-foreground transition-all hover:text-background"
+              href="/homepage/connect.tsx"
+            >
               Contact
             </Button>
           </div>
