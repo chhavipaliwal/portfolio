@@ -87,7 +87,7 @@ const HeroSection = () => {
           <div className="text-left">
             <DiscussText
               text="LET'S DISCUSS"
-              href="/contact"
+              href="#contact"
               className="text-7xl text-primary underline decoration-2 underline-offset-4"
             />
           </div>
