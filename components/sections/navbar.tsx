@@ -62,7 +62,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Button
               className="border-foreground border hover:bg-foreground transition-all hover:text-background"
-              href="/homepage/connect.tsx"
+              href="#contact"
             >
               Contact
             </Button>

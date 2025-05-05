@@ -35,7 +35,7 @@ const expertise: Expertise[] = [
       'RESTful Services',
       'Server-Side Logic',
     ],
-    color: 'hover:bg-red-100',
+    color: 'hover:bg-[#d4e2db]',
   },
   {
     id: '03',
@@ -47,7 +47,7 @@ const expertise: Expertise[] = [
       'Figma',
       'Interaction Design',
     ],
-    color: 'hover:bg-green-100',
+    color: 'hover:bg-[#DFDACD]',
   },
   {
     id: '04',
@@ -59,7 +59,7 @@ const expertise: Expertise[] = [
       'REST API Integration',
       'Data Modeling',
     ],
-    color: 'hover:bg-yellow-100',
+    color: 'hover:bg-[#d3d7e4]',
   },
   {
     id: '05',
@@ -70,7 +70,7 @@ const expertise: Expertise[] = [
       'Portfolio Sites',
       'Fun & Functional Side Projects',
     ],
-    color: 'hover:bg-purple-100',
+    color: 'hover:bg-[#dee7d3]',
   },
 ];
 
@@ -141,7 +141,7 @@ function ExpertiseItem({ item }: { item: Expertise }) {
           animate={isHovered ? 'visible' : 'hidden'}
           transition={{ duration: 0.4, ease: 'easeOut' }}
         >
-          <Button className="border-background font-semibold border text-background">
+          <Button className="border-background font-neue-Helvetica-Medium font-semibold border text-background">
             discuss the project
           </Button>
         </motion.div>

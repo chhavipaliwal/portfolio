@@ -29,7 +29,7 @@ export default function ContactMe() {
           <div>
             <div className="text-left">
               <DiscussText
-                text="HELLO@PIXELPAW"
+                text="HELLO@DIVINELY.DEV"
                 className="mt-12 font-neue-Helvetica-Condensed-light text-2xl text-white decoration-2"
               />
             </div>
