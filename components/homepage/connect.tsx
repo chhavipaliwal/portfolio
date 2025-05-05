@@ -55,28 +55,13 @@ export default function ProjectInquiryForm() {
                   <button
                     key={service}
                     type="button"
-                    className={`relative rounded-full border border-gray-700 px-6 py-3 transition-colors hover:border-gray-500 ${
-                      selectedService === service ? 'border-gray-400' : ''
+                    className={`rounded-full px-6 py-3 ${
+                      selectedService === service
+                        ? 'bg-white text-black'
+                        : 'border border-gray-700 transition-colors hover:border-gray-500'
                     }`}
                     onClick={() => setSelectedService(service)}
                   >
-                    {selectedService === service && (
-                      <div className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-green-500">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="3"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                      </div>
-                    )}
                     {service}
                   </button>
                 ))}
