@@ -120,13 +120,13 @@ export default function Projects() {
               </Link>
             ))}
           </div>
-          <div className="w-full flex justify-center font-neue-Helvetica-Medium lg:justify-end px-6 lg:px-24">
-            <div className="mb-20 flex flex-col items-center lg:items-end justify-center max-w-lg text-center ">
-              <p className="mt-10  text-2xl">
+          <div className="w-full flex justify-center font-neue-Helvetica-Medium px-6 lg:px-24">
+            <div className="mb-20  flex flex-col items-center lg:items-end justify-center text-center">
+              <p className="mt-10 ml-72 text-2xl  max-w-lg">
                 I craft digital experiences where every pixel matters — blending
                 personality with purpose, and design with intention.
               </p>
-              <Button className="mt-2 rounded-full border border-gray-500 px-8 py-6  text-lg text-black hover:bg-gray-900 hover:text-white">
+              <Button className="mt-2 mr-32  rounded-full border border-gray-500 px-8 py-6 text-lg text-black hover:bg-gray-900 hover:text-white">
                 View All Projects
               </Button>
             </div>

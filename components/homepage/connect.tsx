@@ -2,6 +2,7 @@
 
 import type React from 'react';
 import DiscussText from '../ui/animate';
+import Link from 'next/link';
 
 import { useState } from 'react';
 
@@ -139,7 +140,7 @@ export default function ProjectInquiryForm() {
           </form>
         </div>
       </div>
-      <footer className="-translate-y-48 rounded-t-[80px] bg-white p-10 shadow-md md:p-16">
+      <footer className="-translate-y-48 rounded-t-[80px] font-neue-Helvetica-Medium bg-white p-10 shadow-md md:p-16">
         <div className="flex flex-col items-start justify-between md:flex-row md:items-center">
           <div className="space-y-6">
             <div>
@@ -147,35 +148,80 @@ export default function ProjectInquiryForm() {
                 get in touch
               </p>
               <h1 className="text-3xl font-bold text-black md:text-5xl">
-                chhavipaliwal@gmail.com
+                kittipaliwal@gmail.com
               </h1>
-            </div>
-            <div className="flex items-center gap-2">
-              <p className="text-xl font-bold text-black">chhavi</p>
-              <span className="text-2xl"></span>
+              <div className="mt-10 mb-0 text-sm text-gray-400">
+                {' '}
+                @chhavi 2025
+              </div>
             </div>
           </div>
 
-          <div className="mt-10 grid grid-cols-3 gap-8 text-lg font-medium text-black md:mt-0">
+          <div className="mt-10 grid grid-cols-1 gap-10 text-lg font-medium text-black md:grid-cols-3 md:mt-0">
+            {/* Column 1 */}
             <div className="space-y-4">
-              <p>portfolio</p>
-              <p>about</p>
-              <p>expertise</p>
-              <p>contact us</p>
+              <Link
+                href="https://chhavi.divinely.dev/"
+                className="block hover:text-gray-600"
+              >
+                portfolio
+              </Link>
+              <Link href="#about" className="block hover:text-gray-600">
+                about
+              </Link>
+              <Link href="#expertise" className="block hover:text-gray-600">
+                expertise
+              </Link>
+              <Link href="#contact" className="block hover:text-gray-600">
+                contact us
+              </Link>
             </div>
+
+            {/* Column 2 */}
             <div className="space-y-4">
-              <p>telegram</p>
-              <p>watsapp</p>
-              <p>x</p>
-              <p>instagram</p>
+              <Link
+                href="https://t.me/+918193907462"
+                className="block hover:text-gray-600"
+              >
+                telegram
+              </Link>
+              <Link
+                href="https://wa.me/918193907462"
+                className="block hover:text-gray-600"
+              >
+                whatsapp
+              </Link>
+              <Link
+                href="https://x.com/PaliwalChhavi"
+                className="block hover:text-gray-600"
+              >
+                x
+              </Link>
+              <Link
+                href="https://instagram.com/kittious"
+                className="block hover:text-gray-600"
+              >
+                instagram
+              </Link>
             </div>
+
+            {/* Column 3 */}
             <div className="space-y-4">
-              <p>github</p>
-              <p>linkedin</p>
+              <Link
+                href="https://github.com/chhavipaliwal"
+                className="block hover:text-gray-600"
+              >
+                github
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/chhavipaliwal/"
+                className="block hover:text-gray-600"
+              >
+                linkedin
+              </Link>
             </div>
           </div>
         </div>
-        <div className="mt-10 text-sm text-gray-400">© chhavi 2025</div>
       </footer>
     </div>
   );
