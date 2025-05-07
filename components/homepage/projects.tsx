@@ -65,28 +65,27 @@ export default function Projects() {
               FEATURED PROJECTS
             </h1>
             <div className="flex flex-row gap-4">
-              <HeroButton
-                // as={Link}
-                variant="bordered"
+              <Link
                 href="https://github.com/chhavipaliwal"
-                isIconOnly
-                className="border-default-500 text-background border p-4"
-                radius="full"
-                size="lg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-gray-500 p-3"
               >
-                <Icon icon="uil:github" className="w-[48px] h-[48px] block" />
-              </HeroButton>
-              <HeroButton
-                // as={Link}
-                variant="bordered"
+                <Icon icon="uil:github" className="h-6 w-6 text-gray-600" />
+              </Link>
+
+              {/* LinkedIn */}
+              <Link
                 href="https://www.linkedin.com/in/chhavipaliwal/"
-                isIconOnly
-                className="border-default-500 text-background border p-4"
-                radius="full"
-                size="lg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-gray-500 p-3"
               >
-                <Icon icon="akar-icons:linkedin-fill" className="w-10 h-10" />
-              </HeroButton>
+                <Icon
+                  icon="akar-icons:linkedin-fill"
+                  className="h-6 w-6 text-gray-600 "
+                />
+              </Link>
             </div>
           </div>
           <hr className="my-5 border-t border-gray-300" />
