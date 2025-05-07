@@ -35,8 +35,6 @@ export default function ProjectInquiryForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log({ selectedService, selectedBudget, name, email });
   };
 
   return (
