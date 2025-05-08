@@ -98,11 +98,56 @@ const HeroSection = () => {
               </p>
             </div>
             <ul className="space-y-2 text-xl md:text-3xl">
-              <li>Next.js</li>
-              <li>React.js</li>
-              <li>Node.js</li>
-              <li>Tailwind CSS</li>
-              <li>MongoDB</li>
+              <li>
+                <a
+                  href="https://nextjs.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  Next.js
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://reactjs.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  React.js
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://nodejs.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  Node.js
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://tailwindcss.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  Tailwind CSS
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.mongodb.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  MongoDB
+                </a>
+              </li>
             </ul>
           </div>
         </div>

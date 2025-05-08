@@ -147,11 +147,14 @@ export default function ProjectInquiryForm() {
               <p className="mb-6 text-lg font-medium text-gray-700">
                 get in touch
               </p>
-              <h1 className="text-3xl font-bold text-black md:text-5xl">
+              <a
+                className="text-3xl font-bold text-black md:text-5xl"
+                href="mailto:kittipaliwal@gmail.com"
+              >
                 kittipaliwal@gmail.com
-              </h1>
+              </a>
+
               <div className="mt-10 mb-0 text-sm text-gray-400">
-                {' '}
                 @chhavi 2025
               </div>
             </div>
