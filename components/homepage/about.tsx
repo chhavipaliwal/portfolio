@@ -95,7 +95,10 @@ export default function AboutMe() {
   };
 
   return (
-    <div className="grid w-full grid-cols-3 overflow-hidden rounded-t-[74px] bg-secondary font-neue-Helvetica-Condensed-light font-bold text-black sm:p-8">
+    <div
+      className="grid w-full grid-cols-3 overflow-hidden rounded-t-[74px] bg-secondary font-neue-Helvetica-Condensed-light font-bold text-black sm:p-8"
+      id="about"
+    >
       <h1 className="col-span-1 mt-10 text-6xl text-white">About Me :</h1>
       <div className="col-span-2 mt-10 flex flex-col pb-40 line-clamp-3">
         <p
