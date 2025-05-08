@@ -60,12 +60,11 @@ const Navbar = () => {
         {/* Right side: Contact, Menu, and Circle Logo */}
         <div className="flex items-center gap-6">
           <div className="flex items-center">
-            <Button
-              className="border-foreground border hover:bg-foreground transition-all hover:text-background"
-              href="#contact"
-            >
-              Contact
-            </Button>
+            <Link href="/contact">
+              <Button className="border-foreground border hover:bg-foreground transition-all hover:text-background">
+                Contact
+              </Button>
+            </Link>
           </div>
           <div className="flex items-center gap-3">
             <button
