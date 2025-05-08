@@ -78,15 +78,19 @@ export default function Expertise() {
   return (
     <section className="-translate-y-32 rounded-t-[74px] bg-white py-28 font-neue-Helvetica-Condensed-light tracking-wider dark:bg-black">
       <div className="mx-auto">
-        <div className="mb-20 text-center">
-          <p className="mb-6 text-sm uppercase tracking-widest text-gray-500 ">
-            Expertise
-          </p>
-          <p className="mb-16 text-2xl font-light leading-relaxed text-gray-700 dark:text-gray-300 md:text-3xl">
-            I blend design thinking with robust development to create digital
-            experiences that are both intuitive and technically strong.
-          </p>
+        <div className="flex items-center justify-center font-neue-Helvetica-Medium text-black">
+          <div className="mb-10 text-center flex flex-col max-w-xl ml-40">
+            <p className="mb-6 text-left text-lg tracking-widest text-gray-500">
+              expertise
+            </p>
+            <p className=" text-2xl text-left font-light leading-relaxed md:text-2xl">
+              I blend design thinking with robust development to create digital
+              experiences that are both intuitive and technically strong.
+            </p>
+          </div>{' '}
         </div>
+        <hr className="border-t  border-gray-300 w-full" />
+
         <div>
           {expertise.map((item) => (
             <ExpertiseItem key={item.id} item={item} />
@@ -110,7 +114,7 @@ function ExpertiseItem({ item }: { item: Expertise }) {
       key={item.id}
       layout
       className={cn(
-        'border-b transition-colors cursor-default font-manrope relative grid p-6 grid-cols-[0.6fr_1fr] gap-8 border-gray-200 pb-8 dark:border-gray-700',
+        'border-b transition-colors cursor-default font-neue-Helvetica-Medium relative grid p-6 grid-cols-[0.6fr_1fr] gap-8 border-gray-200 pb-8 dark:border-gray-700',
         item.color
       )}
       onHoverStart={() => setIsHovered(true)}
