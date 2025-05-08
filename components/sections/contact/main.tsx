@@ -62,9 +62,9 @@ const Main = () => {
 
   return (
     <>
-      <section className="relative pb-8 flex flex-col md:flex-row gap-12 ">
+      <section className="relative pb-8 flex flex-col md:flex-row gap-12 font-manrope">
         <div className="relative md:w-[40%] hidden md:block w-full overflow-hidden rounded-3xl">
-          <Image src={'/imankitkalirawana.jpg'} alt="" className="shadow-lg" />
+          <Image src={'/chhavi.jpeg'} alt="" className="shadow-lg" />
           <Button
             as={Link}
             href="/"
@@ -77,7 +77,6 @@ const Main = () => {
           </Button>
           <div className="absolute z-10 bg-gradient-to-t from-black to-transparent w-full h-1/2 bottom-0 left-0 flex">
             <div className="flex flex-col gap-2 justify-end items-start w-full p-8">
-              <Avatar src="/logo.png" className="p-1 bg-white" />
               <h3 className="text-white text-xl">Contact Us</h3>
               <p className="text-white text-[12px] md:max-w-xs">
                 Ask about our platform, pricing, implementation or anything
@@ -171,7 +170,7 @@ const Main = () => {
           />
 
           <WorkButton
-            className="w-full"
+            className="w-full border-gray-200"
             onClick={() => formik.handleSubmit()}
             isLoading={formik.isSubmitting}
           />

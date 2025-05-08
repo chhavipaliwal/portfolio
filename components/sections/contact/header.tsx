@@ -3,22 +3,22 @@ import React from 'react';
 const Header = () => {
   return (
     <>
-      <section className="relative h-56 md:h-96">
+      <section className="relative h-56 md:h-96 translate-y-20">
         <div className="absolute top-0 left-[50%] mt-12 translate-x-[-50%] text-[50px] leading-[60px] md:text-[80px] md:leading-[80px] text-center">
           <img
-            src="/sparkle.svg"
+            src="/sparkle.png"
             width={60}
             alt="sparkle"
             className="text-primary absolute left-[-10%] md:left-[10%] top-[40%]"
           />
           <img
-            src="/sparkle.svg"
+            src="/sparkle.png"
             width={60}
             alt="sparkle"
             className="text-primary absolute left-[40%] md:left-[45%] top-[80%] rotate-45"
           />
           <img
-            src="/sparkle-filled.svg"
+            src="/sparkle-filled.png"
             width={70}
             alt="sparkle"
             className="text-primary absolute left-[90%] md:left-[72%] top-[0%]"

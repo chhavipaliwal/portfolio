@@ -17,7 +17,7 @@ export default function WorkButton({
     <Button
       isLoading={isLoading}
       className={cn(
-        'group relative overflow-hidden rounded-full bg-gradient-to-r from-[#dd32da] to-[#7618e3] px-8 py-6 text-base',
+        'group relative overflow-hidden rounded-full bg-black px-8 py-6 text-base',
         className
       )}
       onClick={() => {
