@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Button from '../ui/button';
 import { useState } from 'react';
 import { cn } from '@heroui/react';
+import Link from 'next/link';
 
 interface Expertise {
   id: string;
@@ -145,9 +146,11 @@ function ExpertiseItem({ item }: { item: Expertise }) {
           animate={isHovered ? 'visible' : 'hidden'}
           transition={{ duration: 0.4, ease: 'easeOut' }}
         >
-          <Button className="border-background font-neue-Helvetica-Medium font-semibold border text-background">
-            discuss the project
-          </Button>
+          <Link href="/contact">
+            <Button className="border-background font-neue-Helvetica-Medium font-semibold border text-background">
+              discuss the project
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </motion.div>

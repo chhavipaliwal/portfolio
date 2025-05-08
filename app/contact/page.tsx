@@ -2,7 +2,7 @@ import Header from '@/components/sections/contact/header';
 import Main from '@/components/sections/contact/main';
 import React from 'react';
 
-const Page = () => {
+const Contact = () => {
   return (
     <>
       <div className="mx-auto max-w-7xl px-4 md:px-12">
@@ -13,4 +13,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Contact;
