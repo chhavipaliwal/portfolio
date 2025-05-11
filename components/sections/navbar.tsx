@@ -152,7 +152,7 @@ const Navbar = () => {
                         href="/socials"
                         className="text-lg hover:text-gray-600"
                       >
-                        Socials
+                        Contact
                       </Link>
                     </li>
                   </ul>

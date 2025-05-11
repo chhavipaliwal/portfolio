@@ -16,7 +16,7 @@ const Contact = () => {
           </span>{' '}
         </div>
       </Marquee>
-      <div className="flex flex-col md:flex-row mb-4 gap-2 justify-between items-center max-w-7xl mx-auto p-8">
+      <div className="flex flex-col font-neue-Helvetica-Medium md:flex-row mb-4 gap-2 justify-between items-center max-w-7xl mx-auto p-8">
         <p className="text-[15px] sm:text-xl self-start md:text-[18px] md:max-w-[50%]">
           Got an idea to bring to life?
           <br />
