@@ -149,7 +149,7 @@ const Navbar = () => {
                     </li>
                     <li>
                       <Link
-                        href="/socials"
+                        href="/contact"
                         className="text-lg hover:text-gray-600"
                       >
                         Contact
@@ -161,7 +161,7 @@ const Navbar = () => {
                   <div className="mt-6 flex items-center space-x-3">
                     {/* Instagram */}
                     <Link
-                      href="https://instagram.com"
+                      href="https://instagram.com/kittious"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -176,7 +176,7 @@ const Navbar = () => {
 
                     {/* GitHub */}
                     <Link
-                      href="https://github.com"
+                      href="https://github.com/chhavipaliwal"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -191,7 +191,7 @@ const Navbar = () => {
 
                     {/* LinkedIn */}
                     <Link
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/in/chhavipaliwal/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -206,7 +206,7 @@ const Navbar = () => {
 
                     {/* Twitter */}
                     <Link
-                      href="https://twitter.com"
+                      href="https://x.com/PaliwalChhavi"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
