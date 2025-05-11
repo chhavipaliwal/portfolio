@@ -24,14 +24,62 @@ const config = {
         'work-sans': ['Work Sans', 'sans-serif'],
         manrope: ['Manrope', 'sans-serif'],
       },
-      keyframes: {
-        'caret-blink': {
-          '0%,70%,100%': { opacity: '1' },
-          '20%,50%': { opacity: '0' },
-        },
-      },
       animation: {
-        'caret-blink': 'caret-blink 1.25s ease-out infinite',
+        marquee: 'marquee var(--duration) linear infinite',
+        'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
+        ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
+        'float-y': 'float-y 6s ease-in-out infinite',
+        'float-x': 'float-x 6s ease-in-out infinite',
+        'float-xy': 'float-xy 6s ease-in-out infinite',
+        sparkle: 'sparkle 6s ease-in-out infinite',
+        rocket: 'rocket 6s ease-in-out infinite',
+      },
+      keyframes: {
+        ping: {
+          '75%, 100%': { transform: 'scale(2)', opacity: '0' },
+        },
+        marquee: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(calc(-100% - var(--gap)))' },
+        },
+        'marquee-vertical': {
+          from: { transform: 'translateY(0)' },
+          to: { transform: 'translateY(calc(-100% - var(--gap)))' },
+        },
+        'bg-position': {
+          '0%': { backgroundPosition: '0% 50%' },
+          '100%': { backgroundPosition: '100% 50%' },
+        },
+        'float-y': {
+          '0%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-5%)' },
+          '100%': { transform: 'translateY(0)' },
+        },
+        'float-x': {
+          '0%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(-5%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        'float-xy': {
+          '0%': { transform: 'translate(0, 0)' },
+          '50%': { transform: 'translate(-5%, -5%)' },
+          '100%': { transform: 'translate(0, 0)' },
+        },
+        sparkle: {
+          '0%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.5)' },
+          '100%': { transform: 'scale(1)' },
+        },
+        rocket: {
+          '0%': { transform: 'translateY(1.3em) rotate(-45deg)' },
+          '10%': { transform: 'translateY(1.1em) rotate(-45deg)' },
+          '30%': { transform: 'translateY(1.2em) rotate(-45deg)' },
+          '50%': { transform: 'translateY(1em) rotate(-45deg)' },
+          '70%': { transform: 'translateY(1.2em) rotate(-45deg)' },
+          '80%': { transform: 'translateY(1em) rotate(-45deg)' },
+          '90%': { transform: 'translateY(1.2em) rotate(-45deg)' },
+          '100%': { transform: 'translateY(1.3em) rotate(-45deg)' },
+        },
       },
     },
   },
