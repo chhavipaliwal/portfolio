@@ -176,7 +176,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
                   <div className="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
                     <div
                       className="bg-green-500 h-full"
-                      style={{ width: '100%' }}
+                      // style={{ width: '100%' }}
                     ></div>
                   </div>
                   <p className="text-right text-gray-400 mt-1">100%</p>
