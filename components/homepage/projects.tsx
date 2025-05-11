@@ -126,9 +126,11 @@ export default function Projects() {
                 I craft digital experiences where every pixel matters — blending
                 personality with purpose, and design with intention.
               </p>
-              <Button className="mt-2 mr-32  rounded-full border border-gray-500 px-8 py-6 text-lg text-black hover:bg-gray-900 hover:text-white">
-                View All Projects
-              </Button>
+              <Link href="/work">
+                <Button className="mt-2 mr-32  rounded-full border border-gray-500 px-8 py-6 text-lg text-black hover:bg-gray-900 hover:text-white">
+                  View All Projects
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
