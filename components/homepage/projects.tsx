@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Icon } from '@iconify/react';
 import Button from '../ui/button';
 import Marquee from 'react-fast-marquee';
-import { Image, Button as HeroButton } from '@heroui/react';
+import { Image, Button as HeroButton, Chip } from '@heroui/react';
 
 const skills = [
   'TAILWIND CSS',
@@ -108,12 +108,14 @@ export default function Projects() {
                   <h2 className="text-4xl">{project.title}</h2>
                   <div className="mt-2 flex flex-wrap gap-3">
                     {project.tech.map((tag, i) => (
-                      <span
+                      <Chip
                         key={i}
-                        className="border-gray-300 rounded-full border px-5 py-2 text-xs font-semibold text-black"
+                        color="secondary"
+                        variant="bordered"
+                        className="text-black"
                       >
                         {tag}
-                      </span>
+                      </Chip>
                     ))}
                   </div>
                 </div>
