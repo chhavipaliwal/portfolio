@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className="fixed left-0 w-full top-0 z-50 px-8 bg-background/30 font-pp-neue-machina shadow-md backdrop-blur-md"
+      className="fixed left-0 w-full top-0 z-50 px-8 bg-background/30 font-neue-Helvetica-Medium shadow-md backdrop-blur-md"
       initial={{
         y: isHidden ? -100 : 0,
         opacity: isHidden ? 0 : 1,
@@ -92,7 +92,7 @@ const Navbar = () => {
                 ))}
               </HeroButton>
               <motion.div
-                className="fixed top-0 left-0 right-0 bottom-0 z-[49] w-screen h-screen bg-background/40"
+                className="fixed top-0 left-0 right-0 bottom-0 z-[49] w-screen h-screen bg-background/40 m-4"
                 initial={{
                   opacity: 0,
                   zIndex: -1,
@@ -107,7 +107,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 <motion.div
-                  className="fixed overflow-hidden right-8 top-4 z-50 rounded-lg bg-white p-6 text-black shadow-lg"
+                  className="fixed overflow-hidden flex items-center flex-col right-8 top-0 z-50 rounded-lg bg-white m-6 text-black shadow-lg"
                   initial={{
                     opacity: 0,
                     height: 0,
@@ -115,7 +115,7 @@ const Navbar = () => {
                   }}
                   animate={
                     isOpen
-                      ? { opacity: 1, height: '300px', width: '200px' }
+                      ? { opacity: 1, height: '300px', width: '250px' }
                       : { opacity: 0, height: 0, width: 0 }
                   }
                   transition={{ duration: 0.5, type: 'spring', bounce: 0 }}
@@ -158,7 +158,7 @@ const Navbar = () => {
                   </ul>
 
                   {/* Social Icons and Email */}
-                  <div className="mt-6 flex items-center space-x-3">
+                  <div className="mt-6 mb-6 flex items-center space-x-6">
                     {/* Instagram */}
                     <Link
                       href="https://instagram.com/kittious"
@@ -219,7 +219,7 @@ const Navbar = () => {
                       </svg>
                     </Link>
                   </div>
-                  <p className="mt-2 text-gray-600">hello@chhavi.dev</p>
+                  <p className=" text-lg text-gray-600">chhavi@divinely.dev</p>
                 </motion.div>
               </motion.div>
             </div>

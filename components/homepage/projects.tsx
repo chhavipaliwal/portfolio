@@ -41,13 +41,13 @@ const projectsData: ProjectsProps = {
       tech: ['REACT', 'TYPESCRIPT', 'FRAMER MOTION', 'NODE.JS'],
     },
     {
-      title: 'Kittify',
+      title: 'Better.com Clone',
       image: '/project/better.png',
       link: 'https://better-com-clone.vercel.app/',
       tech: ['NEXT.JS', 'SHADCN', 'OPENAI API'],
     },
     {
-      title: 'Kodi',
+      title: 'Kody',
       image: '/project/kodi.png',
       link: 'https://the-kody.netlify.app/',
       tech: ['HTML', 'CSS', 'JAVASCRIPT'],

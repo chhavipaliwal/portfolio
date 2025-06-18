@@ -4,7 +4,7 @@ import DiscussText from '../ui/animate';
 export default function ContactMe() {
   return (
     <>
-      <section className="w-full -translate-y-16 rounded-t-[74px] bg-[#2F3847] text-foreground">
+      <section className="w-full -translate-y-16 rounded-t-[74px] bg-[#2F3847] text-foreground ">
         <div>
           <video
             autoPlay
@@ -26,7 +26,7 @@ export default function ContactMe() {
               </h1>
             </div>
           </div>
-          <div>
+          <div className="mb-20">
             <div className="text-left">
               <DiscussText
                 text="CHHAVI.DIVINELY.DEV"
