@@ -21,7 +21,7 @@ const HeroSection = () => {
       <div className="relative mt-48">
         <div className="flex flex-row justify-between text-white">
           <div className="">
-            <h1 className="mr-80 max-w-2xl text-[101px] font-bold leading-none tracking-wide">
+            <h1 className="mr-80 max-w-2xl text-[101px]  leading-none ">
               <span className="text-[#999]">BRINGING</span> IDEAS TO LIFE{' '}
               <span className="text-[#999]">WITH</span>{' '}
               <span className="text-[#999]">CODE</span> AND{' '}

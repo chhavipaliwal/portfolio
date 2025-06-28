@@ -9,7 +9,7 @@ const Contact = () => {
   return (
     <>
       <Marquee pauseOnHover={false} className="[--duration:20s] mt-48">
-        <div className="text-[100px] font-extrabold leading-[100px] md:text-[200px] md:leading-[200px] after:content-['•'] after:text-[80px] gap-4 flex items-center uppercase after:text-secondary">
+        <div className="text-[100px]  leading-[100px] md:text-[200px] md:leading-[200px] after:content-['•'] after:text-[80px] gap-4 flex items-center uppercase after:text-secondary">
           Looking to{' '}
           <span className="text-primary font-pp-migra italic mr-4">
             collaborate?

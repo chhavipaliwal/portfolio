@@ -41,7 +41,7 @@ const Skills = () => {
             style={{ filter: backdrop }}
             className="absolute -z-10 top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%]"
           >
-            <div className="md:text-[90px] font-extrabold text-[50px] leading-[50px] md:leading-[90px] text-center">
+            <div className="md:text-[90px]  text-[50px] leading-[50px] md:leading-[90px] text-center">
               Areas Of
             </div>
             <Marquee pauseOnHover={false} className="[--duration:20s]">

@@ -61,7 +61,7 @@ export default function Projects() {
       <div className="w-full rounded-t-[74px] bg-white text-black">
         <div className="sm:p-8">
           <div className="mb-12 flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <h1 className="text-center text-[40px] font-bold sm:text-left sm:text-[60px] md:text-[82px]">
+            <h1 className="text-center text-[40px]  sm:text-left sm:text-[60px] md:text-[82px]">
               FEATURED PROJECTS
             </h1>
             <div className="flex flex-row gap-4">

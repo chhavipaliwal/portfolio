@@ -8,7 +8,7 @@ const Banner = () => {
 
   return (
     <>
-      <div className="flex translate-y-20 px-4 md:px-0 font-extrabold flex-col mt-8 md:mt-0 justify-between items-start md:items-center md:pb-8 text-[60px] leading-[60px] md:text-[110px] md:leading-[110px]">
+      <div className="flex translate-y-20 px-4 md:px-0  flex-col mt-8 md:mt-0 justify-between items-start md:items-center md:pb-8 text-[60px] leading-[60px] md:text-[110px] md:leading-[110px]">
         <div className="mt-12 relative">
           <motion.img
             src="/sparkle-filled.png"

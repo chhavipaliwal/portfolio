@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <div className="m-20">
         <div className="flex  px-4 md:px-0 font-extrabold flex-row  mt-8 md:mt-0  items-start md:items-center md:pb-8 text-[60px] leading-[60px] md:text-[110px] md:leading-[110px] ">
-          <div className="mt-12 relative">
+          {/* <div className="mt-12 relative">
             <motion.img
               src="/sparkle-filled.png"
               width={70}
@@ -35,11 +35,11 @@ export default function Home() {
               }}
               transition={{ duration: 1, type: 'spring', stiffness: 100 }}
               viewport={{ once: isOnce }}
-              className="uppercase"
+              className="uppercase "
             >
               My
             </motion.div>
-          </div>
+          </div> */}
           <div className="flex relative items-center">
             <motion.div
               initial="hidden"
@@ -61,7 +61,7 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-        <div className="mt-20  font-neue-Helvetica-Medium text-2xl maax-w-xl ">
+        <div className="mt-10  font-neue-Helvetica-Medium text-2xl maax-w-xl ">
           <p>
             Explore my latest projects showcasing innovative solutions and
             creative designs

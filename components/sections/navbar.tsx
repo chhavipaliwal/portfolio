@@ -107,7 +107,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 <motion.div
-                  className="fixed overflow-hidden flex items-center flex-col right-8 top-0 z-50 rounded-lg bg-white m-6 text-black shadow-lg"
+                  className="fixed overflow-hidden flex  flex-col right-8 top-0 z-50 rounded-lg bg-white p-6 m-6 text-black shadow-lg"
                   initial={{
                     opacity: 0,
                     height: 0,
@@ -122,13 +122,13 @@ const Navbar = () => {
                   onClick={(e) => e.stopPropagation()}
                 >
                   {/* Menu Links */}
-                  <ul className="mt-4 space-y-4">
+                  <ul className="mt-6 space-y-3 ">
                     <li>
                       <Link
                         href="/homepage"
                         className="text-lg hover:text-gray-600"
                       >
-                        portfolio
+                        Portfolio
                       </Link>
                     </li>
                     <li>
@@ -136,7 +136,7 @@ const Navbar = () => {
                         href="/about"
                         className="text-lg hover:text-gray-600"
                       >
-                        about
+                        About
                       </Link>
                     </li>
                     <li>
