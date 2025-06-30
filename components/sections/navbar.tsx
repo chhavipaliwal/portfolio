@@ -126,7 +126,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         href="/homepage"
-                        className="text-lg hover:text-gray-600"
+                        className="text-xl hover:text-gray-600"
                       >
                         Portfolio
                       </Link>
@@ -134,7 +134,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         href="/about"
-                        className="text-lg hover:text-gray-600"
+                        className="text-xl hover:text-gray-600"
                       >
                         About
                       </Link>
@@ -142,7 +142,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         href="/work"
-                        className="text-lg hover:text-gray-600"
+                        className="text-xl hover:text-gray-600"
                       >
                         Work
                       </Link>
@@ -150,7 +150,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         href="/contact"
-                        className="text-lg hover:text-gray-600"
+                        className="text-xl hover:text-gray-600"
                       >
                         Contact
                       </Link>
