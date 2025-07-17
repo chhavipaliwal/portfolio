@@ -1,10 +1,9 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import Button from '../ui/button';
 import { useScroll, motion, useMotionValueEvent } from 'framer-motion';
-import { Button as HeroButton } from '@heroui/react';
+import { Button as HeroButton, Image } from '@heroui/react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,11 +45,12 @@ const Navbar = () => {
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3">
           <Image
-            src="/favicon.ico"
+            isBlurred
+            src="/chhavi.jpeg"
             alt="Logo"
             width={40}
             height={40}
-            className="rounded-full object-cover"
+            className="rounded-full object-cover object-top"
           />
           <span className="text-2xl font-medium tracking-wide text-white">
             Chhavi

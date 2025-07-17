@@ -5,12 +5,12 @@ const skills = ["LET'S WORK", "LET'S WORK", "LET'S WORK"];
 export default function LetsWork() {
   return (
     <>
-      <div className="relative -translate-y-72 overflow-hidden rounded-t-[74px] bg-[#A6B8C7] ">
+      <div className="relative font-neue-Helvetica -translate-y-72 overflow-hidden rounded-t-[74px] bg-[#A6B8C7] ">
         <Marquee
           pauseOnHover={false}
           speed={40}
           gradient={false}
-          loop={0} // 0 = infinite
+          loop={0}
           play={true}
           direction="left"
           className="[--duration:20s]"

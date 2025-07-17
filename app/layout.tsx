@@ -17,7 +17,7 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="font-neue-Helvetica">
+      <body className="font-manrope font-medium">
         <Providers>
           <ThemeProvider attribute="class">
             <Navbar />
