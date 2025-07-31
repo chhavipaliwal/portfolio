@@ -31,15 +31,21 @@ const Navbar = () => {
   };
 
   return (
-    <motion.nav
-      className="fixed left-0 w-full top-0 z-50 px-8 bg-background/30 font-neue-Helvetica-Medium shadow-md backdrop-blur-md"
+    <motion.div
+      className=" px-8 top-0  font-neue-Helvetica-Medium scroll-smooth w-full fixed z-50 shadow-md backdrop-blur-md bg-background/30"
       initial={{
-        y: isHidden ? -100 : 0,
-        opacity: isHidden ? 0 : 1,
+        y: -100,
+        opacity: 0,
       }}
       animate={{
-        y: isHidden ? -100 : 0,
-        opacity: isHidden ? 0 : 1,
+        y: 0,
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.5,
+        delay: 0.5,
+        type: 'spring',
+        stiffness: 100,
       }}
     >
       <div className="mx-auto flex items-center justify-between py-4">
@@ -226,7 +232,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </motion.nav>
+    </motion.div>
   );
 };
 

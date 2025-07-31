@@ -5,13 +5,13 @@ import {
   IconArrowNarrowRight,
   IconBook,
   IconFileDescription,
-  IconMessageCircle
+  IconMessageCircle,
 } from '@tabler/icons-react';
 
 export default function NotFound() {
   return (
     <>
-      <section>
+      <section className="font-neue-Helvetica-Condensed-light">
         <div className="container mx-auto flex min-h-screen items-center justify-center px-6 py-12">
           <div className="w-full">
             <div className="mx-auto flex max-w-lg flex-col items-center text-center">

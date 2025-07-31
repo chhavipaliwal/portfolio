@@ -4,7 +4,7 @@ import React from 'react';
 export default function Error() {
   return (
     <>
-      <section>
+      <section className="font-neue-Helvetica-Condensed-light">
         <div className="container mx-auto flex min-h-screen items-center justify-center px-6 py-12">
           <div className="w-full">
             <div className="mx-auto flex max-w-lg flex-col items-center text-center">
