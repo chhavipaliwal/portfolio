@@ -1,40 +1,65 @@
+import { link } from 'fs';
 import Image from 'next/image';
 
 const projects = [
   {
     id: 1,
-    title: 'Insur Hotels',
+    title: 'Invoice Generator',
     description:
-      'Hotel booking platform with room selection and reservation system',
+      'A comprehensive invoicing solution for businesses to create, manage, and send invoices',
     video: '/placeholder.svg?height=300&width=500',
-    link: 'https://insurhotels.com',
-    technologies: ['Next.js', 'Tailwind', 'Framer', 'MongoDB', 'AWS', 'Vercel'],
+    link: 'https://chhavi-paliwal-invoice-generator.vercel.app/',
+    technologies: ['React', 'Tailwind', 'Framer', 'MongoDB', 'AWS', 'Vercel'],
     category: 'Web Application',
   },
   {
     id: 2,
-    title: 'MedBook Appointments',
+    title: 'the policlinic',
     description: 'Medical appointment booking system with patient management',
     image: '/placeholder.svg?height=300&width=500',
-    technologies: ['React', 'Tailwind', 'Node.js'],
+    technologies: ['React', 'Tailwind', 'Node.js', 'MongoDB', 'TypeScript'],
+    link: 'https://the-policlinic.vercel.app/',
     category: 'Healthcare Platform',
   },
   {
     id: 3,
-    title: 'Patient Dashboard',
+    title: 'the yogic Bowl',
     description:
-      'Healthcare management system for patient records and appointments',
+      'A restaurant management system with online ordering and delivery',
     image: '/placeholder.svg?height=300&width=500',
-    technologies: ['React', 'TypeScript', 'PostgreSQL', 'Express'],
-    category: 'Dashboard',
+    link: 'https://theyogicbowl.divinely.dev/',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind'],
+    category: 'Restaurant Management',
   },
+
   {
     id: 4,
-    title: 'DataVault Pro',
-    description: 'Advanced file management and database administration tool',
+    title: 'React Portfolio',
+    description: 'A personal portfolio showcasing projects and skills',
     image: '/placeholder.svg?height=300&width=500',
-    technologies: ['Vue.js', 'Node.js', 'MongoDB', 'Docker'],
-    category: 'Data Management',
+    technologies: ['React', 'Tailwind', 'Framer'],
+    link: 'https://react-portfolio-kitti.netlify.app/',
+    category: 'Portfolio Website',
+  },
+  {
+    id: 5,
+    title: 'Better.com clone',
+    description:
+      'A full-stack e-commerce application with product management and payment integration',
+    image: '/placeholder.svg?height=300&width=500',
+    technologies: ['Next.js', 'Node.js', 'MongoDB', 'TypeScript'],
+    link: 'https://better-com-clone.vercel.app/',
+    category: 'E-commerce',
+  },
+  {
+    id: 6,
+    title: 'Social Media App',
+    description:
+      'A social media platform for users to connect, share content, and interact',
+    image: '/placeholder.svg?height=300&width=500',
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'Express'],
+    link: 'https://social-media-app-nu-ten.vercel.app/',
+    category: 'Social Media',
   },
 ];
 
@@ -63,7 +88,7 @@ export default function Projects() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:transform hover:scale-[1.02] group cursor-pointer"
+              className=" rounded-xl overflow-hidden border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:transform hover:scale-[1.02] group cursor-pointer"
             >
               {/* Project Image */}
               <a href={project.link} target="_blank" rel="noopener noreferrer">
