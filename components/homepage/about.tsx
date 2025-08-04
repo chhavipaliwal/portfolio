@@ -2,8 +2,36 @@
 import { Avatar } from '@heroui/react';
 import { SpringElement } from '../ui/spring-element';
 import React from 'react';
+import { useGemini } from '@/hooks/use-gemini';
+
+const fallbackAbout1 = `Hi, I'm Chhavi — a dedicated web developer, and creative thinker who finds joy in
+          writing clean code and designing functional UI. I specialize in framing seamless user
+          experiences using React & Tailwind CSS, and love turning ideas into reality with Next.js.
+          At the heart of my work is a balance of
+          design and logic, fueled by a mindset of continuous learning and attention to detail.`;
+
+const fallbackAbout2 = ` I'm naturally curious and driven by purpose, always eager to build meaningful
+          projects that connect people and solve real-world problems. I enjoy working on user-centered
+          design and creating interactive interfaces that leave a lasting impact. Beyond the screen,
+          I'm into music, writing, and dreaming up my next big idea. Let's collaborate and build
+          something truly impactful together.`;
 
 export default function AboutMe() {
+  const { mutateAsync, isPending } = useGemini();
+
+  const [about1, setAbout1] = React.useState('');
+
+  React.useEffect(() => {
+    const getAbout = async () => {
+      const about1 = await mutateAsync({
+        prompt: 'Generate about me in max 60 words',
+        context: '',
+      });
+      setAbout1(about1);
+    };
+    getAbout();
+  }, [mutateAsync]);
+
   return (
     <div
       className="grid w-full grid-cols-3 rounded-t-[74px] bg-secondary p-4 text-background sm:p-8"
@@ -11,23 +39,8 @@ export default function AboutMe() {
     >
       <h1 className="col-span-full mt-10 text-white lg:col-span-1">about me</h1>
       <div className="col-span-full mt-10 line-clamp-3 flex flex-col gap-12 pb-40 lg:col-span-2">
-        <Content>
-          &quot;Hi, I&apos;m <span className="text-white">Chhavi</span> — a dedicated{' '}
-          <span className="text-white">web developer</span>, and creative thinker who finds joy in
-          writing clean code and designing functional UI. I specialize in framing seamless user
-          experiences using <span className="text-white">React</span> &{' '}
-          <span className="text-white">Tailwind CSS</span>, and love turning ideas into reality with{' '}
-          <span className="text-white">Next.js.</span> At the heart of my work is a balance of
-          design and logic, fueled by a mindset of continuous learning and attention to detail.
-        </Content>
-        <Content>
-          I&apos;m naturally curious and driven by purpose, always eager to build meaningful
-          projects that connect people and solve{' '}
-          <span className="text-white">real-world problems.</span> I enjoy working on user-centered
-          design and creating interactive interfaces that leave a lasting impact. Beyond the screen,
-          I&apos;m into music, writing, and dreaming up my next big idea. Let&apos;s collaborate and
-          build something truly impactful together.
-        </Content>
+        <Content>{isPending ? 'Wooh! You found me...' : about1 || fallbackAbout1}</Content>
+        <Content>{fallbackAbout2}</Content>
         <div className="mt-8 flex items-center gap-4">
           <SpringElement>
             <Avatar
