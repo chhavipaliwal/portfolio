@@ -7,7 +7,7 @@ import {
   useMotionValue,
   useSpring,
 } from 'motion/react';
-import { cn } from '/lib/utils';
+import { cn } from '@/lib/utils';
 
 const generateSpringPath = (
   x1: number,
@@ -21,7 +21,7 @@ const generateSpringPath = (
     curveRatioMin?: number;
     curveRatioMax?: number;
     bezierOffset?: number;
-  } = {},
+  } = {}
 ) => {
   const {
     coilCount = 8,
@@ -40,7 +40,7 @@ const generateSpringPath = (
   const h = Math.max(0.8, 1 - (dist - 40) / 200);
   const amplitude = Math.max(
     amplitudeMin,
-    Math.min(amplitudeMax, amplitudeMax * h),
+    Math.min(amplitudeMax, amplitudeMax * h)
   );
   const curveRatio =
     dist <= 40
@@ -87,7 +87,7 @@ function useMotionValueValue(mv: any) {
       return unsub;
     },
     () => mv.get(),
-    () => mv.get(),
+    () => mv.get()
   );
 }
 
@@ -133,6 +133,7 @@ function SpringElement({
   const sy = useMotionValueValue(springY);
 
   const childRef = React.useRef<HTMLDivElement>(null);
+  // @ts-ignore
   React.useImperativeHandle(ref, () => childRef.current as HTMLDivElement);
   const [center, setCenter] = React.useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = React.useState(false);
@@ -169,7 +170,7 @@ function SpringElement({
     center.y,
     center.x + sx,
     center.y + sy,
-    springPathConfig,
+    springPathConfig
   );
 
   return (
@@ -185,7 +186,7 @@ function SpringElement({
           strokeLinejoin="round"
           className={cn(
             'stroke-2 stroke-neutral-900 dark:stroke-neutral-100 fill-none',
-            springClassName,
+            springClassName
           )}
         />
       </svg>
@@ -194,7 +195,7 @@ function SpringElement({
         className={cn(
           'z-50',
           isDragging ? 'cursor-grabbing' : 'cursor-grab',
-          className,
+          className
         )}
         style={{
           x: springX,
