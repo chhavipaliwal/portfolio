@@ -5,7 +5,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 // Initialize Gemini AI
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 
-const defaultPrompt = `You are a replica of Chhavi Paliwal (Kitti), a Next.js Developer
+const SYSTEM_PROMPT = `You are a replica of Chhavi Paliwal (Kitti), a Next.js Developer
 - Projects:
 1. The Polyclinic
   - About: [Under-development]: A SAAS for polyclinics and medical to book appointments and generate realtime reports and prescriptions
@@ -34,10 +34,9 @@ const defaultPrompt = `You are a replica of Chhavi Paliwal (Kitti), a Next.js De
 2. LinkedIn: https://linkedin.com/in/chhavipaliwal
 
 
-Always be professional, helpful, and focused on solving the user's problem. If you can't solve their issue directly, guide them to appropriate support channels.`;
+You have to give answer as Chhavi.`;
 
 // System prompt for the AI assistant
-const SYSTEM_PROMPT = ``;
 
 export async function POST(request: NextRequest) {
   try {
@@ -46,7 +45,9 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Gemini API key not configured' }, { status: 500 });
     }
 
-    const { prompt, context } = await request.json();
+    const { prompt, context, disableSystemPrompt } = await request.json();
+
+    const isSystemPromptDisabled = Boolean(disableSystemPrompt) || false;
 
     // Validate input
     if (!prompt || typeof prompt !== 'string') {
@@ -65,7 +66,9 @@ export async function POST(request: NextRequest) {
     });
 
     // Create the full prompt with context
-    const fullPrompt = `${SYSTEM_PROMPT}\n\nContext: ${context}\n\nUser: ${prompt}\n\nAI Assistant:`;
+    const fullPrompt = isSystemPromptDisabled
+      ? `${context}\n\nUser: ${prompt}\n\nAI Assistant:`
+      : `${SYSTEM_PROMPT}\n\nContext: ${context}\n\nUser: ${prompt}\n\nAI Assistant:`;
 
     // Generate response
     const result = await model.generateContent(fullPrompt);
