@@ -1,14 +1,13 @@
 'use client';
 import { Avatar } from '@heroui/react';
 import { SpringElement } from '../ui/spring-element';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useGemini } from '@/hooks/use-gemini';
 
 const fallbackAbout1 = `Hi, I'm Chhavi — a dedicated web developer, and creative thinker who finds joy in
           writing clean code and designing functional UI. I specialize in framing seamless user
           experiences using React & Tailwind CSS, and love turning ideas into reality with Next.js.
-          At the heart of my work is a balance of
-          design and logic, fueled by a mindset of continuous learning and attention to detail.`;
+          At the heart of my work is a balance of design and logic, fueled by a mindset of continuous learning and attention to detail.`;
 
 const fallbackAbout2 = ` I'm naturally curious and driven by purpose, always eager to build meaningful
           projects that connect people and solve real-world problems. I enjoy working on user-centered
@@ -19,7 +18,10 @@ const fallbackAbout2 = ` I'm naturally curious and driven by purpose, always eag
 export default function AboutMe() {
   const { mutateAsync, isPending } = useGemini();
 
-  const [about1, setAbout1] = React.useState('');
+  const [about, setAbout] = useState('');
+  const [apiResponse, setApiResponse] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isComplete, setIsComplete] = useState(false);
 
   React.useEffect(() => {
     const getAbout = async () => {
@@ -27,10 +29,23 @@ export default function AboutMe() {
         prompt: 'Generate about me in max 60 words',
         context: '',
       });
-      setAbout1(about1);
+      setApiResponse(about1);
     };
     getAbout();
   }, [mutateAsync]);
+
+  useEffect(() => {
+    if (currentIndex < apiResponse.length) {
+      const timeout = setTimeout(() => {
+        setAbout((prev) => prev + apiResponse[currentIndex]);
+        setCurrentIndex((prev) => prev + 1);
+      }, Math.random() * 30);
+
+      return () => clearTimeout(timeout);
+    } else {
+      setIsComplete(true);
+    }
+  }, [currentIndex, apiResponse]);
 
   return (
     <div
@@ -39,7 +54,7 @@ export default function AboutMe() {
     >
       <h1 className="col-span-full mt-10 text-white lg:col-span-1">about me</h1>
       <div className="col-span-full mt-10 line-clamp-3 flex flex-col gap-12 pb-40 lg:col-span-2">
-        <Content>{isPending ? 'Wooh! You found me...' : about1 || fallbackAbout1}</Content>
+        <Content>{isPending ? 'Wooh! You found me...' : about || fallbackAbout1}</Content>
         <Content>{fallbackAbout2}</Content>
         <div className="mt-8 flex items-center gap-4">
           <SpringElement>
