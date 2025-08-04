@@ -4,6 +4,35 @@ import Link from 'next/link';
 import { Icon } from '@iconify/react';
 import DiscussText from '../ui/animate';
 
+const skills = [
+  {
+    name: 'Next.js',
+    icon: 'nextjs',
+    url: 'https://nextjs.org',
+  },
+  {
+    name: 'React.js',
+    icon: 'react',
+    url: 'https://reactjs.org',
+  },
+
+  {
+    name: 'Node.js',
+    icon: 'nodejs',
+    url: 'https://nodejs.org',
+  },
+  {
+    name: 'Tailwind CSS',
+    icon: 'tailwindcss',
+    url: 'https://tailwindcss.com',
+  },
+  {
+    name: 'MongoDB',
+    icon: 'mongodb',
+    url: 'https://www.mongodb.com',
+  },
+];
+
 const HeroSection = () => {
   return (
     <section className="bg-background font-neue-Helvetica leading-none text-foreground sm:p-8">
@@ -83,7 +112,7 @@ const HeroSection = () => {
             </p>
           </div>
         </div>
-        <div className="relative mt-52 flex flex-col items-start justify-between text-white md:flex-row md:items-center">
+        <div className="relative mt-52 flex flex-col items-start justify-between md:flex-row md:items-center">
           <div className="text-left">
             <DiscussText
               text="LET'S DISCUSS"
@@ -91,63 +120,21 @@ const HeroSection = () => {
               className="text-7xl text-primary underline decoration-2 underline-offset-4"
             />
           </div>
-          <div className="flex flex-row space-x-3 text-left font-neue-Helvetica-Medium">
-            <div>
-              <p className="mr-20 text-2xl text-[#999] font-neue-Helvetica-Condensed-light tracking-wide">
-                skills
-              </p>
-            </div>
-            <ul className="space-y-2 text-xl md:text-3xl">
-              <li>
-                <a
-                  href="https://nextjs.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline"
-                >
-                  Next.js
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://reactjs.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline"
-                >
-                  React.js
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://nodejs.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline"
-                >
-                  Node.js
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://tailwindcss.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline"
-                >
-                  Tailwind CSS
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.mongodb.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline"
-                >
-                  MongoDB
-                </a>
-              </li>
+          <div className="flex gap-20 text-left font-neue-Helvetica-Medium">
+            <p className="text-xl text-default-500 tracking-wide">skills</p>
+            <ul className="space-y-2 text-xl md:text-4xl">
+              {skills.map((skill) => (
+                <li key={skill.name}>
+                  <a
+                    href={skill.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    {skill.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

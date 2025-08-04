@@ -5,7 +5,6 @@ import ContactMe from '@/components/homepage/contact';
 import HeroSection from '@/components/homepage/hero';
 import LetsWork from '@/components/homepage/letwork';
 import Projects from '@/components/homepage/projects';
-import Skills from '@/components/homepage/skills';
 import React from 'react';
 
 const HomePage = () => {
