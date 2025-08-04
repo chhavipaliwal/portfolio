@@ -50,14 +50,16 @@ const Navbar = () => {
       <div className="mx-auto flex items-center justify-between py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3">
-          <Image
-            isBlurred
-            src="/chhavi.jpeg"
-            alt="Logo"
-            width={40}
-            height={40}
-            className="rounded-full object-cover object-top"
-          />
+          <div className="">
+            <Image
+              isBlurred
+              src="/chhavi.jpeg"
+              alt="Logo"
+              width={40}
+              height={40}
+              className="rounded-full object-cover object-top"
+            />
+          </div>
           <span className="text-2xl font-medium tracking-wide text-white">
             Chhavi
           </span>

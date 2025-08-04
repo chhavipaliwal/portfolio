@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => {
   return (
     <>
-      <section className="relative h-56 md:h-96 translate-y-10">
+      <section className="relative h-56 md:h-96 translate-y-10 ">
         <div className="absolute top-0 left-[50%] mt-12 translate-x-[-50%] text-[50px] leading-[60px] md:text-[80px] md:leading-[80px] text-center">
           <img
             src="/sparkle.png"

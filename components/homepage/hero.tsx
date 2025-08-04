@@ -36,12 +36,12 @@ const skills = [
 const HeroSection = () => {
   return (
     <section className="bg-background font-neue-Helvetica leading-none text-foreground sm:p-8">
-      <div>
+      <div className="">
         <video
           autoPlay
           loop
           muted
-          className="absolute inset-0 mt-20 h-full w-full object-cover"
+          className="absolute inset-0 mt-20 h-full object-cover overflow-hidden"
         >
           <source src="/video/banner.mp4" type="video/mp4" />
         </video>
