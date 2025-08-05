@@ -1,8 +1,7 @@
 'use client';
 import { Avatar } from '@heroui/react';
 import { SpringElement } from '../ui/spring-element';
-import React, { useEffect, useState } from 'react';
-import { useGemini } from '@/hooks/use-gemini';
+import React from 'react';
 
 const fallbackAbout1 = `Hi, I'm Chhavi — a dedicated web developer, and creative thinker who finds joy in
           writing clean code and designing functional UI. I specialize in framing seamless user
@@ -16,37 +15,6 @@ const fallbackAbout2 = ` I'm naturally curious and driven by purpose, always eag
           something truly impactful together.`;
 
 export default function AboutMe() {
-  const { mutateAsync, isPending } = useGemini();
-
-  const [about, setAbout] = useState('');
-  const [apiResponse, setApiResponse] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isComplete, setIsComplete] = useState(false);
-
-  React.useEffect(() => {
-    const getAbout = async () => {
-      const about1 = await mutateAsync({
-        prompt: 'Generate about me in max 60 words',
-        context: '',
-      });
-      setApiResponse(about1);
-    };
-    getAbout();
-  }, [mutateAsync]);
-
-  useEffect(() => {
-    if (currentIndex < apiResponse.length) {
-      const timeout = setTimeout(() => {
-        setAbout((prev) => prev + apiResponse[currentIndex]);
-        setCurrentIndex((prev) => prev + 1);
-      }, Math.random() * 30);
-
-      return () => clearTimeout(timeout);
-    } else {
-      setIsComplete(true);
-    }
-  }, [currentIndex, apiResponse]);
-
   return (
     <div
       className="grid w-full grid-cols-3 rounded-t-[74px] bg-secondary p-4 text-background sm:p-8"
@@ -54,7 +22,7 @@ export default function AboutMe() {
     >
       <h1 className="col-span-full mt-10 text-white lg:col-span-1">about me</h1>
       <div className="col-span-full mt-10 line-clamp-3 flex flex-col gap-12 pb-40 lg:col-span-2">
-        <Content>{isPending ? 'Wooh! You found me...' : about || fallbackAbout1}</Content>
+        <Content>{fallbackAbout1}</Content>
         <Content>{fallbackAbout2}</Content>
         <div className="mt-8 flex items-center gap-4">
           <SpringElement>
