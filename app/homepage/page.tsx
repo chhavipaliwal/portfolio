@@ -1,5 +1,5 @@
 import AboutMe from '@/components/homepage/about';
-import Expertise from '@/components/homepage/cando';
+import Expertise from '@/components/homepage/expertise';
 import ProjectInquiryForm from '@/components/homepage/connect';
 import ContactMe from '@/components/homepage/contact';
 import HeroSection from '@/components/homepage/hero';

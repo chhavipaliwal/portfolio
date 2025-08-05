@@ -17,10 +17,7 @@ const config = {
         'clash-display': ['ClashDisplay', 'sans-serif'],
         'neue-Helvetica': ['NeueHelvetica', 'sans-serif'],
         'neue-Helvetica-Medium': ['NeueHelveticaMedium', 'sans-serif'],
-        'neue-Helvetica-Condensed-light': [
-          'NeueHelveticaCondensedLight',
-          'sans-serif',
-        ],
+        'neue-Helvetica-Condensed-light': ['NeueHelveticaCondensedLight', 'sans-serif'],
         'work-sans': ['Work Sans', 'sans-serif'],
         manrope: ['Manrope', 'sans-serif'],
       },
@@ -168,8 +165,8 @@ const config = {
         },
         radius: {
           small: '0.5rem',
-          medium: '0.75rem',
-          large: '0.875rem',
+          medium: '3rem',
+          large: '4.6rem',
         },
         borderWidth: {
           small: '1px',
