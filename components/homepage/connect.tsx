@@ -16,8 +16,7 @@ type ServiceType =
 type BudgetType = '1K-5K' | '5K-10K' | '10K-50K' | 'more than 50K';
 
 export default function ProjectInquiryForm() {
-  const [selectedService, setSelectedService] =
-    useState<ServiceType>('Product design');
+  const [selectedService, setSelectedService] = useState<ServiceType>('Product design');
   const [selectedBudget, setSelectedBudget] = useState<BudgetType>('1K-5K');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -41,10 +40,8 @@ export default function ProjectInquiryForm() {
   return (
     <div className="h-screen font-neue-Helvetica-Condensed-light">
       <div className="flex min-h-screen -translate-y-72 items-center justify-center rounded-t-[74px] bg-black p-4 text-white">
-        <div className="w-full max-w-4xl " id="contact">
-          <h1 className="mb-16 mt-32 text-5xl font-bold">
-            Please tell me about your project
-          </h1>
+        <div className="w-full max-w-4xl" id="contact">
+          <h1 className="mb-16 mt-32 text-5xl font-bold">Please tell me about your project</h1>
 
           <form onSubmit={handleSubmit}>
             <div className="mb-16">
@@ -140,13 +137,11 @@ export default function ProjectInquiryForm() {
           </form>
         </div>
       </div>
-      <footer className="-translate-y-48 rounded-t-[80px] font-neue-Helvetica-Medium bg-white p-10 shadow-md md:p-16">
+      <footer className="-translate-y-48 rounded-t-[80px] bg-white p-10 font-neue-Helvetica-Medium shadow-md md:p-16">
         <div className="flex flex-col items-start justify-between md:flex-row md:items-center">
           <div className="space-y-6">
             <div>
-              <p className="mb-6 text-lg font-medium text-gray-700">
-                get in touch
-              </p>
+              <p className="mb-6 text-lg font-medium text-gray-700">get in touch</p>
               <a
                 className="text-3xl font-bold text-black md:text-5xl"
                 href="mailto:kittipaliwal@gmail.com"
@@ -154,19 +149,14 @@ export default function ProjectInquiryForm() {
                 kittipaliwal@gmail.com
               </a>
 
-              <div className="mt-10 mb-0 text-sm text-gray-400">
-                @chhavi 2025
-              </div>
+              <div className="mb-0 mt-10 text-sm text-gray-400">@chhavi 2025</div>
             </div>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-10 text-lg font-medium text-black md:grid-cols-3 md:mt-0">
+          <div className="mt-10 grid grid-cols-1 gap-10 text-lg font-medium text-black md:mt-0 md:grid-cols-3">
             {/* Column 1 */}
             <div className="space-y-4">
-              <Link
-                href="https://chhavi.divinely.dev/"
-                className="block hover:text-gray-600"
-              >
+              <Link href="https://chhavi.divinely.dev/" className="block hover:text-gray-600">
                 portfolio
               </Link>
               <Link href="#about" className="block hover:text-gray-600">
@@ -182,38 +172,23 @@ export default function ProjectInquiryForm() {
 
             {/* Column 2 */}
             <div className="space-y-4">
-              <Link
-                href="https://t.me/+918193907462"
-                className="block hover:text-gray-600"
-              >
+              <Link href="https://t.me/+918193907462" className="block hover:text-gray-600">
                 telegram
               </Link>
-              <Link
-                href="https://wa.me/918193907462"
-                className="block hover:text-gray-600"
-              >
+              <Link href="https://wa.me/918193907462" className="block hover:text-gray-600">
                 whatsapp
               </Link>
-              <Link
-                href="https://x.com/PaliwalChhavi"
-                className="block hover:text-gray-600"
-              >
+              <Link href="https://x.com/PaliwalChhavi" className="block hover:text-gray-600">
                 x
               </Link>
-              <Link
-                href="https://instagram.com/kittious"
-                className="block hover:text-gray-600"
-              >
+              <Link href="https://instagram.com/kittious" className="block hover:text-gray-600">
                 instagram
               </Link>
             </div>
 
             {/* Column 3 */}
             <div className="space-y-4">
-              <Link
-                href="https://github.com/chhavipaliwal"
-                className="block hover:text-gray-600"
-              >
+              <Link href="https://github.com/chhavipaliwal" className="block hover:text-gray-600">
                 github
               </Link>
               <Link
