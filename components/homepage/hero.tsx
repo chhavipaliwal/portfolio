@@ -50,11 +50,12 @@ const HeroSection = () => {
       <div className="relative mt-48">
         <div className="flex flex-row justify-between text-white">
           <div className="">
-            <h1 className="mr-80 max-w-2xl text-[101px]  leading-none ">
-              <span className="text-[#999]">BRINGING</span> IDEAS TO LIFE{' '}
-              <span className="text-[#999]">WITH</span>{' '}
-              <span className="text-[#999]">CODE</span> AND{' '}
-              <span className="text-[#999]">CREATIVITY.</span>
+            <h1 className="mr-80 w- md:max-w-2xl text-3xl leading-none ">
+              Bringing
+              <span>IDEAS TO</span>
+              <span>LIFE</span>
+              Ideas to
+              <span className="text-primary"> Life</span>
             </h1>
             <div className="mt-6 flex items-center space-x-3">
               {/* Instagram */}
