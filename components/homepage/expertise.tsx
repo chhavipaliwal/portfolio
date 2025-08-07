@@ -59,7 +59,7 @@ const expertise: Expertise[] = [
 
 export default function Expertise() {
   return (
-    <section className="-translate-y-60 rounded-t-3xl bg-white py-28 font-neue-Helvetica-Condensed-light tracking-wider dark:bg-black md:rounded-t-[74px]">
+    <section className="-translate-y-60 rounded-t-[74px] bg-white py-28 font-neue-Helvetica-Condensed-light tracking-wider dark:bg-black">
       <div className="mx-auto" id="expertise">
         <div className="grid grid-cols-[0.6fr_1fr] gap-8 p-6">
           <div></div>

@@ -5,18 +5,25 @@ export default function ContactMe() {
     <>
       <section className="w-full -translate-y-16 rounded-t-3xl bg-[#2F3847] py-16 font-neue-Helvetica text-foreground md:rounded-t-[74px]">
         <div>
-          <video autoPlay loop muted className="absolute inset-x-0 object-cover">
+          <video
+            autoPlay
+            loop
+            muted
+            className="absolute inset-x-0 mt-56 w-full object-cover sm:mt-2"
+          >
             <source src="/video/contact.mp4" type="video/mp4" />
           </video>
         </div>
         <div className="relative mb-32 sm:p-8">
-          <div className="flex flex-row justify-between text-white">
+          <div className="mb-32 flex flex-row justify-between text-white">
             <div>
-              <h2 className="p-4 text-5xl tracking-wide sm:max-w-xl sm:text-[117px] sm:leading-none">
-                <span className="text-secondary">LET&apos;S</span> CONNECT{' '}
-                <span className="text-secondary">AND</span>{' '}
-                <span className="text-secondary">CREATE</span> SOMETHING{' '}
-                <span className="text-secondary">MAGICAL.</span>
+              <h2 className="h-[300px] p-4 text-6xl tracking-wide sm:h-[400px] sm:max-w-3xl sm:leading-none md:h-[600px] md:text-[117px]">
+                <span className="text-secondary">HAVE</span> A PROJECT{' '}
+                <span className="text-secondary">IDEA?</span>{' '}
+                <span className="text-secondary">JOIN</span> ME TO{' '}
+                <span className="text-secondary">SHAPE</span> IDEAS{' '}
+                <span className="text-secondary">INTO</span>{' '}
+                <span className="text-secondary">REALITY</span>.
               </h2>
             </div>
           </div>
