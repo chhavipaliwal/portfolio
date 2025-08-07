@@ -37,7 +37,7 @@ const projectsData: ProjectsProps = {
       title: 'Invoice Generator',
       image: '/project/invoice.png',
       link: 'https://chhavi-paliwal-invoice-generator.vercel.app/',
-      tech: ['REACT', 'TYPESCRIPT', 'FRAMER MOTION', 'NODE.JS'],
+      tech: ['REACT', 'TYPESCRIPT', 'NODE.JS'],
     },
     {
       title: 'Better.com Clone',
@@ -57,9 +57,9 @@ const projectsData: ProjectsProps = {
 export default function Projects() {
   return (
     <>
-      <div className="w-full rounded-t-[74px] bg-white text-black">
-        <div className="sm:p-8">
-          <div className="mb-12 flex flex-col items-center justify-between gap-4 sm:flex-row">
+      <div className="w-full rounded-t-3xl bg-white text-black md:rounded-t-[74px]">
+        <div className="p-4 sm:p-8">
+          <div className="mb-8 flex flex-col items-center justify-between sm:flex-row">
             <h1 className="text-center font-neue-Helvetica text-[40px] sm:text-left sm:text-[60px] md:text-[82px]">
               FEATURED PROJECTS
             </h1>
@@ -84,20 +84,22 @@ export default function Projects() {
               </Link>
             </div>
           </div>
-          <hr className="my-5 border-t border-gray-300" />
-          <div className="mt-20 grid grid-cols-1 gap-10 sm:grid-cols-2">
+          <hr className="border-t border-gray-300" />
+          <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2">
             {projectsData.projects.map((project, index) => (
-              <Link href={project.link} key={index} className="flex flex-col justify-center gap-6">
+              <Link href={project.link} key={index} className="flex flex-col justify-center gap-4">
                 <Image
+                  radius="none"
                   isBlurred
                   isZoomed
                   src={project.image}
                   alt={project.title}
                   classNames={{
                     img: 'hover:scale-105',
+                    wrapper: 'rounded-3xl overflow-hidden ',
                   }}
                 />
-                <div className="flex flex-col gap-3 font-manrope">
+                <div className="flex flex-col gap-3 pl-4 font-manrope">
                   <h2 className="text-3xl font-semibold">{project.title}</h2>
                   <div className="flex flex-wrap gap-3">
                     {project.tech.map((tag, i) => (
@@ -120,7 +122,7 @@ export default function Projects() {
             ))}
           </div>
           <div className="flex w-full justify-center">
-            <div className="mb-20 flex flex-col items-center justify-center text-center">
+            <div className="mb-10 flex flex-col items-center justify-center text-center">
               <p className="mt-10 max-w-lg text-2xl">
                 I craft digital experiences where every pixel matters — blending personality with
                 purpose, and design with intention.
