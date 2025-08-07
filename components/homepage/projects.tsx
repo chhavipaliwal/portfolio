@@ -133,7 +133,7 @@ export default function Projects() {
             </div>
           </div>
         </div>
-        <div className="relative overflow-hidden rounded-t-medium bg-black md:rounded-t-large">
+        <div className="relative overflow-hidden rounded-t-3xl bg-black md:rounded-t-large">
           <Marquee
             pauseOnHover={false}
             speed={40}

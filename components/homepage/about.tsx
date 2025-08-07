@@ -17,7 +17,7 @@ const fallbackAbout2 = ` I'm naturally curious and driven by purpose, always eag
 export default function AboutMe() {
   return (
     <div
-      className="grid w-full grid-cols-3 rounded-t-medium bg-secondary p-4 text-background sm:p-8 md:rounded-t-large"
+      className="grid w-full grid-cols-3 rounded-t-3xl bg-secondary p-4 text-background sm:p-8 md:rounded-t-large"
       id="about"
     >
       <h1 className="col-span-full mt-10 text-white lg:col-span-1">about me</h1>
