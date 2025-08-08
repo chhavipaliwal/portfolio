@@ -15,7 +15,7 @@ interface Expertise {
 const expertise: Expertise[] = [
   {
     id: '01',
-    title: 'Front-End Development',
+    title: 'FrontEnd Development',
     items: [
       'React.js',
       'Next.js',
@@ -61,10 +61,10 @@ export default function Expertise() {
   return (
     <section className="-translate-y-60 rounded-t-3xl bg-white py-12 font-neue-Helvetica-Condensed-light tracking-wider dark:bg-black md:rounded-t-[74px] md:py-28">
       <div className="mx-auto" id="expertise">
-        <div className="grid grid-cols-[0.6fr_1fr] gap-8 p-6">
-          <div className="col-start-2 flex flex-col text-center md:max-w-xl">
-            <p className="mb-6 text-lg tracking-widest text-gray-500 md:text-left">expertise</p>
-            <p className="text-xl text-black md:text-left md:text-2xl">
+        <div className="grid gap-8 p-6 md:grid-cols-[0.6fr_1fr]">
+          <div className="flex flex-col text-center md:col-start-2 md:max-w-xl">
+            <p className="mb-6 text-left text-lg tracking-widest text-gray-500">expertise</p>
+            <p className="text-left text-xl font-bold text-black md:text-2xl">
               I blend design thinking with robust development to create digital experiences that are
               both intuitive and technically strong.
             </p>
@@ -95,17 +95,17 @@ function ExpertiseItem({ item }: { item: Expertise }) {
       key={item.id}
       layout
       className={cn(
-        'relative grid cursor-default grid-cols-[0.6fr_1fr] gap-8 border-b border-gray-200 p-6 pb-8 font-neue-Helvetica-Medium transition-colors dark:border-gray-700',
+        'relative grid cursor-default gap-8 border-b border-gray-200 p-6 pb-8 font-neue-Helvetica-Medium transition-colors dark:border-gray-700 md:grid-cols-[0.6fr_1fr]',
         item.color
       )}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
-      <h3 className="font-bold text-default">{item.id}</h3>
+      <h3 className="hidden font-bold text-default">{item.id}</h3>
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-4">
-          <h3 className="text-3xl font-semibold text-background">{item.title}</h3>
-          <div className="flex flex-wrap gap-x-2 gap-y-1 text-sm font-bold uppercase tracking-tight text-default">
+          <h3 className="text-3xl text-background">{item.title}</h3>
+          <div className="flex flex-wrap gap-x-2 gap-y-1 text-sm uppercase tracking-tight text-default">
             {item.items.map((item, i) => (
               <span key={i} className="after:ml-2 after:content-['•'] last:after:content-['']">
                 {item}

@@ -65,7 +65,7 @@ const Navbar = () => {
 
         {/* Right side: Contact, Menu, and Circle Logo */}
         <div className="flex items-center gap-6">
-          <div className="hidden items-center md:flex">
+          <div className="flex items-center">
             <Link href="/contact">
               <Button className="border border-foreground transition-all hover:bg-foreground hover:text-background">
                 Contact
@@ -73,7 +73,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="flex items-center gap-3">
-            <button onClick={toggleMenu} className="text-white focus:outline-none">
+            <button onClick={toggleMenu} className="hidden text-white focus:outline-none md:flex">
               menu
             </button>
 
