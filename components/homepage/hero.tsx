@@ -41,16 +41,16 @@ const HeroSection = () => {
           autoPlay
           loop
           muted
-          className="absolute inset-x-0 mt-20 w-full overflow-hidden object-cover"
+          className="absolute inset-x-0 mt-40 w-full overflow-hidden object-cover sm:mt-20"
         >
           <source src="/video/banner.mp4" type="video/mp4" />
         </video>
       </div>
 
-      <div className="relative mt-20 md:mt-28">
-        <div className="flex flex-row justify-between text-white">
+      <div className="relative mt-28">
+        <div className="flex flex-col justify-between gap-20 text-white sm:flex-row">
           <div>
-            <h2 className="h-[300px] p-4 text-5xl tracking-wide sm:h-[200px] sm:leading-none md:h-[600px] md:max-w-2xl md:text-[117px]">
+            <h2 className="mb-3 max-w-[70%] text-4xl tracking-wide sm:h-[200px] sm:leading-none md:h-[500px] md:max-w-2xl md:text-[117px]">
               <span className="text-secondary">BRINGING</span> IDEAS{' '}
               <span className="text-secondary">TO LIFE</span> THROUGH{' '}
               <span className="text-secondary">CODE</span> AND{' '}
@@ -62,9 +62,9 @@ const HeroSection = () => {
                 href="https://instagram.com/kittious"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-gray-500 p-2"
+                className="rounded-full border border-gray-500 p-2 sm:p-2"
               >
-                <Icon icon="ri:instagram-line" className="h-5 w-5 text-white" />
+                <Icon icon="ri:instagram-line" className="h-3 w-3 text-white sm:h-5 sm:w-5" />
               </Link>
 
               {/* GitHub */}
@@ -74,7 +74,7 @@ const HeroSection = () => {
                 rel="noopener noreferrer"
                 className="rounded-full border border-gray-500 p-2"
               >
-                <Icon icon="uil:github" className="h-5 w-5 text-white" />
+                <Icon icon="uil:github" className="h-3 w-3 text-white sm:h-5 sm:w-5" />
               </Link>
 
               {/* LinkedIn */}
@@ -84,7 +84,10 @@ const HeroSection = () => {
                 rel="noopener noreferrer"
                 className="rounded-full border border-gray-500 p-2"
               >
-                <Icon icon="akar-icons:linkedin-fill" className="h-5 w-5 text-white" />
+                <Icon
+                  icon="akar-icons:linkedin-fill"
+                  className="h-3 w-3 text-white sm:h-5 sm:w-5"
+                />
               </Link>
 
               {/* Twitter */}
@@ -94,19 +97,19 @@ const HeroSection = () => {
                 rel="noopener noreferrer"
                 className="rounded-full border border-gray-500 p-2"
               >
-                <Icon icon="akar-icons:twitter-fill" className="h-5 w-5 text-white" />
+                <Icon icon="akar-icons:twitter-fill" className="h-3 w-3 text-white sm:h-5 sm:w-5" />
               </Link>
             </div>
           </div>
           {/* Right Section: Subtext */}
-          <div className="max-w-lg font-pp-neue-machina md:mt-80 md:text-right">
-            <p className="text-3xl font-light">
+          <div className="ml-auto max-w-[60%] p-4 text-right font-pp-neue-machina sm:max-w-lg md:mt-80">
+            <p className="text-lg font-light sm:text-3xl">
               I can design and develop intelligent products that transform ideas into reality.
             </p>
           </div>
         </div>
-        <div className="relative mt-52 flex flex-col items-start justify-between md:flex-row md:items-center">
-          <div className="flex flex-col gap-5 text-left font-neue-Helvetica-Medium md:flex-row md:gap-20">
+        <div className="relative flex flex-col items-start justify-between md:flex-row md:items-center">
+          <div className="flex flex-col gap-5 text-left font-neue-Helvetica-Medium md:mt-40 md:flex-row md:gap-20">
             <p className="font-neue-Helvetica-Condensed-light text-xl tracking-wide text-default-500">
               skills
             </p>
@@ -129,7 +132,7 @@ const HeroSection = () => {
             <DiscussText
               text="LET'S DISCUSS"
               href="#contact"
-              className="mt-4 text-4xl tracking-wide text-primary underline decoration-2 underline-offset-4 md:text-7xl"
+              className="mb-6 mt-4 text-4xl tracking-wide text-primary underline decoration-2 underline-offset-4 md:text-7xl"
             />
           </div>
         </div>
