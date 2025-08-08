@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <motion.div
-      className="fixed top-0 z-50 w-full scroll-smooth bg-background/30 px-8 font-neue-Helvetica-Medium shadow-md backdrop-blur-md"
+      className="fixed top-0 z-50 w-full scroll-smooth bg-background/30 px-4 font-neue-Helvetica-Medium shadow-md backdrop-blur-md md:px-8"
       initial={{
         y: -100,
         opacity: 0,
@@ -60,12 +60,12 @@ const Navbar = () => {
               className="rounded-full object-cover object-top"
             />
           </div>
-          <span className="text-2xl font-medium tracking-wide text-white">Chhavi</span>
+          <span className="text-xl font-medium tracking-wide text-white md:text-2xl">Chhavi</span>
         </Link>
 
         {/* Right side: Contact, Menu, and Circle Logo */}
-        <div className="flex items-center gap-6">
-          <div className="flex items-center">
+        <div className="flex items-center gap-4 md:gap-6">
+          <div className="flex items-center md:flex">
             <Link href="/contact">
               <Button className="border border-foreground transition-all hover:bg-foreground hover:text-background">
                 Contact

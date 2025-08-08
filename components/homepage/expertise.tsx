@@ -101,7 +101,7 @@ function ExpertiseItem({ item }: { item: Expertise }) {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
-      <h3 className="hidden font-bold text-default">{item.id}</h3>
+      <h3 className="hidden font-bold text-default md:flex">{item.id}</h3>
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-4">
           <h3 className="text-3xl text-background">{item.title}</h3>

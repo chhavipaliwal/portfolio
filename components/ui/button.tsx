@@ -20,7 +20,7 @@ const Button = React.forwardRef<
       animate="rest"
       variant="bordered"
       radius="full"
-      className={cn('px-6 py-6 text-base', className)}
+      className={cn('px-4 py-4 text-base', className)}
       {...props}
     >
       <div className="absolute flex">
