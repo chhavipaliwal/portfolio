@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <motion.div
-      className=" px-8 top-0  font-neue-Helvetica-Medium scroll-smooth w-full fixed z-50 shadow-md backdrop-blur-md bg-background/30"
+      className="fixed top-0 z-50 w-full scroll-smooth bg-background/30 px-8 font-neue-Helvetica-Medium shadow-md backdrop-blur-md"
       initial={{
         y: -100,
         opacity: 0,
@@ -60,31 +60,26 @@ const Navbar = () => {
               className="rounded-full object-cover object-top"
             />
           </div>
-          <span className="text-2xl font-medium tracking-wide text-white">
-            Chhavi
-          </span>
+          <span className="text-2xl font-medium tracking-wide text-white">Chhavi</span>
         </Link>
 
         {/* Right side: Contact, Menu, and Circle Logo */}
         <div className="flex items-center gap-6">
-          <div className="flex items-center">
+          <div className="hidden items-center md:flex">
             <Link href="/contact">
-              <Button className="border-foreground border hover:bg-foreground transition-all hover:text-background">
+              <Button className="border border-foreground transition-all hover:bg-foreground hover:text-background">
                 Contact
               </Button>
             </Link>
           </div>
           <div className="flex items-center gap-3">
-            <button
-              onClick={toggleMenu}
-              className="text-white focus:outline-none"
-            >
+            <button onClick={toggleMenu} className="text-white focus:outline-none">
               menu
             </button>
 
             <div className="relative">
               <HeroButton
-                className="grid p-4 relative transition-all z-[51] size-12 bg-white place-items-center grid-cols-2 grid-rows-2"
+                className="relative z-[51] grid size-12 grid-cols-2 grid-rows-2 place-items-center bg-white p-4 transition-all"
                 onPress={toggleMenu}
                 isIconOnly
                 radius="full"
@@ -100,7 +95,7 @@ const Navbar = () => {
                 ))}
               </HeroButton>
               <motion.div
-                className="fixed top-0 left-0 right-0 bottom-0 z-[49] w-screen h-screen bg-background/40 m-4"
+                className="fixed bottom-0 left-0 right-0 top-0 z-[49] m-4 h-screen w-screen bg-background/40"
                 initial={{
                   opacity: 0,
                   zIndex: -1,
@@ -115,7 +110,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 <motion.div
-                  className="fixed overflow-hidden flex  flex-col right-8 top-0 z-50 rounded-lg bg-white p-6 m-6 text-black shadow-lg"
+                  className="fixed right-8 top-0 z-50 m-6 flex flex-col overflow-hidden rounded-lg bg-white p-6 text-black shadow-lg"
                   initial={{
                     opacity: 0,
                     height: 0,
@@ -130,43 +125,31 @@ const Navbar = () => {
                   onClick={(e) => e.stopPropagation()}
                 >
                   {/* Menu Links */}
-                  <ul className="mt-6 space-y-3 ">
+                  <ul className="mt-6 space-y-3">
                     <li>
-                      <Link
-                        href="/homepage"
-                        className="text-xl hover:text-gray-600"
-                      >
+                      <Link href="/homepage" className="text-xl hover:text-gray-600">
                         Portfolio
                       </Link>
                     </li>
                     <li>
-                      <Link
-                        href="/about"
-                        className="text-xl hover:text-gray-600"
-                      >
+                      <Link href="/about" className="text-xl hover:text-gray-600">
                         About
                       </Link>
                     </li>
                     <li>
-                      <Link
-                        href="/work"
-                        className="text-xl hover:text-gray-600"
-                      >
+                      <Link href="/work" className="text-xl hover:text-gray-600">
                         Work
                       </Link>
                     </li>
                     <li>
-                      <Link
-                        href="/contact"
-                        className="text-xl hover:text-gray-600"
-                      >
+                      <Link href="/contact" className="text-xl hover:text-gray-600">
                         Contact
                       </Link>
                     </li>
                   </ul>
 
                   {/* Social Icons and Email */}
-                  <div className="mt-6 mb-6 flex items-center space-x-6">
+                  <div className="mb-6 mt-6 flex items-center space-x-6">
                     {/* Instagram */}
                     <Link
                       href="https://instagram.com/kittious"
@@ -227,7 +210,7 @@ const Navbar = () => {
                       </svg>
                     </Link>
                   </div>
-                  <p className=" text-lg text-gray-600">chhavi@divinely.dev</p>
+                  <p className="text-lg text-gray-600">chhavi@divinely.dev</p>
                 </motion.div>
               </motion.div>
             </div>
