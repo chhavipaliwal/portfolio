@@ -137,7 +137,7 @@ export default function ProjectInquiryForm() {
           </form>
         </div>
       </div>
-      <footer className="-translate-y-30 rounded-t-3xl bg-white p-6 font-neue-Helvetica-Medium shadow-md md:rounded-t-[80px] md:p-16">
+      <footer className="-translate-y-30 mb-10 rounded-t-3xl bg-white p-6 font-neue-Helvetica-Medium shadow-md md:rounded-t-[80px] md:p-16">
         <div className="flex flex-col items-start justify-between md:flex-row md:items-center">
           <div className="space-y-6">
             <div>
@@ -151,7 +151,7 @@ export default function ProjectInquiryForm() {
             </div>
           </div>
 
-          <div className="mb-10 mt-10 grid grid-cols-3 gap-10 text-lg font-medium text-black md:mt-0 md:grid-cols-3">
+          <div className="text-md mt-10 grid grid-cols-3 gap-10 font-medium text-black md:mt-0 md:grid-cols-3 md:text-lg">
             {/* Column 1 */}
             <div className="space-y-4">
               <Link href="https://chhavi.divinely.dev/" className="block hover:text-gray-600">

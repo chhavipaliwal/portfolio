@@ -59,13 +59,12 @@ const expertise: Expertise[] = [
 
 export default function Expertise() {
   return (
-    <section className="-translate-y-60 rounded-t-[74px] bg-white py-28 font-neue-Helvetica-Condensed-light tracking-wider dark:bg-black">
+    <section className="-translate-y-60 rounded-t-3xl bg-white py-12 font-neue-Helvetica-Condensed-light tracking-wider dark:bg-black md:rounded-t-[74px] md:py-28">
       <div className="mx-auto" id="expertise">
         <div className="grid grid-cols-[0.6fr_1fr] gap-8 p-6">
-          <div></div>
-          <div className="col-start-2 flex max-w-xl flex-col text-center">
-            <p className="mb-6 text-left text-lg tracking-widest text-gray-500">expertise</p>
-            <p className="text-left text-2xl font-light leading-relaxed text-black md:text-2xl">
+          <div className="col-start-2 flex flex-col text-center md:max-w-xl">
+            <p className="mb-6 text-lg tracking-widest text-gray-500 md:text-left">expertise</p>
+            <p className="text-xl text-black md:text-left md:text-2xl">
               I blend design thinking with robust development to create digital experiences that are
               both intuitive and technically strong.
             </p>
