@@ -39,9 +39,9 @@ export default function ProjectInquiryForm() {
 
   return (
     <div className="h-screen font-neue-Helvetica-Condensed-light">
-      <div className="flex min-h-screen -translate-y-72 items-center justify-center rounded-t-[74px] bg-black p-4 text-white">
-        <div className="w-full max-w-4xl" id="contact">
-          <h1 className="mb-16 mt-32 text-5xl font-bold">Please tell me about your project</h1>
+      <div className="-mt-72 flex min-h-screen items-center justify-center bg-black p-6 text-white">
+        <div className="mb-16 w-full max-w-4xl" id="contact">
+          <h1 className="mb-16 mt-16 text-xl font-bold">Please tell me about your project</h1>
 
           <form onSubmit={handleSubmit}>
             <div className="mb-16">
@@ -131,29 +131,27 @@ export default function ProjectInquiryForm() {
             <button type="submit" aria-label="Let's Collaborate">
               <DiscussText
                 text="DISCUSS PROJECT"
-                className="font-neue-Helvetica text-7xl text-primary underline decoration-2 underline-offset-4"
+                className="font-neue-Helvetica text-5xl text-primary underline decoration-2 underline-offset-4 md:text-7xl"
               />
             </button>
           </form>
         </div>
       </div>
-      <footer className="-translate-y-48 rounded-t-[80px] bg-white p-10 font-neue-Helvetica-Medium shadow-md md:p-16">
+      <footer className="-translate-y-30 rounded-t-3xl bg-white p-6 font-neue-Helvetica-Medium shadow-md md:rounded-t-[80px] md:p-16">
         <div className="flex flex-col items-start justify-between md:flex-row md:items-center">
           <div className="space-y-6">
             <div>
-              <p className="mb-6 text-lg font-medium text-gray-700">get in touch</p>
+              <p className="mb-4 mt-6 text-lg font-medium text-gray-700">get in touch</p>
               <a
                 className="text-3xl font-bold text-black md:text-5xl"
                 href="mailto:kittipaliwal@gmail.com"
               >
                 kittipaliwal@gmail.com
               </a>
-
-              <div className="mb-0 mt-10 text-sm text-gray-400">@chhavi 2025</div>
             </div>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-10 text-lg font-medium text-black md:mt-0 md:grid-cols-3">
+          <div className="mb-10 mt-10 grid grid-cols-3 gap-10 text-lg font-medium text-black md:mt-0 md:grid-cols-3">
             {/* Column 1 */}
             <div className="space-y-4">
               <Link href="https://chhavi.divinely.dev/" className="block hover:text-gray-600">

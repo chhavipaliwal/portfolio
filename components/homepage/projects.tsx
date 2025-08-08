@@ -96,7 +96,7 @@ export default function Projects() {
                   alt={project.title}
                   classNames={{
                     img: 'hover:scale-105',
-                    wrapper: 'rounded-3xl overflow-hidden ',
+                    wrapper: 'rounded-xl overflow-hidden ',
                   }}
                 />
                 <div className="flex flex-col gap-3 pl-4 font-manrope">
@@ -108,7 +108,7 @@ export default function Projects() {
                         variant="bordered"
                         color="secondary"
                         className="border py-2 text-sm text-background"
-                        size="lg"
+                        size="md"
                         classNames={{
                           content: 'font-bold',
                         }}
