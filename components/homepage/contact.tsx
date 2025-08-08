@@ -9,6 +9,9 @@ export default function ContactMe() {
             autoPlay
             loop
             muted
+            playsInline
+            preload="auto"
+            controls={false}
             className="absolute inset-x-0 mt-56 w-full object-cover sm:mt-2"
           >
             <source src="/video/contact.mp4" type="video/mp4" />

@@ -1,88 +1,112 @@
-const projects = [
-  {
-    id: 1,
-    title: 'Invoice Generator',
-    video: '/vedio/invoice-genreator.mov',
-    link: 'https://chhavi-paliwal-invoice-generator.vercel.app/',
-    category: 'Web Application',
-  },
-  {
-    id: 2,
-    title: 'the policlinic',
-    video: '/vedio/clinic.mov',
-    link: 'https://the-policlinic.vercel.app/',
-    category: 'Healthcare Platform',
-  },
-  {
-    id: 3,
-    title: 'the yogic Bowl',
-    video: '/vedio/the-yogic-bowl.mov',
-    link: 'https://theyogicbowl.divinely.dev/',
-    category: 'Restaurant Management',
-  },
-  {
-    id: 4,
-    title: 'React Portfolio',
-    video: '/vedio/react-portfolio.mov',
-    technologies: ['React', 'Tailwind', 'Framer'],
-    link: 'https://react-portfolio-kitti.netlify.app/',
-    category: 'Portfolio Website',
-  },
-  {
-    id: 5,
-    title: 'Better.com clone',
-    video: '/vedio/better-com-clone.mov',
-    link: 'https://better-com-clone.vercel.app/',
-    category: 'E-commerce',
-  },
-  {
-    id: 6,
-    title: 'Social Media App',
-    video: '/vedio/socialConnect.mov',
-    link: 'https://social-media-app-nu-ten.vercel.app/',
-    category: 'Social Media',
-  },
-];
+'use client';
+import { isImage } from '@/functions/utility';
+import { Project } from '@/lib/interface';
+import { Icon } from '@iconify/react/dist/iconify.js';
+import { Chip, cn, ScrollShadow, Skeleton } from '@nextui-org/react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRef, useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { isOnce } from '@/lib/utils';
 
-export default function Projects() {
+interface Props {
+  projects: Project[];
+}
+
+export default function Projects({ projects }: Props) {
+  const targetRef = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+  const y = useTransform(scrollYProgress, [0, 1.5], ['2%', '-5%']);
   return (
-    <div className="min-h-screen px-4 font-neue-Helvetica-Medium">
-      {/* Projects Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-        {projects.map((project) => (
-          <div
-            key={project.id}
-            className="rounded-xl overflow-hidden border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:transform hover:scale-[1.02] group cursor-pointer"
-          >
-            {/* Project Image with Overlay */}
-            <a href={project.link} target="_blank" rel="noopener noreferrer">
-              <div className="relative overflow-hidden">
-                <video
-                  src={project.video}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-[24rem] object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-
-                {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
-                {/* Title and Category Overlay */}
-                <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center z-10">
-                  <h2 className="text-white text-lg font-semibold drop-shadow-md">
-                    {project.title}
-                  </h2>
-                  <span className="text-xs text-white px-3 py-1 bg-black/40 rounded-full border border-white/30">
-                    {project.category}
-                  </span>
-                </div>
-              </div>
-            </a>
-          </div>
-        ))}
+    <>
+      <div ref={targetRef} className="relative mx-auto mt-24 max-w-7xl p-4 sm:p-8 md:p-12">
+        <motion.div style={{ y }} className="grid gap-8 md:grid-cols-2">
+          {projects.map((project, index) => (
+            <ProjectCard key={project.id} cardIndex={index} project={project} />
+          ))}
+        </motion.div>
       </div>
-    </div>
+    </>
+  );
+}
+
+function ProjectCard({ project, cardIndex }: { project: Project; cardIndex: number }) {
+  const [hasError, setHasError] = useState(false);
+
+  return (
+    <motion.div
+      className="group relative overflow-hidden rounded-xl"
+      initial={{
+        opacity: 0,
+        y: 100,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        duration: 0.5,
+        delay: cardIndex < 6 ? cardIndex * 0.1 : 0.3,
+      }}
+      viewport={{ once: isOnce }}
+    >
+      <Link href={`/work/${project.id}`} className="group flex flex-col gap-4">
+        <div className="relative h-fit w-full">
+          <div className="relative w-full">
+            {!hasError && (
+              <video
+                autoPlay
+                loop
+                muted
+                className={cn(
+                  'pointer-events-none flex aspect-video w-full rounded-3xl bg-default object-cover transition-all group-hover:opacity-30'
+                )}
+                playsInline
+                width={400}
+                height={400}
+                controls={false}
+                preload="auto"
+                src={process.env.NEXT_PUBLIC_CLOUDFLARE_URL + project.video}
+                onError={() => {
+                  setHasError(true); // Trigger fallback if an error occurs
+                }}
+              />
+            )}
+
+            {hasError && (
+              <Image
+                src="/project.gif" // Fallback image
+                objectFit="cover"
+                alt={project.title}
+                className="pointer-events-none aspect-video w-full rounded-3xl bg-default object-cover transition-all group-hover:opacity-30"
+                width={400}
+                height={400}
+              />
+            )}
+          </div>
+
+          <h3 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-3xl text-white opacity-0 transition-all group-hover:opacity-100">
+            <span>{project.title}</span>
+          </h3>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <ScrollShadow orientation="horizontal" className="no-scrollbar flex gap-2">
+            {project.technologies?.map((tech) => (
+              <Chip
+                key={tech}
+                // size="sm"
+                className="capitalize"
+                startContent={<Icon icon={tech} className="mx-1" />}
+              >
+                {tech.split(/[:-]/).pop()}
+              </Chip>
+            ))}
+          </ScrollShadow>
+        </div>
+      </Link>
+    </motion.div>
   );
 }
