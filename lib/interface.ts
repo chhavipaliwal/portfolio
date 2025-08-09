@@ -24,6 +24,8 @@ export interface Project {
   category: string;
   technologies?: string[];
   source?: string;
+  tagline?: string;
+  description?: string;
 }
 
 export interface Testimonial extends Base {
