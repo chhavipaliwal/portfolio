@@ -1,10 +1,10 @@
 import { connectDB } from '@/lib/db';
 import User from '@/models/User';
 import Otp from '@/models/Otp';
-import bcrypt from 'bcryptjs';
 import { NextResponse } from 'next/server';
 
-import { generateOtp, handleDbOtp, phoneValidate, sendMail, sendSMS } from '@/lib/functions';
+import { generateOtp, handleDbOtp, phoneValidate, sendSMS } from '@/lib/functions';
+import { sendMail } from '@/lib/server-actions';
 
 export async function POST(request: Request) {
   try {
@@ -16,7 +16,12 @@ export async function POST(request: Request) {
         return NextResponse.json({ message: 'User Already Exists' }, { status: 404 });
       }
       const otp = generateOtp();
-      await sendMail(id, 'OTP for Registration', `Your OTP is: ${otp}`, 'Chhavi Paliwal');
+      await sendMail({
+        from: 'Chhavi Paliwal',
+        to: id,
+        subject: 'OTP for Registration',
+        message: `Your OTP is: ${otp}`,
+      });
       await Otp.create({ id, otp });
       return NextResponse.json({ message: 'OTP sent successfully' });
     } else if (phoneValidate(id)) {

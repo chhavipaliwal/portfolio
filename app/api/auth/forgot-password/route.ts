@@ -2,7 +2,8 @@ import { NextResponse } from 'next/server';
 import User from '@/models/User';
 import Otp from '@/models/Otp';
 import { connectDB } from '@/lib/db';
-import { generateOtp, handleDbOtp, phoneValidate, sendMail, sendSMS } from '@/lib/functions';
+import { generateOtp, handleDbOtp, phoneValidate, sendSMS } from '@/lib/functions';
+import { sendMail } from '@/lib/server-actions';
 
 // send forgot password mail
 export async function POST(request: Request) {
@@ -15,7 +16,12 @@ export async function POST(request: Request) {
         return NextResponse.json({ message: 'User not found' }, { status: 404 });
       }
       const otp = generateOtp();
-      await sendMail(user.email, 'Reset Password', `Your OTP is: ${otp}`, 'Chhavi Paliwal');
+      await sendMail({
+        from: 'Chhavi Paliwal',
+        to: user.email,
+        subject: 'Reset Password',
+        message: `Your OTP is: ${otp}`,
+      });
       await Otp.create({ id: user.email, otp });
       return NextResponse.json({ message: 'OTP sent successfully' });
     } else if (phoneValidate(id)) {
