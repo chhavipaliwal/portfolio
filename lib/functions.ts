@@ -2,20 +2,15 @@ import { transporter } from './nodemailer';
 const email = process.env.NEXT_PUBLIC_GMAIL || 'divinelydeveloper@gmail.com';
 import Otp from '@/models/Otp';
 
-export const sendMail = async (
-  to: string,
-  subject: string,
-  message: string,
-  title?: string
-) => {
+export const sendMail = async (to: string, subject: string, message: string, title?: string) => {
   const mailOptions = {
     from: {
-      name: title ? `${title} - Insur Hotels` : 'Insur Hotels',
-      address: email
+      name: title ? `${title} - Chhavi Paliwal` : 'Chhavi Paliwal',
+      address: email,
     },
     to: to,
     subject: subject,
-    text: message
+    text: message,
   };
   try {
     return await transporter.sendMail(mailOptions).then(() => {

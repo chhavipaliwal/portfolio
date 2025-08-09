@@ -4,13 +4,7 @@ import Otp from '@/models/Otp';
 import bcrypt from 'bcryptjs';
 import { NextResponse } from 'next/server';
 
-import {
-  generateOtp,
-  handleDbOtp,
-  phoneValidate,
-  sendMail,
-  sendSMS
-} from '@/lib/functions';
+import { generateOtp, handleDbOtp, phoneValidate, sendMail, sendSMS } from '@/lib/functions';
 
 export async function POST(request: Request) {
   try {
@@ -19,18 +13,10 @@ export async function POST(request: Request) {
     if (id.includes('@')) {
       const user = await User.findOne({ email: id }).select('email');
       if (user) {
-        return NextResponse.json(
-          { message: 'User Already Exists' },
-          { status: 404 }
-        );
+        return NextResponse.json({ message: 'User Already Exists' }, { status: 404 });
       }
       const otp = generateOtp();
-      await sendMail(
-        id,
-        'OTP for Registration',
-        `Your OTP is: ${otp}`,
-        'Insur Hotels'
-      );
+      await sendMail(id, 'OTP for Registration', `Your OTP is: ${otp}`, 'Chhavi Paliwal');
       await Otp.create({ id, otp });
       return NextResponse.json({ message: 'OTP sent successfully' });
     } else if (phoneValidate(id)) {
@@ -39,10 +25,7 @@ export async function POST(request: Request) {
         try {
           const user = await User.findOne({ phone: phone });
           if (user) {
-            return NextResponse.json(
-              { message: 'User Already Exists' },
-              { status: 404 }
-            );
+            return NextResponse.json({ message: 'User Already Exists' }, { status: 404 });
           }
           const otp = await handleDbOtp(phone);
           if (otp) {
@@ -57,10 +40,7 @@ export async function POST(request: Request) {
         }
       }
     } else {
-      return NextResponse.json(
-        { message: 'Invalid email/phone' },
-        { status: 400 }
-      );
+      return NextResponse.json({ message: 'Invalid email/phone' }, { status: 400 });
     }
   } catch (error) {
     console.error(error);

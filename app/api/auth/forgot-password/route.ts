@@ -2,13 +2,7 @@ import { NextResponse } from 'next/server';
 import User from '@/models/User';
 import Otp from '@/models/Otp';
 import { connectDB } from '@/lib/db';
-import {
-  generateOtp,
-  handleDbOtp,
-  phoneValidate,
-  sendMail,
-  sendSMS
-} from '@/lib/functions';
+import { generateOtp, handleDbOtp, phoneValidate, sendMail, sendSMS } from '@/lib/functions';
 
 // send forgot password mail
 export async function POST(request: Request) {
@@ -18,18 +12,10 @@ export async function POST(request: Request) {
     if (id.includes('@')) {
       const user = await User.findOne({ email: id }).select('email');
       if (!user) {
-        return NextResponse.json(
-          { message: 'User not found' },
-          { status: 404 }
-        );
+        return NextResponse.json({ message: 'User not found' }, { status: 404 });
       }
       const otp = generateOtp();
-      await sendMail(
-        user.email,
-        'Reset Password',
-        `Your OTP is: ${otp}`,
-        'Insur Hotels'
-      );
+      await sendMail(user.email, 'Reset Password', `Your OTP is: ${otp}`, 'Chhavi Paliwal');
       await Otp.create({ id: user.email, otp });
       return NextResponse.json({ message: 'OTP sent successfully' });
     } else if (phoneValidate(id)) {
@@ -38,10 +24,7 @@ export async function POST(request: Request) {
         try {
           const user = await User.findOne({ phone: phone });
           if (!user) {
-            return NextResponse.json(
-              { message: 'User not found' },
-              { status: 404 }
-            );
+            return NextResponse.json({ message: 'User not found' }, { status: 404 });
           }
           const otp = await handleDbOtp(phone);
           if (otp) {
@@ -56,10 +39,7 @@ export async function POST(request: Request) {
         }
       }
     } else {
-      return NextResponse.json(
-        { message: 'Invalid email/phone' },
-        { status: 400 }
-      );
+      return NextResponse.json({ message: 'Invalid email/phone' }, { status: 400 });
     }
   } catch (error) {
     console.error(error);
