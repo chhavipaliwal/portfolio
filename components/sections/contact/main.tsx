@@ -20,6 +20,7 @@ import { Icon } from '@iconify/react/dist/iconify.js';
 import Link from 'next/link';
 import { toast } from 'sonner';
 import WorkButton from '@/components/animata/button/work-button';
+import { sendMail } from '@/lib/server-actions';
 
 const Main = () => {
   const submittedModal = useDisclosure();
@@ -40,19 +41,19 @@ const Main = () => {
     validationSchema,
     onSubmit: async (values) => {
       try {
-        const response = await fetch('/api/contact', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(values),
-        });
-        if (response.ok) {
-          formik.resetForm();
-          submittedModal.onOpenChange();
-        } else {
-          toast.error('An error occurred. Please try again later.');
-        }
+        await sendMail({
+          from: values.email,
+          subject: 'Contact Form Submission',
+          message: `Name: ${values.name}\nEmail: ${values.email}\nPhone: ${values.phone}\nMessage: ${values.message}`,
+        })
+          .then(() => {
+            formik.resetForm();
+            submittedModal.onOpenChange();
+          })
+          .catch((error) => {
+            toast.error('An error occurred. Please try again later.');
+            console.error(error);
+          });
       } catch (error) {
         toast.error('An error occurred. Please try again later.');
         console.error(error);
