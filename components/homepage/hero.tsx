@@ -41,6 +41,9 @@ const HeroSection = () => {
           autoPlay
           loop
           muted
+          playsInline
+          preload="auto"
+          controls={false}
           className="absolute inset-x-0 mt-40 w-full overflow-hidden object-cover sm:mt-20"
         >
           <source src="/video/banner.mp4" type="video/mp4" />

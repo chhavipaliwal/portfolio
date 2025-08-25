@@ -20,6 +20,7 @@ import { Icon } from '@iconify/react/dist/iconify.js';
 import Link from 'next/link';
 import { toast } from 'sonner';
 import WorkButton from '@/components/animata/button/work-button';
+import { sendMail } from '@/lib/server-actions';
 
 const Main = () => {
   const submittedModal = useDisclosure();
@@ -40,19 +41,19 @@ const Main = () => {
     validationSchema,
     onSubmit: async (values) => {
       try {
-        const response = await fetch('/api/contact', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(values),
-        });
-        if (response.ok) {
-          formik.resetForm();
-          submittedModal.onOpenChange();
-        } else {
-          toast.error('An error occurred. Please try again later.');
-        }
+        await sendMail({
+          from: values.email,
+          subject: 'Contact Form Submission',
+          message: `Name: ${values.name}\nEmail: ${values.email}\nPhone: ${values.phone}\nMessage: ${values.message}`,
+        })
+          .then(() => {
+            formik.resetForm();
+            submittedModal.onOpenChange();
+          })
+          .catch((error) => {
+            toast.error('An error occurred. Please try again later.');
+            console.error(error);
+          });
       } catch (error) {
         toast.error('An error occurred. Please try again later.');
         console.error(error);
@@ -62,36 +63,36 @@ const Main = () => {
 
   return (
     <>
-      <section className="relative pb-8 flex flex-col md:flex-row gap-12 font-manrope">
-        <div className="relative md:w-[40%] hidden md:block w-full overflow-hidden rounded-3xl">
+      <section className="relative flex flex-col gap-12 pb-8 font-manrope md:flex-row">
+        <div className="relative hidden w-full overflow-hidden rounded-3xl md:block md:w-[40%]">
           <Image src={'/chhavi.jpeg'} alt="" className="shadow-lg" />
           <Button
             as={Link}
             href="/"
             // color="foreground"
             variant="light"
-            className="w-fit absolute z-10 top-3"
+            className="absolute top-3 z-10 w-fit"
             startContent={<Icon icon="akar-icons:arrow-left" />}
           >
             Back
           </Button>
-          <div className="absolute z-10 bg-gradient-to-t from-black to-transparent w-full h-1/2 bottom-0 left-0 flex">
-            <div className="flex flex-col gap-2 justify-end items-start w-full p-8">
-              <h3 className="text-white text-xl">Contact Us</h3>
-              <p className="text-white text-[12px] md:max-w-xs">
-                Ask about our platform, pricing, implementation or anything
-                else. Our highly trained reps are standing by. Ready to help
+          <div className="absolute bottom-0 left-0 z-10 flex h-1/2 w-full bg-gradient-to-t from-black to-transparent">
+            <div className="flex w-full flex-col items-start justify-end gap-2 p-8">
+              <h3 className="text-xl text-white">Contact Me</h3>
+              <p className="text-[12px] text-white md:max-w-xs">
+                Ask about my projects, pricing, implementation or anything else. I am always
+                available to help.
               </p>
             </div>
           </div>
         </div>
-        <div className="flex justify-center md:w-[60%] flex-col gap-8">
+        <div className="flex flex-col justify-center gap-8 md:w-[60%]">
           <Button
             as={Link}
             href="/"
             // color="foreground"
             variant="light"
-            className="w-fit gap-2 md:hidden translate-x-[-10px]"
+            className="w-fit translate-x-[-10px] gap-2 md:hidden"
             startContent={<Icon icon="akar-icons:arrow-left" />}
           >
             Back
@@ -128,9 +129,7 @@ const Main = () => {
             name="email"
             onChange={formik.handleChange}
             value={formik.values.email}
-            isInvalid={
-              formik.touched.email && formik.errors.email ? true : false
-            }
+            isInvalid={formik.touched.email && formik.errors.email ? true : false}
             errorMessage={formik.errors.email}
           />
           <Input
@@ -146,9 +145,7 @@ const Main = () => {
             name="phone"
             onChange={formik.handleChange}
             value={formik.values.phone}
-            isInvalid={
-              formik.touched.phone && formik.errors.phone ? true : false
-            }
+            isInvalid={formik.touched.phone && formik.errors.phone ? true : false}
             errorMessage={formik.errors.phone}
           />
           <Textarea
@@ -164,9 +161,7 @@ const Main = () => {
             name="message"
             onChange={formik.handleChange}
             value={formik.values.message}
-            isInvalid={
-              formik.touched.message && formik.errors.message ? true : false
-            }
+            isInvalid={formik.touched.message && formik.errors.message ? true : false}
           />
 
           <WorkButton
@@ -183,25 +178,24 @@ const Main = () => {
         radius="lg"
         className="rounded-3xl"
       >
-        <ModalContent className=" px-4">
+        <ModalContent className="px-4">
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col mt-8 items-center gap-1">
+              <ModalHeader className="mt-8 flex flex-col items-center gap-1">
                 <Icon
                   fontSize={50}
                   icon="tabler:circle-check-filled"
-                  className="text-success mb-4"
+                  className="mb-4 text-success"
                 />
                 <h2 className="text-xl leading-[20px]">Congratulations</h2>
-                <p className="text-center text-[12px] font-sans text-foreground-500">
+                <p className="text-center font-sans text-[12px] text-foreground-500">
                   Your message has been sent successfully.
                 </p>
               </ModalHeader>
-              <ModalBody className="bg-default rounded-2xl mb-4 p-4">
-                <h3 className="uppercase text-sm">What&apos;s next?</h3>
+              <ModalBody className="mb-4 rounded-2xl bg-default p-4">
+                <h3 className="text-sm uppercase">What&apos;s next?</h3>
                 <p className="text-sm text-foreground-500">
-                  I will get back to you within 24 hours. In the meantime, you
-                  can check my{' '}
+                  I will get back to you within 24 hours. In the meantime, you can check my{' '}
                   <a
                     rel="noopener noreferrer"
                     href="https://github.com/chhavipaliwal"
@@ -216,13 +210,7 @@ const Main = () => {
                   </a>{' '}
                   to get more information.
                 </p>
-                <Button
-                  variant="bordered"
-                  as={Link}
-                  href="/"
-                  color="primary"
-                  size="lg"
-                >
+                <Button variant="bordered" as={Link} href="/" color="primary" size="lg">
                   Go to Home
                 </Button>
               </ModalBody>

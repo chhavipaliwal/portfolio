@@ -11,18 +11,12 @@ export async function POST(request: Request) {
     await connectDB();
     const { name, id, password } = data;
     if (!name || !id || !password) {
-      return NextResponse.json(
-        { message: 'Please enter all fields' },
-        { status: 400 }
-      );
+      return NextResponse.json({ message: 'Please enter all fields' }, { status: 400 });
     }
     if (id.includes('@')) {
       const existingUser = await User.findOne({ email: id });
       if (existingUser) {
-        return NextResponse.json(
-          { message: 'User already exists' },
-          { status: 400 }
-        );
+        return NextResponse.json({ message: 'User already exists' }, { status: 400 });
       }
 
       const hashedPassword = await bcrypt.hash(password, 12);
@@ -39,13 +33,10 @@ export async function POST(request: Request) {
         try {
           const existingUser = await User.findOne({ phone: phone });
           if (existingUser) {
-            return NextResponse.json(
-              { message: 'User already exists' },
-              { status: 404 }
-            );
+            return NextResponse.json({ message: 'User already exists' }, { status: 404 });
           }
           const hashedPassword = await bcrypt.hash(password, 12);
-          const email = `${phone}@insur.com`;
+          const email = `${phone}@divinely.dev`;
           let user = new User({ name, phone, email, password: hashedPassword });
           user = await user.save();
           return NextResponse.json(

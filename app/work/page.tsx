@@ -1,13 +1,10 @@
-import Header from '@/components/sections/work/project';
 import Projects from '@/components/sections/work/projects';
+import { projects } from '@/data/projects';
 
-export default function Page() {
+export default async function WorkPage() {
   return (
     <>
-      <div className="mx-auto px-4 md:px-12">
-        <Header />
-        <Projects />
-      </div>
+      <Projects projects={projects} />
     </>
   );
 }

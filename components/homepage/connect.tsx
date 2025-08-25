@@ -4,38 +4,57 @@ import type React from 'react';
 import DiscussText from '../ui/animate';
 import Link from 'next/link';
 
-import { useState } from 'react';
+import { useFormik } from 'formik';
+import { sendMail } from '@/lib/server-actions';
+import { toast } from 'sonner';
+import { addToast } from '@heroui/react';
 
-type ServiceType =
-  | 'Web design'
-  | 'Product design'
-  | 'Web development'
-  | 'Branding'
-  | 'Graphics'
-  | 'Packaging';
 type BudgetType = '1K-5K' | '5K-10K' | '10K-50K' | 'more than 50K';
 
 export default function ProjectInquiryForm() {
-  const [selectedService, setSelectedService] = useState<ServiceType>('Product design');
-  const [selectedBudget, setSelectedBudget] = useState<BudgetType>('1K-5K');
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [projectDetails, setProjectDetails] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const services: ServiceType[] = [
-    'Web design',
-    'Web development',
-    'Branding',
-    'Graphics',
-    'Packaging',
-  ];
-
   const budgets: BudgetType[] = ['1K-5K', '5K-10K', '10K-50K', 'more than 50K'];
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-  };
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      budget: budgets[0],
+      projectDetails: '',
+    },
+    onSubmit: async (values) => {
+      console.log(values);
+      if (!values.name || !values.email || !values.projectDetails) {
+        addToast({
+          title: 'Please fill all the fields',
+          description: 'Please fill all the fields',
+          color: 'danger',
+        });
+        return;
+      }
+
+      await sendMail({
+        from: values.email,
+        subject: 'Project Inquiry',
+        message: `Name: ${values.name}\nEmail: ${values.email}\nBudget: ${values.budget}\nProject Details: ${values.projectDetails}`,
+      })
+        .then(() => {
+          addToast({
+            title: 'Email sent successfully',
+            description: 'I will get back to you soon',
+            color: 'success',
+          });
+          formik.resetForm();
+        })
+        .catch((error) => {
+          addToast({
+            title: 'Failed to send email',
+            description: 'Please try again later',
+            color: 'danger',
+          });
+          console.error(error);
+        });
+    },
+  });
 
   return (
     <div className="h-screen font-neue-Helvetica-Condensed-light">
@@ -43,40 +62,20 @@ export default function ProjectInquiryForm() {
         <div className="mb-16 w-full max-w-4xl" id="contact">
           <h1 className="mb-16 mt-16 text-xl font-bold">Please tell me about your project</h1>
 
-          <form onSubmit={handleSubmit}>
+          <div>
             <div className="mb-16">
-              <h2 className="mb-6 text-2xl">Service</h2>
-              <div className="flex flex-wrap gap-4">
-                {services.map((service) => (
-                  <button
-                    key={service}
-                    type="button"
-                    className={`rounded-full px-6 py-3 ${
-                      selectedService === service
-                        ? 'bg-white text-black'
-                        : 'border border-gray-700 transition-colors hover:border-gray-500'
-                    }`}
-                    onClick={() => setSelectedService(service)}
-                  >
-                    {service}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="mb-16">
-              <h2 className="mb-6 text-2xl">Budget in USD</h2>
+              <h2 className="mb-6 text-2xl">Budget in INR</h2>
               <div className="flex flex-wrap gap-4">
                 {budgets.map((budget) => (
                   <button
                     key={budget}
                     type="button"
                     className={`rounded-full px-6 py-3 ${
-                      selectedBudget === budget
+                      formik.values.budget === budget
                         ? 'bg-white text-black'
                         : 'border border-gray-700 transition-colors hover:border-gray-500'
                     }`}
-                    onClick={() => setSelectedBudget(budget)}
+                    onClick={() => formik.setFieldValue('budget', budget)}
                   >
                     {budget}
                   </button>
@@ -85,56 +84,58 @@ export default function ProjectInquiryForm() {
             </div>
 
             <div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-2">
-              <div className="flex flex-col gap-8">
-                <div>
-                  <label htmlFor="name" className="mb-4 block text-2xl">
-                    Name
-                  </label>
-                  <input
-                    id="name"
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="w-full border-b border-gray-700 bg-transparent pb-2 transition-colors focus:border-white focus:outline-none"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="mb-4 block text-2xl">
-                    Email
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full border-b border-gray-700 bg-transparent pb-2 transition-colors focus:border-white focus:outline-none"
-                    required
-                  />
-                </div>
+              <div>
+                <label htmlFor="name" className="mb-4 block text-2xl">
+                  Name
+                </label>
+                <input
+                  id="name"
+                  type="text"
+                  value={formik.values.name}
+                  onChange={formik.handleChange}
+                  className="w-full border-b border-gray-700 bg-transparent pb-2 transition-colors focus:border-white focus:outline-none"
+                  required
+                />
               </div>
               <div>
                 <label htmlFor="email" className="mb-4 block text-2xl">
-                  Project Details
+                  Email
                 </label>
                 <input
+                  id="email"
+                  type="email"
+                  value={formik.values.email}
+                  onChange={formik.handleChange}
+                  className="w-full border-b border-gray-700 bg-transparent pb-2 transition-colors focus:border-white focus:outline-none"
+                  required
+                />
+              </div>
+              <div className="col-span-full">
+                <label htmlFor="email" className="mb-4 block text-2xl">
+                  Project Details
+                </label>
+                <textarea
                   id="projectDetails"
-                  type="text"
-                  value={projectDetails}
-                  onChange={(e) => setProjectDetails(e.target.value)}
+                  value={formik.values.projectDetails}
+                  onChange={formik.handleChange}
                   placeholder="Please tell us about your project"
                   className="w-full border-b border-gray-700 bg-transparent pb-2 transition-colors focus:border-white focus:outline-none"
                   required
                 />
               </div>
             </div>
-            <button type="submit" aria-label="Let's Collaborate">
+            <button
+              type="submit"
+              aria-label="Let's Collaborate"
+              onClick={() => formik.handleSubmit()}
+            >
               <DiscussText
                 text="DISCUSS PROJECT"
                 className="font-neue-Helvetica text-5xl text-primary underline decoration-2 underline-offset-4 md:text-7xl"
+                isLoading={formik.isSubmitting}
               />
             </button>
-          </form>
+          </div>
         </div>
       </div>
       <footer className="-translate-y-30 mb-10 rounded-t-3xl bg-white p-6 font-neue-Helvetica-Medium shadow-md md:rounded-t-[80px] md:p-16">

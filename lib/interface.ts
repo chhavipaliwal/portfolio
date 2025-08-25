@@ -16,25 +16,16 @@ export interface User extends Base {
   src: string;
 }
 
-export interface Project extends Base {
+export interface Project {
+  id: number;
   title: string;
-  tagline: string;
-  description: string;
-  role: string;
-  github: string;
-  thumbnail: {
-    src: string;
-    file: File;
-    preview: string;
-  };
-  technologies: string[];
-  previewlink: string;
-  startdate: string;
-  enddate: string;
-  status: 'upcoming' | 'in-progress' | 'on-hold' | 'completed';
-  slug: string;
-  client: string;
-  priority: number;
+  video: string;
+  link: string;
+  category: string;
+  technologies?: string[];
+  source?: string;
+  tagline?: string;
+  description?: string;
 }
 
 export interface Testimonial extends Base {

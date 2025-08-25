@@ -9,6 +9,7 @@ type DiscussTextProps = {
   duration?: number;
   className?: string;
   href?: string;
+  isLoading?: boolean;
 };
 
 const DiscussText: React.FC<DiscussTextProps> = ({
@@ -16,6 +17,7 @@ const DiscussText: React.FC<DiscussTextProps> = ({
   duration = 0.4,
   className = '',
   href = '#',
+  isLoading,
 }) => {
   const letters = text?.split('') || [];
 
@@ -92,6 +94,15 @@ const DiscussText: React.FC<DiscussTextProps> = ({
     </motion.div>
   );
 
+  if (isLoading) {
+    return (
+      <div className="h-10 w-10 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+    );
+  }
+
+  if (href === '#') {
+    return content;
+  }
   return href.startsWith('/') || href.startsWith('#') ? (
     <Link href={href} scroll={href.startsWith('#')}>
       {content}
