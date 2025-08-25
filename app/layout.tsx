@@ -16,10 +16,10 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="dark">
       <body className="font-manrope font-medium">
         <Providers>
-          <ThemeProvider attribute="class">
+          <ThemeProvider attribute="class" defaultTheme="dark">
             <Navbar />
             {children}
             <Sonner />
