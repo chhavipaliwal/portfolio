@@ -1,9 +1,9 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import Button from '../ui/button';
 import { useScroll, motion, useMotionValueEvent } from 'framer-motion';
-import { Button as HeroButton, Image } from '@heroui/react';
+import { Button, Image } from '@heroui/react';
+import CommandMenu from '../ui/command-menu';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <motion.div
-      className="fixed top-0 z-50 w-full scroll-smooth bg-background/30 px-4 font-neue-Helvetica-Medium shadow-md backdrop-blur-md md:px-8"
+      className="fixed top-0 w-full scroll-smooth bg-background/70 px-4 shadow-md backdrop-blur-lg md:px-8"
       initial={{
         y: -100,
         opacity: 0,
@@ -60,25 +60,24 @@ const Navbar = () => {
               className="rounded-full object-cover object-top"
             />
           </div>
-          <span className="text-xl font-medium tracking-wide text-white md:text-2xl">Chhavi</span>
+          <span className="text-xl font-medium text-white md:text-2xl">Chhavi</span>
         </Link>
 
         {/* Right side: Contact, Menu, and Circle Logo */}
         <div className="flex items-center gap-4 md:gap-6">
           <div className="flex items-center md:flex">
-            <Link href="/contact">
-              <Button className="border border-foreground transition-all hover:bg-foreground hover:text-background">
-                Contact
-              </Button>
-            </Link>
+            <Button as={Link} variant="bordered" href="/contact">
+              Contact
+            </Button>
           </div>
           <div className="flex items-center gap-3">
             <button onClick={toggleMenu} className="hidden text-white focus:outline-none md:flex">
               menu
             </button>
+            <CommandMenu />
 
             <div className="relative">
-              <HeroButton
+              <Button
                 className="relative z-[51] grid size-12 grid-cols-2 grid-rows-2 place-items-center bg-white p-4 transition-all"
                 onPress={toggleMenu}
                 isIconOnly
@@ -93,7 +92,7 @@ const Navbar = () => {
                     className="size-[6px] rounded-full bg-black transition-transform duration-500 ease-in-out group-hover:rotate-180"
                   ></div>
                 ))}
-              </HeroButton>
+              </Button>
               <motion.div
                 className="fixed bottom-0 left-0 right-0 top-0 z-[49] m-4 h-screen w-screen bg-background/40"
                 initial={{

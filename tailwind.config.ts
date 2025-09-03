@@ -163,11 +163,7 @@ const config = {
           medium: '1.5rem',
           large: '1.75rem',
         },
-        radius: {
-          small: '0.5rem',
-          medium: '3rem',
-          large: '4.6rem',
-        },
+
         borderWidth: {
           small: '1px',
           medium: '2px',

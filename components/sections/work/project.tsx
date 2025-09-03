@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Button, cn, Divider } from '@nextui-org/react';
 import Link from 'next/link';
 import { isOnce } from '@/lib/utils';
+import { Chip, Tooltip } from '@heroui/react';
 
 interface Props {
   project: ProjectType;
@@ -36,31 +37,39 @@ export default function Project({ project }: Props) {
               <p className="mt-4 text-justify text-default-600">{project?.description}</p>
             </div>
             <div className="flex gap-4">
-              {project?.source && (
-                <motion.div
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{
-                    duration: 0.1,
-                    delay: 0.5,
-                    type: 'spring',
-                    stiffness: 80,
-                  }}
-                  viewport={{ once: isOnce }}
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{
+                  duration: 0.1,
+                  delay: 0.5,
+                  type: 'spring',
+                  stiffness: 80,
+                }}
+                viewport={{ once: isOnce }}
+              >
+                <Tooltip
+                  delay={500}
+                  isDisabled={!!project.source}
+                  content="Source code is either private or not available"
+                  color="primary"
                 >
-                  <Button
-                    as={Link}
-                    size="lg"
-                    color="primary"
-                    variant="flat"
-                    href={`${project?.source}`}
-                    endContent={<Icon icon="tabler:arrow-up-right" fontSize={20} />}
-                    target="_blank"
-                  >
-                    Source
-                  </Button>
-                </motion.div>
-              )}
+                  <div>
+                    <Button
+                      isDisabled={!project?.source}
+                      as={Link}
+                      size="lg"
+                      color="primary"
+                      variant="bordered"
+                      href={`${project?.source}`}
+                      endContent={<Icon icon="tabler:arrow-up-right" fontSize={20} />}
+                      target="_blank"
+                    >
+                      Source
+                    </Button>
+                  </div>
+                </Tooltip>
+              </motion.div>
               {project?.link && (
                 <motion.div
                   initial={{ scale: 0 }}
