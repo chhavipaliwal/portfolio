@@ -22,7 +22,7 @@ export default function Project({ project }: Props) {
         className="mx-auto mt-24 max-w-7xl p-4 sm:p-8 md:p-12"
       >
         <div className="flex flex-col">
-          <h1 className="flex items-center justify-center gap-4 font-pp-migra text-[clamp(1rem,7vw,11.5rem)] font-extrabold italic leading-none text-secondary">
+          <h1 className="flex items-center justify-center gap-4 font-pp-migra text-[clamp(1rem,7vw,11.5rem)] font-extrabold capitalize italic leading-none text-secondary">
             {project?.title}
           </h1>
           <p className="mt-2 text-center text-[clamp(1rem,1.5vw,2rem)] text-default-600">
