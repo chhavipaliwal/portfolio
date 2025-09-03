@@ -2,9 +2,8 @@ import type { CSSProperties } from 'react';
 
 export enum CategoryEnum {
   PROJECTS = 'projects',
-  MARKETING = 'marketing',
-  ECOMMERCE = 'ecommerce',
-  CHARTS = 'charts',
+  SOCIAL = 'social',
+  SKILLS = 'skills',
 }
 
 export type Attributes = {

@@ -33,6 +33,7 @@ import { Popover, PopoverContent, PopoverTrigger } from './popover';
 import { sortSearchCategoryItems } from './sort';
 import { NewChip } from './new-chip';
 import Image from 'next/image';
+import { useRouter } from 'nextjs-toploader/app';
 
 const cmdk = tv({
   slots: {
@@ -136,9 +137,8 @@ const MAX_RECENT_SEARCHES = 10;
 const MAX_RESULTS = 20;
 const CATEGORY_ICON_MAP = {
   [CategoryEnum.PROJECTS]: 'solar:suitcase-bold-duotone',
-  [CategoryEnum.MARKETING]: 'solar:graph-new-up-linear',
-  [CategoryEnum.ECOMMERCE]: 'solar:cart-large-minimalistic-linear',
-  [CategoryEnum.CHARTS]: 'solar:pie-chart-2-broken',
+  [CategoryEnum.SOCIAL]: 'solar:users-group-rounded-bold-duotone',
+  [CategoryEnum.SKILLS]: 'solar:lightbulb-bolt-bold-duotone',
 };
 const CATEGORIES = [
   {
@@ -147,19 +147,14 @@ const CATEGORIES = [
     label: 'Projects',
   },
   {
-    key: CategoryEnum.MARKETING,
-    icon: CATEGORY_ICON_MAP[CategoryEnum.MARKETING],
-    label: 'Marketing',
+    key: CategoryEnum.SOCIAL,
+    icon: CATEGORY_ICON_MAP[CategoryEnum.SOCIAL],
+    label: 'Social Media',
   },
   {
-    key: CategoryEnum.ECOMMERCE,
-    icon: CATEGORY_ICON_MAP[CategoryEnum.ECOMMERCE],
-    label: 'E-commerce',
-  },
-  {
-    key: CategoryEnum.CHARTS,
-    icon: CATEGORY_ICON_MAP[CategoryEnum.CHARTS],
-    label: 'Charts',
+    key: CategoryEnum.SKILLS,
+    icon: CATEGORY_ICON_MAP[CategoryEnum.SKILLS],
+    label: 'Skills',
   },
 ] as const;
 
@@ -185,9 +180,8 @@ function flattenSearchData() {
 function groupedSearchData(data: SearchResultItem[]) {
   let categoryGroupMap = {
     [CategoryEnum.PROJECTS]: [] as SearchResultItem[],
-    [CategoryEnum.MARKETING]: [] as SearchResultItem[],
-    [CategoryEnum.ECOMMERCE]: [] as SearchResultItem[],
-    [CategoryEnum.CHARTS]: [] as SearchResultItem[],
+    [CategoryEnum.SKILLS]: [] as SearchResultItem[],
+    [CategoryEnum.SOCIAL]: [] as SearchResultItem[],
   };
 
   data.forEach((item) => {
@@ -208,6 +202,7 @@ function groupedSearchData(data: SearchResultItem[]) {
  *
  */
 const CommandMenu: FC<{}> = () => {
+  const router = useRouter();
   const [query, setQuery] = useState('');
   const [activeItem, setActiveItem] = useState(0);
   const [menuNodes] = useState(() => new MultiRef<number, HTMLElement>());
@@ -217,7 +212,7 @@ const CommandMenu: FC<{}> = () => {
   const groupedData = useMemo(() => groupedSearchData(flattenedData), [flattenedData]);
   const eventRef = useRef<'mouse' | 'keyboard'>();
   const listRef = useRef<HTMLDivElement>(null);
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [commandKey, setCommandKey] = useState<'ctrl' | 'command'>('command');
 
   useEffect(() => {
@@ -355,8 +350,16 @@ const CommandMenu: FC<{}> = () => {
     (item: SearchResultItem) => {
       onClose();
       addToRecentSearches(item);
+
+      if (item.url) {
+        if (item.component.attributes?.openInNewTabRecommended) {
+          window.open(item.url, '_blank');
+        } else {
+          router.push(item.url);
+        }
+      }
     },
-    [onClose, addToRecentSearches]
+    [onClose, addToRecentSearches, router]
   );
 
   const onCategorySelect = useCallback((keys: Selection) => {
@@ -443,7 +446,7 @@ const CommandMenu: FC<{}> = () => {
       return (
         <Button
           isIconOnly
-          className={cn('border border-red-400 data-[hover=true]:bg-content2', className)}
+          className={cn('border border-default-400 data-[hover=true]:bg-content2', className)}
           radius="full"
           size="sm"
           variant="bordered"
@@ -480,7 +483,7 @@ const CommandMenu: FC<{}> = () => {
           }}
         >
           <div
-            className={cn('flex h-full w-full items-center justify-center', {
+            className={cn('flex h-full w-full items-center justify-center p-3', {
               'p-0': item?.component?.attributes?.screenshot?.fullWidth,
             })}
           >
@@ -696,35 +699,21 @@ const CommandMenu: FC<{}> = () => {
 
   return (
     <>
-      <Tooltip
-        classNames={{
-          content: 'px-0',
-        }}
-        content={
-          <Kbd
-            className="hidden bg-transparent px-2 py-0.5 shadow-none lg:inline-block"
-            keys={commandKey}
-          >
-            K
-          </Kbd>
-        }
-        placement="bottom"
-      >
-        <Button
-          className="mr-2"
-          radius="full"
-          size="md"
-          variant="bordered"
-          onPress={handleOpenCmdk}
-        >
+      <Button
+        className="mr-2"
+        radius="full"
+        size="md"
+        variant="bordered"
+        onPress={handleOpenCmdk}
+        startContent={
           <Icon
             className="text-default-400 [&>g]:stroke-[2px]"
             icon="solar:magnifer-linear"
             width={18}
           />
-          Toggle command menu
-        </Button>
-      </Tooltip>
+        }
+        endContent={<Kbd keys={commandKey}>K</Kbd>}
+      ></Button>
       <Modal
         hideCloseButton
         backdrop="blur"

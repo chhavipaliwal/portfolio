@@ -2,7 +2,7 @@ import type { Project } from '@/lib/interface';
 
 export const projects: Project[] = [
   {
-    id: 1,
+    slug: 'insur-hotels',
     title: 'Insur Hotels',
     video: '/insur-hotels.mp4',
     link: 'https://insurhotels.com',
@@ -13,7 +13,7 @@ export const projects: Project[] = [
       'Experience the beauty of serene getaways with my project portfolio, featuring exclusive retreats like Winged Villa in Bhimtal, Seraibagh in Ranthambore, and Riverwal in Jim Corbett. Each retreat offers unique experiences—from tranquil lakeside views to luxury immersed in wildlife, and riverside relaxation amid lush greenery. This portfolio is developed using Next.js 14, styled with TailwindCSS, and enhanced with NEXTUI and Shadcn UI for a modern, aesthetic design. MongoDB powers the backend, ensuring seamless data management for a smooth user experience.',
   },
   {
-    id: 2,
+    slug: 'invoice-generator',
     title: 'Invoice Generator',
     video: '/invoice-genreator.mp4',
     link: 'https://chhavi-paliwal-invoice-generator.vercel.app/',
@@ -26,7 +26,7 @@ export const projects: Project[] = [
   },
 
   {
-    id: 3,
+    slug: 'the-policlinic',
     title: 'the policlinic',
     video: '/the-polyclinic.mp4',
     link: 'https://policlinic.divinely.dev/',
@@ -38,7 +38,7 @@ export const projects: Project[] = [
       'A comprehensive healthcare platform designed to modernize clinic operations. Features include secure patient registration, an intuitive appointment booking system, and an admin dashboard for management. Built as a full-stack application with Next.js, Tailwind CSS, and MongoDB, it offers a robust solution for modern healthcare.',
   },
   {
-    id: 4,
+    slug: 'the-yogic-bowl',
     title: 'the yogic Bowl',
     video: '/the-yogic-bowl.mp4',
     link: 'https://theyogicbowl.divinely.dev/',
@@ -50,7 +50,7 @@ export const projects: Project[] = [
       "A beautifully crafted website and management system for 'The Yogic Bowl' restaurant. This project features an elegant menu, seamless user experience, and an easy-to-manage admin panel. Built with Next.js and Tailwind CSS, it's optimized for performance and aesthetics to reflect a unique brand identity.",
   },
   {
-    id: 5,
+    slug: 'react-portfolio',
     title: 'React Portfolio',
     video: '/react-portfolio.mp4',
     link: 'https://react-portfolio-kitti.netlify.app/',
@@ -62,7 +62,7 @@ export const projects: Project[] = [
       'A dynamic personal portfolio designed to leave a lasting impression. This project leverages React, Tailwind CSS, and the magic of Framer Motion to create a fluid user experience. It features smooth animations and elegant transitions to effectively showcase projects and skills.',
   },
   {
-    id: 6,
+    slug: 'better-com-clone',
     title: 'Better.com clone',
     video: '/better-com-clone.mp4',
     link: 'https://better-com-clone.vercel.app/',
@@ -74,7 +74,7 @@ export const projects: Project[] = [
       "A high-fidelity clone of the Better.com website, demonstrating the ability to build complex user interfaces. This project meticulously recreates the platform's layout and responsive design using Next.js for performance, Tailwind CSS for precision, and Framer Motion for engaging animations.",
   },
   {
-    id: 7,
+    slug: 'social-media-app',
     title: 'Social Media App',
     video: '/socialConnect.mp4',
     link: 'https://social-media-app-nu-ten.vercel.app/',

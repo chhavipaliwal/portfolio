@@ -24,7 +24,7 @@ export default function Projects({ projects }: Props) {
       <div ref={targetRef} className="relative mx-auto mt-24 max-w-7xl p-4 sm:p-8 md:p-12">
         <motion.div style={{ y }} className="grid gap-8 md:grid-cols-2">
           {projects.map((project, index) => (
-            <ProjectCard key={project.id} cardIndex={index} project={project} />
+            <ProjectCard key={project.slug} cardIndex={index} project={project} />
           ))}
         </motion.div>
       </div>
@@ -52,7 +52,7 @@ function ProjectCard({ project, cardIndex }: { project: Project; cardIndex: numb
       }}
       viewport={{ once: isOnce }}
     >
-      <Link href={`/work/${project.id}`} className="group flex flex-col gap-4">
+      <Link href={`/work/${project.slug}`} className="group flex flex-col gap-4">
         <div className="relative h-fit w-full">
           <div className="relative w-full">
             {!hasError && (

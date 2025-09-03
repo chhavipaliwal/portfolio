@@ -4,14 +4,14 @@ import { projects } from '@/data/projects';
 
 interface Props {
   params: {
-    id: string;
+    slug: string;
   };
 }
 
 export default function ProjectPage({ params }: Props) {
-  const { id } = params;
+  const { slug } = params;
 
-  const project = projects.find((project) => project.id === parseInt(id));
+  const project = projects.find((project) => project.slug === slug);
 
   if (!project) {
     return <div>Project not found</div>;

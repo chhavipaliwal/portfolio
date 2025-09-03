@@ -17,7 +17,7 @@ export interface User extends Base {
 }
 
 export interface Project {
-  id: number;
+  slug: string;
   title: string;
   video: string;
   link: string;
