@@ -6,29 +6,6 @@ import { Button, Image } from '@heroui/react';
 import CommandMenu from '../ui/command-menu';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
-
-  const { scrollY } = useScroll();
-
-  useMotionValueEvent(scrollY, 'change', (latest) => {
-    if (latest > 1000) {
-      const previous = scrollY.getPrevious();
-      const diff = previous ? latest - previous : 0;
-
-      if (diff > 10) {
-        setIsHidden(true);
-        setIsOpen(false);
-      } else if (diff < -10) {
-        setIsHidden(false);
-      }
-    }
-  });
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
     <motion.div
       className="fixed top-0 z-10 w-full scroll-smooth bg-background/70 px-4 shadow-md backdrop-blur-lg md:px-8"
@@ -68,6 +45,9 @@ const Navbar = () => {
           <div className="flex items-center md:flex">
             <Button as={Link} radius="full" variant="light" href="/contact">
               Contact
+            </Button>
+            <Button as={Link} radius="full" variant="light" href="/work">
+              Projects
             </Button>
           </div>
           <div className="flex items-center gap-3">

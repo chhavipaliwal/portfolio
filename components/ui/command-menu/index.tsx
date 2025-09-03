@@ -748,7 +748,7 @@ const CommandMenu: FC<{}> = () => {
               <Command.Input
                 autoFocus={!isWebKit()}
                 className={slots.input()}
-                placeholder="Search component..."
+                placeholder="Search projects, skills, etc."
                 value={query}
                 onKeyDown={onInputKeyDown}
                 onValueChange={setQuery}
