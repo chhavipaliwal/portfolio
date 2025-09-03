@@ -30,13 +30,13 @@ export const projects: Project[] = [
     slug: 'divinely-store',
     title: 'divinely store',
     video: 'https://chhavi-assets.divinely.dev/divinely-store.mp4',
-    link: 'https://theyogicbowl.divinely.dev/',
+    link: 'https://store.divinely.dev/',
     category: 'Web Application',
     source: 'https://github.com/chhavipaliwal/divinely-store',
     technologies: ['tabler:brand-nextjs', 'tabler:brand-tailwind'],
     tagline: 'A centralized hub for free and essential development resources.',
     description:
-      'Divinely Store is an open source project designed for our web developers, providing centralized access to free and essential development resources.',
+      'Divinely Store is an open source project designed and developed for Ankit Kalirawana, a web developer, providing centralized access to free and essential development resources to their team.',
     client: 'Ankit Kalirawana',
   },
   {
