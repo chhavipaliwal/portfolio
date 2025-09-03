@@ -173,7 +173,7 @@ export default function Project({ project }: Props) {
           height={1200}
           controls={false}
           preload="auto"
-          src={process.env.NEXT_PUBLIC_CLOUDFLARE_URL + project?.video}
+          src={project?.video}
         />
       </motion.div>
     </>
