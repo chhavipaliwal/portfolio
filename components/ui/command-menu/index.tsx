@@ -680,7 +680,7 @@ const CommandMenu: FC<{}> = () => {
         selectedKeys={[selectedCategory]}
         selectionMode="single"
         variant="flat"
-        onAction={alert}
+        // onAction={alert}
         onSelectionChange={onCategorySelect}
       >
         {CATEGORIES.map((item) => (
