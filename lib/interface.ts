@@ -26,6 +26,7 @@ export interface Project {
   source?: string;
   tagline?: string;
   description?: string;
+  client?: string;
 }
 
 export interface Testimonial extends Base {

@@ -5,7 +5,7 @@ const skills = ["LET'S WORK", "LET'S WORK", "LET'S WORK"];
 export default function LetsWork() {
   return (
     <>
-      <div className="relative -translate-y-72 overflow-hidden rounded-t-3xl bg-[#A6B8C7] font-neue-Helvetica md:rounded-t-large">
+      <div className="relative -translate-y-80 overflow-hidden rounded-t-3xl bg-[#A6B8C7] font-neue-Helvetica md:rounded-t-[74px]">
         <Marquee
           pauseOnHover={false}
           speed={40}

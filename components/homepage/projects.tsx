@@ -1,9 +1,10 @@
 'use client';
 import Link from 'next/link';
 import { Icon } from '@iconify/react';
-import Button from '../ui/button';
 import Marquee from 'react-fast-marquee';
-import { Image, Chip } from '@heroui/react';
+import Projects from '../sections/work/projects';
+import { projects } from '@/data/projects';
+import { Button } from '@heroui/react';
 
 const skills = [
   'TAILWIND CSS',
@@ -16,45 +17,8 @@ const skills = [
   'GIT & GITHUB',
   'UI/UX DESIGN',
 ];
-interface ProjectsProps {
-  projects: {
-    title: string;
-    image: string;
-    link: string;
-    tech: string[];
-  }[];
-}
 
-const projectsData: ProjectsProps = {
-  projects: [
-    {
-      title: 'The Policlinic',
-      image: '/project/hospital.png',
-      link: 'https://assignment-chhavi.netlify.app/',
-      tech: ['NEXT.JS', 'TAILWIND CSS', 'MONGODB'],
-    },
-    {
-      title: 'Invoice Generator',
-      image: '/project/invoice.png',
-      link: 'https://chhavi-paliwal-invoice-generator.vercel.app/',
-      tech: ['REACT', 'TYPESCRIPT', 'NODE.JS'],
-    },
-    {
-      title: 'Better.com Clone',
-      image: '/project/better.png',
-      link: 'https://better-com-clone.vercel.app/',
-      tech: ['NEXT.JS', 'SHADCN', 'OPENAI API'],
-    },
-    {
-      title: 'Kody',
-      image: '/project/kodi.png',
-      link: 'https://the-kody.netlify.app/',
-      tech: ['HTML', 'CSS', 'JAVASCRIPT'],
-    },
-  ],
-};
-
-export default function Projects() {
+export default function LandingProjects() {
   return (
     <>
       <div className="w-full rounded-t-3xl bg-white text-black md:rounded-t-[74px]">
@@ -85,57 +49,23 @@ export default function Projects() {
             </div>
           </div>
           <hr className="border-t border-gray-300" />
-          <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2">
-            {projectsData.projects.map((project, index) => (
-              <Link href={project.link} key={index} className="flex flex-col justify-center gap-4">
-                <Image
-                  radius="none"
-                  isBlurred
-                  isZoomed
-                  src={project.image}
-                  alt={project.title}
-                  classNames={{
-                    img: 'hover:scale-105',
-                    wrapper: 'rounded-xl overflow-hidden ',
-                  }}
-                />
-                <div className="flex flex-col gap-3 pl-4 font-manrope">
-                  <h2 className="text-3xl font-semibold">{project.title}</h2>
-                  <div className="flex flex-wrap gap-3">
-                    {project.tech.map((tag, i) => (
-                      <Chip
-                        key={i}
-                        variant="bordered"
-                        color="secondary"
-                        className="border py-2 text-sm text-background"
-                        size="md"
-                        classNames={{
-                          content: 'font-bold',
-                        }}
-                      >
-                        {tag}
-                      </Chip>
-                    ))}
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
+
+          <Projects projects={projects.slice(0, 4)} className="mt-0 max-w-full" isLanding={true} />
           <div className="flex w-full justify-center">
-            <div className="mb-10 flex flex-col items-center justify-center text-center">
+            <div className="mb-10 flex flex-col items-center justify-center gap-4 text-center">
               <p className="mt-10 max-w-lg text-2xl">
                 I craft digital experiences where every pixel matters — blending personality with
                 purpose, and design with intention.
               </p>
               <Link href="/work">
-                <Button className="mt-2 rounded-full border border-gray-500 px-8 py-6 text-lg text-black hover:bg-gray-900 hover:text-white">
+                <Button radius="full" size="lg" variant="bordered" className="text-black">
                   View All Projects
                 </Button>
               </Link>
             </div>
           </div>
         </div>
-        <div className="relative overflow-hidden rounded-t-3xl bg-black md:rounded-t-large">
+        <div className="relative overflow-hidden rounded-t-3xl bg-black md:rounded-t-[74px]">
           <Marquee
             pauseOnHover={false}
             speed={40}

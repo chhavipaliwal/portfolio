@@ -1,5 +1,4 @@
 'use client';
-import { isImage } from '@/functions/utility';
 import { Project } from '@/lib/interface';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { Chip, cn, ScrollShadow, Skeleton } from '@nextui-org/react';
@@ -11,9 +10,11 @@ import { isOnce } from '@/lib/utils';
 
 interface Props {
   projects: Project[];
+  className?: string;
+  isLanding?: boolean;
 }
 
-export default function Projects({ projects }: Props) {
+export default function Projects({ projects, className, isLanding }: Props) {
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -21,10 +22,18 @@ export default function Projects({ projects }: Props) {
   const y = useTransform(scrollYProgress, [0, 1.5], ['2%', '-5%']);
   return (
     <>
-      <div ref={targetRef} className="relative mx-auto mt-24 max-w-7xl p-4 sm:p-8 md:p-12">
+      <div
+        ref={targetRef}
+        className={cn('relative mx-auto mt-24 max-w-7xl p-4 sm:p-8 md:p-12', className)}
+      >
         <motion.div style={{ y }} className="grid gap-8 md:grid-cols-2">
           {projects.map((project, index) => (
-            <ProjectCard key={project.slug} cardIndex={index} project={project} />
+            <ProjectCard
+              key={project.slug}
+              cardIndex={index}
+              project={project}
+              isLanding={isLanding}
+            />
           ))}
         </motion.div>
       </div>
@@ -32,7 +41,15 @@ export default function Projects({ projects }: Props) {
   );
 }
 
-function ProjectCard({ project, cardIndex }: { project: Project; cardIndex: number }) {
+function ProjectCard({
+  project,
+  cardIndex,
+  isLanding,
+}: {
+  project: Project;
+  cardIndex: number;
+  isLanding?: boolean;
+}) {
   const [hasError, setHasError] = useState(false);
 
   return (
@@ -60,15 +77,13 @@ function ProjectCard({ project, cardIndex }: { project: Project; cardIndex: numb
                 autoPlay
                 loop
                 muted
-                className={cn(
-                  'pointer-events-none flex aspect-video w-full rounded-3xl bg-default object-cover transition-all group-hover:opacity-30'
-                )}
+                className="pointer-events-none flex aspect-video w-full rounded-3xl object-cover transition-all group-hover:opacity-30"
                 playsInline
                 width={400}
                 height={400}
                 controls={false}
                 preload="auto"
-                src={process.env.NEXT_PUBLIC_CLOUDFLARE_URL + project.video}
+                src={project.video}
                 onError={() => {
                   setHasError(true); // Trigger fallback if an error occurs
                 }}
@@ -87,24 +102,38 @@ function ProjectCard({ project, cardIndex }: { project: Project; cardIndex: numb
             )}
           </div>
 
-          <h3 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-3xl text-white opacity-0 transition-all group-hover:opacity-100">
+          <h3
+            className={cn(
+              'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-3xl text-white opacity-0 transition-all group-hover:opacity-100',
+              isLanding ? 'text-black' : 'text-white'
+            )}
+          >
             <span>{project.title}</span>
           </h3>
         </div>
 
-        <div className="flex flex-col gap-2">
+        <div className="flex items-center justify-between gap-2">
           <ScrollShadow orientation="horizontal" className="no-scrollbar flex gap-2">
             {project.technologies?.map((tech) => (
               <Chip
+                variant={isLanding ? 'bordered' : 'solid'}
                 key={tech}
-                // size="sm"
-                className="capitalize"
+                className={cn('capitalize', isLanding ? 'text-black' : 'text-white')}
                 startContent={<Icon icon={tech} className="mx-1" />}
               >
                 {tech.split(/[:-]/).pop()}
               </Chip>
             ))}
           </ScrollShadow>
+          {project.client && (
+            <Chip
+              variant="dot"
+              color="success"
+              className={cn('capitalize', isLanding ? 'text-black' : 'text-white')}
+            >
+              {project.client}
+            </Chip>
+          )}
         </div>
       </Link>
     </motion.div>

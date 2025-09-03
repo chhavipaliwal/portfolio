@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Button, cn, Divider } from '@nextui-org/react';
 import Link from 'next/link';
 import { isOnce } from '@/lib/utils';
-import { Chip, Tooltip } from '@heroui/react';
+import { Tooltip } from '@heroui/react';
 
 interface Props {
   project: ProjectType;
@@ -64,6 +64,7 @@ export default function Project({ project }: Props) {
                       href={`${project?.source}`}
                       endContent={<Icon icon="tabler:arrow-up-right" fontSize={20} />}
                       target="_blank"
+                      radius="full"
                     >
                       Source
                     </Button>
@@ -90,6 +91,7 @@ export default function Project({ project }: Props) {
                     href={`${project?.link}`}
                     endContent={<Icon icon="tabler:arrow-up-right" fontSize={20} />}
                     target="_blank"
+                    radius="full"
                   >
                     Preview
                   </Button>
@@ -119,6 +121,36 @@ export default function Project({ project }: Props) {
                   .join(', ')}
               </p>
             </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.3,
+                delay: 0.5,
+                type: 'spring',
+                stiffness: 80,
+              }}
+              viewport={{ once: isOnce }}
+            >
+              <h4>CATEGORY</h4>
+              <p className="text-default-600">{project?.category}</p>
+            </motion.div>
+            {project?.client && (
+              <motion.div
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: 0.3,
+                  delay: 0.5,
+                  type: 'spring',
+                  stiffness: 80,
+                }}
+                viewport={{ once: isOnce }}
+              >
+                <h4>CLIENT</h4>
+                <p className="text-default-600">{project?.client}</p>
+              </motion.div>
+            )}
           </div>
         </div>
       </motion.div>

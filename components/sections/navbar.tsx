@@ -8,7 +8,7 @@ import CommandMenu from '../ui/command-menu';
 const Navbar = () => {
   return (
     <motion.div
-      className="fixed top-0 z-10 w-full scroll-smooth bg-background/70 px-4 shadow-md backdrop-blur-lg md:px-8"
+      className="fixed top-0 z-[20] w-full scroll-smooth bg-background/70 px-4 shadow-md backdrop-blur-lg md:px-8"
       initial={{
         y: -100,
         opacity: 0,
