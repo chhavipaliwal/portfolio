@@ -5,7 +5,7 @@ const searchData = {
       component: {
         name: 'Insur Hotels',
         slug: 'insur-hotels',
-        image: 'https://chhavi-assets.divinely.dev/insur-hotels.png',
+        image: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/insur-hotels.png',
         attributes: {
           isNew: true,
           group: 'freelancing',
@@ -28,7 +28,7 @@ const searchData = {
       component: {
         name: 'The Yogic Bowl',
         slug: 'the-yogic-bowl',
-        image: 'https://chhavi-assets.divinely.dev/the-yogic-bowl.png',
+        image: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/the-yogic-bowl.png',
         attributes: {
           group: 'freelancing',
           sortPriority: 'medium',
@@ -50,7 +50,7 @@ const searchData = {
       component: {
         name: 'Divinely Store',
         slug: 'divinely-store',
-        image: 'https://chhavi-assets.divinely.dev/divinely-store.png',
+        image: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/divinely-store.png',
         attributes: {
           group: 'freelancing',
           sortPriority: 'medium',
@@ -72,7 +72,7 @@ const searchData = {
       component: {
         name: 'Invoice Generator',
         slug: 'invoice-generator',
-        image: 'https://chhavi-assets.divinely.dev/invoice-generator.png',
+        image: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/invoice-generator.png',
         attributes: {
           group: 'personal',
           sortPriority: 'medium',
@@ -94,7 +94,7 @@ const searchData = {
       component: {
         name: 'React Portfolio',
         slug: 'react-portfolio',
-        image: 'https://chhavi-assets.divinely.dev/react-portfolio.png',
+        image: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/react-portfolio.png',
         attributes: {
           group: 'personal',
           sortPriority: 'medium',
@@ -116,7 +116,7 @@ const searchData = {
       component: {
         name: 'Better.com Clone',
         slug: 'better-com-clone',
-        image: 'https://chhavi-assets.divinely.dev/better-com-clone.png',
+        image: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/better-com-clone.png',
         attributes: {
           group: 'personal',
           sortPriority: 'medium',
@@ -141,7 +141,7 @@ const searchData = {
       component: {
         name: 'LinkedIn',
         slug: 'linkedin',
-        image: 'https://chhavi-assets.divinely.dev/social/linkedin.png',
+        image: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/social/linkedin.png',
         attributes: {
           group: 'featured',
           groupOrder: 1,
@@ -169,7 +169,7 @@ const searchData = {
       component: {
         name: 'Github',
         slug: 'github',
-        image: 'https://chhavi-assets.divinely.dev/social/github.png',
+        image: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/social/github.png',
         attributes: {
           group: 'featured',
           groupOrder: 1,
@@ -197,7 +197,7 @@ const searchData = {
       component: {
         name: 'Twitter',
         slug: 'twitter',
-        image: 'https://chhavi-assets.divinely.dev/social/twitter.png',
+        image: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/social/twitter.png',
         attributes: {
           group: 'featured',
           groupOrder: 1,
@@ -227,7 +227,7 @@ const searchData = {
       component: {
         name: 'Next.js',
         slug: 'nextjs',
-        image: 'https://chhavi-assets.divinely.dev/skills/nextjs.png',
+        image: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/skills/nextjs.png',
         attributes: {
           openInNewTabRecommended: true,
           group: 'frontend',
@@ -257,7 +257,7 @@ const searchData = {
       component: {
         name: 'React.js',
         slug: 'reactjs',
-        image: 'https://chhavi-assets.divinely.dev/skills/react.png',
+        image: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/skills/react.png',
         attributes: {
           openInNewTabRecommended: true,
           group: 'frontend',
@@ -287,7 +287,7 @@ const searchData = {
       component: {
         name: 'Tailwind CSS',
         slug: 'tailwindcss',
-        image: 'https://chhavi-assets.divinely.dev/skills/tailwindcss.png',
+        image: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/skills/tailwindcss.png',
         attributes: {
           openInNewTabRecommended: true,
           group: 'frontend',
@@ -317,7 +317,7 @@ const searchData = {
       component: {
         name: 'Framer Motion',
         slug: 'framer-motion',
-        image: 'https://chhavi-assets.divinely.dev/skills/framer.png',
+        image: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/skills/framer.png',
         attributes: {
           openInNewTabRecommended: true,
           group: 'frontend',
@@ -347,7 +347,7 @@ const searchData = {
       component: {
         name: 'Node.js',
         slug: 'nodejs',
-        image: 'https://chhavi-assets.divinely.dev/skills/node.png',
+        image: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/skills/node.png',
         attributes: {
           openInNewTabRecommended: true,
           group: 'backend',
@@ -377,7 +377,7 @@ const searchData = {
       component: {
         name: 'Express.js',
         slug: 'expressjs',
-        image: 'https://chhavi-assets.divinely.dev/skills/express.png',
+        image: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/skills/express.png',
         attributes: {
           openInNewTabRecommended: true,
           group: 'backend',
@@ -407,7 +407,7 @@ const searchData = {
       component: {
         name: 'MongoDB',
         slug: 'mongodb',
-        image: 'https://chhavi-assets.divinely.dev/skills/mongo.png',
+        image: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/skills/mongo.png',
         attributes: {
           openInNewTabRecommended: true,
           group: 'backend',
@@ -437,7 +437,7 @@ const searchData = {
       component: {
         name: 'AWS',
         slug: 'aws',
-        image: 'https://chhavi-assets.divinely.dev/skills/aws.png',
+        image: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/skills/aws.png',
         attributes: {
           openInNewTabRecommended: true,
           group: 'cloud-devops',
@@ -467,7 +467,7 @@ const searchData = {
       component: {
         name: 'Git',
         slug: 'git',
-        image: 'https://chhavi-assets.divinely.dev/skills/git.png',
+        image: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/skills/git.png',
         attributes: {
           openInNewTabRecommended: true,
           group: 'others',
