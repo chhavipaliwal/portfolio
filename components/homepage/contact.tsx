@@ -34,7 +34,7 @@ export default function ContactMe() {
             <div>
               <p className="font-neue-Helvetica-Medium">Say Hi</p>
               <DiscussText
-                text="CHHAVI.DIVINELY.DEV"
+                text="KITTIPALIWAL@GMAIL.COM"
                 className="font-manrope text-2xl text-white decoration-2 sm:text-2xl"
               />
             </div>
