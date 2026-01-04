@@ -155,7 +155,7 @@ export default function ProjectInquiryForm() {
           <div className="text-md mt-10 grid grid-cols-3 gap-10 font-medium text-black md:mt-0 md:grid-cols-3 md:text-lg">
             {/* Column 1 */}
             <div className="space-y-4">
-              <Link href="https://chhavi.divinely.dev/" className="block hover:text-gray-600">
+              <Link href="https://chhavii.in/" className="block hover:text-gray-600">
                 portfolio
               </Link>
               <Link href="#about" className="block hover:text-gray-600">
