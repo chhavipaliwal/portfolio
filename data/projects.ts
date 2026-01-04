@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     slug: 'insur-hotels',
     title: 'insur hotels',
-    video: 'https://chhavi-assets.divinely.dev/insur-hotels.mp4',
+    video: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/insur-hotels.mp4',
     link: 'https://insurhotels.com',
     category: 'Web Application',
     technologies: ['tabler:brand-nextjs', 'tabler:brand-tailwind'],
@@ -16,7 +16,7 @@ export const projects: Project[] = [
   {
     slug: 'the-yogic-bowl',
     title: 'the yogic Bowl',
-    video: 'https://chhavi-assets.divinely.dev/the-yogic-bowl.mp4',
+    video: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/the-yogic-bowl.mp4',
     link: 'https://theyogicbowl.divinely.dev/',
     category: 'Web Application',
     source: 'https://github.com/chhavipaliwal/the-yogic-bowl',
@@ -29,7 +29,7 @@ export const projects: Project[] = [
   {
     slug: 'divinely-store',
     title: 'divinely store',
-    video: 'https://chhavi-assets.divinely.dev/divinely-store.mp4',
+    video: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/divinely-store.mp4',
     link: 'https://store.divinely.dev/',
     category: 'Web Application',
     source: 'https://github.com/chhavipaliwal/divinely-store',
@@ -42,7 +42,7 @@ export const projects: Project[] = [
   {
     slug: 'invoice-generator',
     title: 'invoice generator',
-    video: 'https://chhavi-assets.divinely.dev/invoice-genreator.mp4',
+    video: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/invoice-genreator.mp4',
     link: 'https://chhavi-paliwal-invoice-generator.vercel.app/',
     category: 'Personal Project',
     source: 'https://github.com/chhavi-paliwal/invoice-generator',
@@ -54,7 +54,7 @@ export const projects: Project[] = [
   {
     slug: 'the-policlinic',
     title: 'the policlinic',
-    video: 'https://chhavi-assets.divinely.dev/the-polyclinic.mp4',
+    video: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/the-polyclinic.mp4',
     link: 'https://policlinic.divinely.dev/',
     category: 'Contributed',
     source: 'https://github.com/imankitkalirawana/the-policlinic',
@@ -67,7 +67,7 @@ export const projects: Project[] = [
   {
     slug: 'react-portfolio',
     title: 'react portfolio',
-    video: 'https://chhavi-assets.divinely.dev/react-portfolio.mp4',
+    video: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/react-portfolio.mp4',
     link: 'https://react-portfolio-kitti.netlify.app/',
     category: 'Personal Project',
     source: 'https://github.com/chhavi-paliwal/react-portfolio',
@@ -79,7 +79,7 @@ export const projects: Project[] = [
   {
     slug: 'better-com-clone',
     title: 'better.com clone',
-    video: 'https://chhavi-assets.divinely.dev/better-com-clone.mp4',
+    video: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/better-com-clone.mp4',
     link: 'https://better-com-clone.vercel.app/',
     category: 'Personal Project',
     source: 'https://github.com/chhavi-paliwal/better-com-clone',
@@ -91,7 +91,7 @@ export const projects: Project[] = [
   {
     slug: 'social-media-app',
     title: 'social media app',
-    video: 'https://chhavi-assets.divinely.dev/socialConnect.mp4',
+    video: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/socialConnect.mp4',
     link: 'https://social-media-app-nu-ten.vercel.app/',
     category: 'Personal Project',
     source: 'https://github.com/chhavi-paliwal/social-media-app',
