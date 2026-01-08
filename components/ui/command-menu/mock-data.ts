@@ -46,11 +46,11 @@ const searchData = {
       content: 'The Yogic Bowl',
     },
     {
-      slug: 'divinely-store',
+      slug: 'dev-store',
       component: {
-        name: 'Divinely Store',
-        slug: 'divinely-store',
-        image: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/divinely-store.png',
+        name: 'Dev Store',
+        slug: 'dev-store',
+        image: 'https://pub-ab1090e7d272462f9dcdf859626e7687.r2.dev/dev-store.png',
         attributes: {
           group: 'freelancing',
           sortPriority: 'medium',
@@ -60,12 +60,12 @@ const searchData = {
           },
         },
       },
-      url: '/work/divinely-store',
+      url: '/work/dev-store',
       group: {
         key: 'freelancing',
         name: 'Freelancing',
       },
-      content: 'Divinely Store',
+      content: 'Dev Store',
     },
     {
       slug: 'invoice-generator',
