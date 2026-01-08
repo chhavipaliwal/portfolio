@@ -42,7 +42,7 @@ const Navbar = () => {
 
         {/* Right side: Contact, Menu, and Circle Logo */}
         <div className="flex items-center gap-4 md:gap-6">
-          <div className="flex items-center md:flex">
+          <div className="hidden items-center md:flex">
             <Button as={Link} radius="full" variant="light" href="/contact">
               Contact
             </Button>
